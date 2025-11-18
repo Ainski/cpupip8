@@ -1,0 +1,4 @@
+
+*** Running vivado
+    with args -log dmem1.vds -m64 -mode batch -messageDb vivado.pb -notrace -source dmem1.tcl
+
