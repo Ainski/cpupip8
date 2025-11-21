@@ -10,7 +10,7 @@ module BJudge(
     output [31:0] B_PC
 );
 
-assign B_PC=NPC_if_id+{{16{instr[15]}},instr[15:0]};
+assign B_PC=NPC_if_id+{{14{instr[15]}},instr[15:0],2'b00};
 
 assign B_PC_en=(instr[31:26]==`beq_op)?(rs==rt):
                 (instr[31:26]==`bne_op)?(rs!=rt):

@@ -177,12 +177,6 @@ module cpu (
         .rtc(rtc)
     );
 
-    IMEM IMEM_inst(
-        .address(PC),
-        .PC_bobl(PC_bobl),
-        .instr(instr)
-    );
-
 
     MEM_WB MEM_WB_inst(
         .clk(clk),

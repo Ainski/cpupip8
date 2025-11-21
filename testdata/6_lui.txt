@@ -32,3 +32,4 @@ lui $29,0xf00f
 lui $29,0x0000
 lui $31,0xf00f
 
+halt

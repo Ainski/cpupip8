@@ -21,8 +21,15 @@ webtalk_add_data -client project -key cpu_name -value "13th Gen Intel(R) Core(TM
 webtalk_add_data -client project -key cpu_speed -value "2688 MHz" -context "user_environment"
 webtalk_add_data -client project -key total_processors -value "1" -context "user_environment"
 webtalk_add_data -client project -key system_ram -value "16.000 GB" -context "user_environment"
+webtalk_add_data -client project -key os_name -value "Microsoft Windows 8 or later , 64-bit" -context "user_environment"
+webtalk_add_data -client project -key os_release -value "major release  (build 9200)" -context "user_environment"
+webtalk_add_data -client project -key cpu_name -value "13th Gen Intel(R) Core(TM) i5-13500HX" -context "user_environment"
+webtalk_add_data -client project -key cpu_speed -value "2688 MHz" -context "user_environment"
+webtalk_add_data -client project -key total_processors -value "1" -context "user_environment"
+webtalk_add_data -client project -key system_ram -value "16.000 GB" -context "user_environment"
 webtalk_register_client -client labtool
 webtalk_add_data -client labtool -key pgmcnt -value "00:00:00" -context "labtool\\usage"
 webtalk_add_data -client labtool -key cable -value "" -context "labtool\\usage"
-webtalk_transmit -clientid 1152822894 -regid "" -xml E:/Homeworks/cpupip8/cpupip8.hw/webtalk/usage_statistics_ext_labtool.xml -html E:/Homeworks/cpupip8/cpupip8.hw/webtalk/usage_statistics_ext_labtool.html -wdm E:/Homeworks/cpupip8/cpupip8.hw/webtalk/usage_statistics_ext_labtool.wdm -intro "<H3>LABTOOL Usage Report</H3><BR>"
+webtalk_add_data -client labtool -key cable -value "" -context "labtool\\usage"
+webtalk_transmit -clientid 2936357083 -regid "" -xml E:/Homeworks/cpupip8/cpupip8.hw/webtalk/usage_statistics_ext_labtool.xml -html E:/Homeworks/cpupip8/cpupip8.hw/webtalk/usage_statistics_ext_labtool.html -wdm E:/Homeworks/cpupip8/cpupip8.hw/webtalk/usage_statistics_ext_labtool.wdm -intro "<H3>LABTOOL Usage Report</H3><BR>"
 webtalk_terminate

@@ -62,3 +62,4 @@ addi $29,$29,0xffffdbc1
 addi $30,$30,0x7871
 addi $31,$31,0x7771
 
+halt

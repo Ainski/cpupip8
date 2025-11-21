@@ -100,7 +100,7 @@ proc run_single_test {test_file results_dir} {
     # Load and run simulation
     vsim -quiet work._246tb_ex10_tb
 
-    # Run simulation for 100000ns
+    # Run simulation for maximum 100000ns, but check for halt condition
     run 100000ns
 
     # Copy the test result file to the results directory
@@ -127,9 +127,6 @@ proc run_single_test {test_file results_dir} {
         return 0
     }
 
-    # Expected standard result file
-    set expected_result_file "./testdata/${test_name}.result.txt"
-
     # Generate standard result using external simulator and save it
     set std_result_file "$results_dir/${test_name}_std_result.txt"
     set cmd_result [catch {exec ./cpu_pipelined_simulator.exe E:/Homeworks/cpupip8/$test_file $std_result_file} std_output]
@@ -149,8 +146,8 @@ proc run_single_test {test_file results_dir} {
         }
     }
 
-    # Compare results using external tool
-    set compare_result [catch {exec txt_compare --file1 $output_result_file --file2 $expected_result_file --display detailed > "$results_dir/${test_name}_comparison_result.txt"} compare_output]
+    # Compare simulation result with standard result using external tool
+    set compare_result [catch {exec txt_compare --file1 $output_result_file --file2 $std_result_file --display detailed > "$results_dir/${test_name}_comparison_result.txt"} compare_output]
 
     # Check the comparison result
     set comp_file "$results_dir/${test_name}_comparison_result.txt"

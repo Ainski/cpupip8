@@ -15,3 +15,5 @@ mfc0 $3,$13
 addi $14,$0,0xffffaaaa
 mtc0 $14,$14
 mfc0 $4,$14
+
+halt

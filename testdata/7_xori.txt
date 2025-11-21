@@ -72,3 +72,4 @@ xori $30,$30,0xaaaa
 xori $31,$31,0x1234
             
 
+halt

@@ -446,3 +446,5 @@ addi $31,$0,-3
 divu $30,$31
 mfhi $1
 mflo $2
+
+halt

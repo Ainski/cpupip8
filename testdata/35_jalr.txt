@@ -10,3 +10,4 @@ jr $30
 
 RIGHT:
 addi $6,$0,2
+halt

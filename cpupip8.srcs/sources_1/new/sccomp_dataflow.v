@@ -184,7 +184,7 @@ module sccomp_dataflow (
 
     IMEM imem_inst(
         .address(PC),
-        .PC_bobl(PC_bobl),
+        .instr_if_id(instr_if_id),
         .instr(instr)
     );
 

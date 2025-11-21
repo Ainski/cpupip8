@@ -68,3 +68,4 @@ slti $29,$29,0xffff8000
 slti $30,$30,0x7fff
 slti $31,$31,0xffff8000
 
+halt

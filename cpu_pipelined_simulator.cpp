@@ -147,7 +147,7 @@ public:
     
     void print_state(ostream& out, int32_t current_display_pc) {
         out << "pc: " << setw(8) << setfill('0') << hex << current_display_pc << endl;
-        
+
         // 获取当前PC处的指令
         int addr = current_display_pc / 4;
         if (addr < instruction_memory.size()) {
@@ -155,9 +155,9 @@ public:
         } else {
             out << "instr: " << setw(8) << setfill('0') << hex << 0 << endl;
         }
-        
+
         for (int i = 0; i < 32; i++) {
-            out << "regfile" << i << ": " << setw(8) << setfill('0') << hex << registers[i] << endl;
+            out << "regfile" << dec << i << ": " << setw(8) << setfill('0') << hex << registers[i] << endl;
         }
     }
     
@@ -167,25 +167,25 @@ public:
         if (pipe[4].valid && pipe[4].dest_reg != 0) {  // WB阶段
             registers[pipe[4].dest_reg] = pipe[4].result;
         }
-        
+
         // 4. 移动流水线 (从后往前移动，防止覆盖)
         for (int i = 4; i > 0; i--) {
             pipe[i] = pipe[i-1];
         }
-        
+
         // 3. 新的IF阶段 (获取新的指令)
         int next_instr_addr = display_pc / 4;
         if (next_instr_addr < instruction_memory.size()) {
             pipe[0].valid = true;
             pipe[0].pc = display_pc;
             pipe[0].instr = instruction_memory[next_instr_addr];
-            
+
             // 解码指令
             uint8_t opcode, funct;
             uint32_t rs, rt, rd, shamt;
             uint32_t imm;
             decode_instruction(pipe[0].instr, opcode, funct, rs, rt, rd, shamt, imm);
-            
+
             pipe[0].rs = rs;
             pipe[0].rt = rt;
             if (opcode == 0x00) { // R-type
@@ -201,23 +201,23 @@ public:
             pipe[0].instr = 0;
             pipe[0].dest_reg = 0;
         }
-        
+
         // 2. EX阶段: 执行ALU操作
         if (pipe[2].valid) {
             uint8_t opcode, funct;
             uint32_t rs, rt, rd, shamt;
             uint32_t imm;
             decode_instruction(pipe[2].instr, opcode, funct, rs, rt, rd, shamt, imm);
-            
+
             // 获取操作数
             int32_t a = registers[pipe[2].rs];
             int32_t b;
-            
+
             if (opcode == 0x00) { // R-type
                 b = registers[pipe[2].rt];
-            } else if (opcode == 0x08 || opcode == 0x09 || 
-                      opcode == 0x23 || opcode == 0x2B || 
-                      opcode == 0x0C || opcode == 0x0D || 
+            } else if (opcode == 0x08 || opcode == 0x09 ||
+                      opcode == 0x23 || opcode == 0x2B ||
+                      opcode == 0x0C || opcode == 0x0D ||
                       opcode == 0x0E) { // I-type with immediate
                 b = sign_extend_16_to_32(imm);
             } else if (opcode == 0x0F) { // LUI
@@ -225,15 +225,15 @@ public:
             } else {
                 b = registers[pipe[2].rt];
             }
-            
+
             // 执行ALU操作
             uint8_t alu_op = get_alu_op(pipe[2].instr);
             pipe[2].result = alu_operation(alu_op, a, b);
         }
-        
+
         // 1. 更新显示PC (为下一周期准备)
         display_pc += 4;
-        
+
         // 确保$0寄存器始终为0
         registers[0] = 0;
     }
