@@ -1,0 +1,7 @@
+BATCH TEST SUMMARY
+==================================
+Total tests: 10
+Passed tests: 0
+Failed tests: 10
+Success rate: 0.00%
+==================================

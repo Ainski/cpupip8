@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="_246tb_ex10_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="_246tb_ex10_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="76000000fs"></ZoomStartTime>
+      <ZoomEndTime time="121200001fs"></ZoomEndTime>
+      <Cursor1Time time="85900000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="82" />
+   <wvobject fp_name="/_246tb_ex10_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/count" type="array">
+      <obj_property name="ElementShortName">count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">count[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/a" type="array">
+      <obj_property name="ElementShortName">a[31:0]</obj_property>
+      <obj_property name="ObjectShortName">a[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/b" type="array">
+      <obj_property name="ElementShortName">b[31:0]</obj_property>
+      <obj_property name="ObjectShortName">b[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/aluc" type="array">
+      <obj_property name="ElementShortName">aluc[3:0]</obj_property>
+      <obj_property name="ObjectShortName">aluc[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/aluo" type="array">
+      <obj_property name="ElementShortName">aluo[31:0]</obj_property>
+      <obj_property name="ObjectShortName">aluo[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/zero" type="logic">
+      <obj_property name="ElementShortName">zero</obj_property>
+      <obj_property name="ObjectShortName">zero</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/carry" type="logic">
+      <obj_property name="ElementShortName">carry</obj_property>
+      <obj_property name="ObjectShortName">carry</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/negative" type="logic">
+      <obj_property name="ElementShortName">negative</obj_property>
+      <obj_property name="ObjectShortName">negative</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/overflow" type="logic">
+      <obj_property name="ElementShortName">overflow</obj_property>
+      <obj_property name="ObjectShortName">overflow</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/rs" type="array">
+      <obj_property name="ElementShortName">rs[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rs[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/rt" type="array">
+      <obj_property name="ElementShortName">rt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rt[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/instr" type="array">
+      <obj_property name="ElementShortName">instr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/NPC_if_id" type="array">
+      <obj_property name="ElementShortName">NPC_if_id[31:0]</obj_property>
+      <obj_property name="ObjectShortName">NPC_if_id[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/B_PC_en" type="logic">
+      <obj_property name="ElementShortName">B_PC_en</obj_property>
+      <obj_property name="ObjectShortName">B_PC_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/B_PC" type="array">
+      <obj_property name="ElementShortName">B_PC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">B_PC[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/SC" type="array">
+      <obj_property name="ElementShortName">SC[1:0]</obj_property>
+      <obj_property name="ObjectShortName">SC[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/LC" type="array">
+      <obj_property name="ElementShortName">LC[2:0]</obj_property>
+      <obj_property name="ObjectShortName">LC[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/Data_in" type="array">
+      <obj_property name="ElementShortName">Data_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_in[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/DMEMaddr" type="array">
+      <obj_property name="ElementShortName">DMEMaddr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DMEMaddr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/CS" type="logic">
+      <obj_property name="ElementShortName">CS</obj_property>
+      <obj_property name="ObjectShortName">CS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/DM_W" type="logic">
+      <obj_property name="ElementShortName">DM_W</obj_property>
+      <obj_property name="ObjectShortName">DM_W</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/DM_R" type="logic">
+      <obj_property name="ElementShortName">DM_R</obj_property>
+      <obj_property name="ObjectShortName">DM_R</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/Dataout" type="array">
+      <obj_property name="ElementShortName">Dataout[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Dataout[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/doing_op_id_ex" type="array">
+      <obj_property name="ElementShortName">doing_op_id_ex[3:0]</obj_property>
+      <obj_property name="ObjectShortName">doing_op_id_ex[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/instr_id_ex" type="array">
+      <obj_property name="ElementShortName">instr_id_ex[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instr_id_ex[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/aluo_ex_mem" type="array">
+      <obj_property name="ElementShortName">aluo_ex_mem[31:0]</obj_property>
+      <obj_property name="ObjectShortName">aluo_ex_mem[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/b_ex_mem" type="array">
+      <obj_property name="ElementShortName">b_ex_mem[31:0]</obj_property>
+      <obj_property name="ObjectShortName">b_ex_mem[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/instr_ex_mem" type="array">
+      <obj_property name="ElementShortName">instr_ex_mem[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instr_ex_mem[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/doing_op_ex_mem" type="array">
+      <obj_property name="ElementShortName">doing_op_ex_mem[3:0]</obj_property>
+      <obj_property name="ObjectShortName">doing_op_ex_mem[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/instr_if_id" type="array">
+      <obj_property name="ElementShortName">instr_if_id[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instr_if_id[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/doing_op" type="array">
+      <obj_property name="ElementShortName">doing_op[3:0]</obj_property>
+      <obj_property name="ObjectShortName">doing_op[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/jpc_head" type="array">
+      <obj_property name="ElementShortName">jpc_head[3:0]</obj_property>
+      <obj_property name="ObjectShortName">jpc_head[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/NPC" type="array">
+      <obj_property name="ElementShortName">NPC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">NPC[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/PC" type="array">
+      <obj_property name="ElementShortName">PC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PC[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/reg_detect_confict" type="logic">
+      <obj_property name="ElementShortName">reg_detect_confict</obj_property>
+      <obj_property name="ObjectShortName">reg_detect_confict</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/PC_bobl" type="logic">
+      <obj_property name="ElementShortName">PC_bobl</obj_property>
+      <obj_property name="ObjectShortName">PC_bobl</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/JPC_en" type="logic">
+      <obj_property name="ElementShortName">JPC_en</obj_property>
+      <obj_property name="ObjectShortName">JPC_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/JPC" type="array">
+      <obj_property name="ElementShortName">JPC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">JPC[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/halt" type="logic">
+      <obj_property name="ElementShortName">halt</obj_property>
+      <obj_property name="ObjectShortName">halt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/rdc" type="array">
+      <obj_property name="ElementShortName">rdc[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rdc[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/rdd" type="array">
+      <obj_property name="ElementShortName">rdd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rdd[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/wen" type="logic">
+      <obj_property name="ElementShortName">wen</obj_property>
+      <obj_property name="ObjectShortName">wen</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/NPC_out" type="array">
+      <obj_property name="ElementShortName">NPC_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">NPC_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/rsc" type="array">
+      <obj_property name="ElementShortName">rsc[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rsc[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/rtc" type="array">
+      <obj_property name="ElementShortName">rtc[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rtc[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/rd" type="array">
+      <obj_property name="ElementShortName">rd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rd[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile0" type="array">
+      <obj_property name="ElementShortName">regfile0[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile0[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile1" type="array">
+      <obj_property name="ElementShortName">regfile1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile2" type="array">
+      <obj_property name="ElementShortName">regfile2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile3" type="array">
+      <obj_property name="ElementShortName">regfile3[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile3[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile4" type="array">
+      <obj_property name="ElementShortName">regfile4[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile4[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile5" type="array">
+      <obj_property name="ElementShortName">regfile5[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile5[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile6" type="array">
+      <obj_property name="ElementShortName">regfile6[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile6[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile7" type="array">
+      <obj_property name="ElementShortName">regfile7[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile7[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile8" type="array">
+      <obj_property name="ElementShortName">regfile8[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile8[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile9" type="array">
+      <obj_property name="ElementShortName">regfile9[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile9[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile10" type="array">
+      <obj_property name="ElementShortName">regfile10[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile10[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile11" type="array">
+      <obj_property name="ElementShortName">regfile11[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile11[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile12" type="array">
+      <obj_property name="ElementShortName">regfile12[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile12[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile13" type="array">
+      <obj_property name="ElementShortName">regfile13[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile13[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile14" type="array">
+      <obj_property name="ElementShortName">regfile14[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile14[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile15" type="array">
+      <obj_property name="ElementShortName">regfile15[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile15[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile16" type="array">
+      <obj_property name="ElementShortName">regfile16[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile16[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile17" type="array">
+      <obj_property name="ElementShortName">regfile17[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile17[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile18" type="array">
+      <obj_property name="ElementShortName">regfile18[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile18[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile19" type="array">
+      <obj_property name="ElementShortName">regfile19[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile19[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile20" type="array">
+      <obj_property name="ElementShortName">regfile20[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile20[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile21" type="array">
+      <obj_property name="ElementShortName">regfile21[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile21[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile22" type="array">
+      <obj_property name="ElementShortName">regfile22[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile22[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile23" type="array">
+      <obj_property name="ElementShortName">regfile23[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile23[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile24" type="array">
+      <obj_property name="ElementShortName">regfile24[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile24[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile25" type="array">
+      <obj_property name="ElementShortName">regfile25[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile25[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile26" type="array">
+      <obj_property name="ElementShortName">regfile26[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile26[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile27" type="array">
+      <obj_property name="ElementShortName">regfile27[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile27[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile28" type="array">
+      <obj_property name="ElementShortName">regfile28[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile28[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile29" type="array">
+      <obj_property name="ElementShortName">regfile29[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile29[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile30" type="array">
+      <obj_property name="ElementShortName">regfile30[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile30[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/regfile31" type="array">
+      <obj_property name="ElementShortName">regfile31[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile31[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/file_output" type="array">
+      <obj_property name="ElementShortName">file_output[31:0]</obj_property>
+      <obj_property name="ObjectShortName">file_output[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/_246tb_ex10_tb/uut/sccpu/cpu_ref/reg_lock" type="array">
+      <obj_property name="ElementShortName">reg_lock[31:0][3:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_lock[31:0][3:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+</wave_config>

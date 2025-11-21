@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 `include "def.v"
 module ID_EX(
     input clk,
@@ -8,7 +10,7 @@ module ID_EX(
     input [3:0] doing_op,
     output [31:0] a,
     output [31:0] b,
-    output [31:0] aluc,
+    output [3:0] aluc,
     output [31:0] instr_id_ex,
     output [3:0] doing_op_id_ex
 );
@@ -21,7 +23,7 @@ assign instr_id_ex = instr_reg;
 assign doing_op_id_ex = doing_op_reg;
 
 always @(posedge clk) begin
-    if (!reset) begin
+    if (reset) begin
         instr_reg <= 0;
         rs_reg <= 0;
         rt_reg <= 0;
@@ -35,30 +37,30 @@ always @(posedge clk) begin
 end
 
 assign a = 
-    (doing_op_reg==`add) ? rs:
-    (doing_op_reg==`addu) ? rs:
-    (doing_op_reg==`addi) ? rs:
-    (doing_op_reg==`addiu) ? rs:
-    (doing_op_reg==`subu) ? rs:
-    (doing_op_reg==`sltu) ? rs:
-    (doing_op_reg==`lw) ? rs:
-    (doing_op_reg==`sw) ? rs:
+    (doing_op_reg==`add) ? rs_reg:
+    (doing_op_reg==`addu) ? rs_reg:
+    (doing_op_reg==`addi) ? rs_reg:
+    (doing_op_reg==`addiu) ? rs_reg:
+    (doing_op_reg==`subu) ? rs_reg:
+    (doing_op_reg==`sltu) ? rs_reg:
+    (doing_op_reg==`lw) ? rs_reg:
+    (doing_op_reg==`sw) ? rs_reg:
     (doing_op_reg==`sll) ? {27'b0,instr_reg[10:6]}://shamt
-    (doing_op_reg==`beq) ? rs:
-    (doing_op_reg==`bne) ? rs:
+    (doing_op_reg==`beq) ? rs_reg:
+    (doing_op_reg==`bne) ? rs_reg:
     32'b0;
 assign b = 
-    (doing_op_reg==`add) ? rt:
-    (doing_op_reg==`addu) ? rt:
+    (doing_op_reg==`add) ? rt_reg:
+    (doing_op_reg==`addu) ? rt_reg:
     (doing_op_reg==`addi) ? {{16{instr_reg[15]}},instr_reg[15:0]}: // sign extend imdt
     (doing_op_reg==`addiu) ? {16'b0,instr_reg[15:0]}: // sign extend imdt
-    (doing_op_reg==`subu) ? rt:
-    (doing_op_reg==`sltu) ? rt:
+    (doing_op_reg==`subu) ? rt_reg:
+    (doing_op_reg==`sltu) ? rt_reg:
     (doing_op_reg==`lw) ? {{16{instr_reg[15]}},instr_reg[15:0]}: // sign extend imdt
     (doing_op_reg==`sw) ? {{16{instr_reg[15]}},instr_reg[15:0]}: // sign extend imdt
-    (doing_op_reg==`sll) ? rt:
-    (doing_op_reg==`beq) ? rt:
-    (doing_op_reg==`bne) ? rt:
+    (doing_op_reg==`sll) ? rt_reg:
+    (doing_op_reg==`beq) ? rt_reg:
+    (doing_op_reg==`bne) ? rt_reg:
     32'b0;
 assign aluc =
     (doing_op_reg==`add) ? `add_aluc:
@@ -72,7 +74,7 @@ assign aluc =
     (doing_op_reg==`sll) ? `sll_aluc:
     (doing_op_reg==`beq) ? `sub_aluc:
     (doing_op_reg==`bne) ? `sub_aluc:
-    32'b0;
+    4'b0;
 
 
 

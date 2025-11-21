@@ -14,8 +14,8 @@ set_property webtalk.parent_dir E:/Homeworks/cpupip8/cpupip8.cache/wt [current_p
 set_property parent.project_path E:/Homeworks/cpupip8/cpupip8.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-read_ip -quiet e:/Homeworks/cpupip8/cpupip8.srcs/sources_1/ip/dmem1/dmem1.xci
-set_property is_locked true [get_files e:/Homeworks/cpupip8/cpupip8.srcs/sources_1/ip/dmem1/dmem1.xci]
+read_ip -quiet E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/ip/dmem1/dmem1.xci
+set_property is_locked true [get_files E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/ip/dmem1/dmem1.xci]
 
 foreach dcp [get_files -quiet -all *.dcp] {
   set_property used_in_implementation false $dcp
@@ -32,44 +32,44 @@ write_checkpoint -force -noxdef dmem1.dcp
 catch { report_utilization -file dmem1_utilization_synth.rpt -pb dmem1_utilization_synth.pb }
 
 if { [catch {
-  file copy -force E:/Homeworks/cpupip8/cpupip8.runs/dmem1_synth_1/dmem1.dcp e:/Homeworks/cpupip8/cpupip8.srcs/sources_1/ip/dmem1/dmem1.dcp
+  file copy -force E:/Homeworks/cpupip8/cpupip8.runs/dmem1_synth_1/dmem1.dcp E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/ip/dmem1/dmem1.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub e:/Homeworks/cpupip8/cpupip8.srcs/sources_1/ip/dmem1/dmem1_stub.v
+  write_verilog -force -mode synth_stub E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/ip/dmem1/dmem1_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub e:/Homeworks/cpupip8/cpupip8.srcs/sources_1/ip/dmem1/dmem1_stub.vhdl
+  write_vhdl -force -mode synth_stub E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/ip/dmem1/dmem1_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim e:/Homeworks/cpupip8/cpupip8.srcs/sources_1/ip/dmem1/dmem1_sim_netlist.v
+  write_verilog -force -mode funcsim E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/ip/dmem1/dmem1_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim e:/Homeworks/cpupip8/cpupip8.srcs/sources_1/ip/dmem1/dmem1_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/ip/dmem1/dmem1_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if {[file isdir E:/Homeworks/cpupip8/cpupip8.ip_user_files/ip/dmem1]} {
   catch { 
-    file copy -force e:/Homeworks/cpupip8/cpupip8.srcs/sources_1/ip/dmem1/dmem1_stub.v E:/Homeworks/cpupip8/cpupip8.ip_user_files/ip/dmem1
+    file copy -force E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/ip/dmem1/dmem1_stub.v E:/Homeworks/cpupip8/cpupip8.ip_user_files/ip/dmem1
   }
 }
 
 if {[file isdir E:/Homeworks/cpupip8/cpupip8.ip_user_files/ip/dmem1]} {
   catch { 
-    file copy -force e:/Homeworks/cpupip8/cpupip8.srcs/sources_1/ip/dmem1/dmem1_stub.vhdl E:/Homeworks/cpupip8/cpupip8.ip_user_files/ip/dmem1
+    file copy -force E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/ip/dmem1/dmem1_stub.vhdl E:/Homeworks/cpupip8/cpupip8.ip_user_files/ip/dmem1
   }
 }

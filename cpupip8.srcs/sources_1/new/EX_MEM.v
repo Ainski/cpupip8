@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 `include "def.v"
 module EX_MEM(
     input clk,
@@ -29,7 +31,7 @@ module EX_MEM(
 );
     reg zero_r, carry_r, negative_r, overflow_r;
     always @(posedge clk) begin
-        if (!reset) begin
+        if (reset) begin
             zero_r <= 0;
             carry_r <= 0;
             negative_r <= 0;
@@ -45,7 +47,7 @@ module EX_MEM(
     reg [3:0] doing_op_r;
 
     always @ (posedge clk) begin
-        if (!reset) begin
+        if (reset) begin
             aluo_r <= 0;
             b_r <= 0;
             doing_op_r <= 0;

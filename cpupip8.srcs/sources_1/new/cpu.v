@@ -1,4 +1,6 @@
 `include "def.v"
+`timescale 1ns / 1ps
+
 module cpu (
     input clk,
     input reset,
@@ -28,17 +30,17 @@ module cpu (
     output DM_R,
     input [31:0] Dataout,
     //EX_MEM
-    output [31:0] doing_op_id_ex,
+    output [3:0] doing_op_id_ex,
     output [31:0] instr_id_ex,
     output [31:0] aluo_ex_mem,
     output [31:0] b_ex_mem,
     output [31:0] instr_ex_mem,
-    output [31:0] doing_op_ex_mem,
+    output [3:0] doing_op_ex_mem,
 
 
     //ID_EX
     output [31:0] instr_if_id,
-    output [31:0] doing_op ,
+    output [3:0] doing_op ,
 
     // IF_ID
     output [3:0] jpc_head,
@@ -53,7 +55,7 @@ module cpu (
     //IMEM
 
     //MEM_WB
-    output [5:0] rdc,
+    output [4:0] rdc,
     output [31:0] rdd,
     output wen ,
 
@@ -112,7 +114,7 @@ module cpu (
         .rs(rs),
         .rt(rt),
         .instr(instr),
-        .NPC_IF_ID(NPC_IF_ID),
+        .NPC_if_id(NPC_if_id),
         .B_PC_en(B_PC_en),
         .B_PC(B_PC)
     );
@@ -202,7 +204,7 @@ module cpu (
         .B_PC(B_PC),
         .B_PC_en(B_PC_en),
         .J_PC(JPC),
-        .JPC_en(JPC_en),
+        .J_PC_en(JPC_en),
         .NPC_out(NPC_out)
     );
 
@@ -215,7 +217,7 @@ module cpu (
         .pc(PC),
         .jpc_head(jpc_head)
     );
-    regfile regfile_inst(
+    regfile cpu_ref(
         .clk(clk),
         .reset(reset),
         .wen(wen),

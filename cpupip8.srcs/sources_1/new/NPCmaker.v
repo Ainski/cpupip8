@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 module NPCmaker(
     input PC_bobl,
     input detect_conflict,

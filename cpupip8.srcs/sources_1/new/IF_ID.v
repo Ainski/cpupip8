@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 `include "def.v"
 module IF_ID(
     input clk,
@@ -20,11 +21,10 @@ module IF_ID(
 );
 
     reg [31:0] NPC_reg, instr_reg;
-    assign instr_if_id=instr_reg;
-    assign NPC_if_id=NPC_reg;
+
 
     always @(posedge clk)begin
-        if (!reset) begin
+        if (reset) begin
             NPC_reg <= 0;
             instr_reg<=0;
         end else if(reg_detect_confict) begin
@@ -35,8 +35,10 @@ module IF_ID(
             instr_reg<=instr;
         end
     end
-    assign halt=instr==`halt_instr;
+    assign halt=(instr==`halt_instr);
+    assign instr_if_id=instr_reg;
 
+    assign NPC_if_id=NPC_reg;
     //遇到跳转指令，直接跳转
     assign JPC_en=0;
     assign JPC={jpc_head, instr[25:21],1'b0,instr[19:0],2'b0};
@@ -48,7 +50,7 @@ module IF_ID(
             doing_op <= 0;
         end else if(reg_detect_confict) begin
             doing_op<=doing_op;
-        end else if (instr[31:0] == `halt_instr) begin
+        end else if (instr== `halt_instr) begin
             doing_op <= `halt;
         end else begin
             case (instr[31:26])
@@ -56,6 +58,9 @@ module IF_ID(
                 `sw_op: doing_op <= `sw;
                 `beq_op: doing_op <= `beq;
                 `bne_op: doing_op <= `bne;
+                `addi_op: doing_op <= `addi;
+                `addiu_op: doing_op <= `addiu;
+
                 `r_op: begin
                     case (instr[5:0])
                         `add_func: doing_op <= `add;

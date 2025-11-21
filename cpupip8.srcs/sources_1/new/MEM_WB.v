@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 `include "def.v"
 module MEM_WB (
     input clk,
@@ -8,7 +10,7 @@ module MEM_WB (
     input [31:0]ALUo,
     input [31:0] Dataout,
 
-    output [5:0] rdc,
+    output [4:0] rdc,
     output [31:0] rdd,
     output wen
     
@@ -17,7 +19,7 @@ module MEM_WB (
 
     reg [31:0] doing_op_r, instr_r , ALUo_r, Dataout_r;
     always @(posedge clk) begin
-        if (!reset) begin
+        if (reset) begin
             doing_op_r <= 0;
             instr_r <= 0;
             ALUo_r <= 0;

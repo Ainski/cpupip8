@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 `include "def.v"
 module regfile(
     input clk,
@@ -91,7 +93,7 @@ module regfile(
     integer i;  // 循环变量      
         
     always @(posedge clk) begin
-        if (!reset) begin
+        if (reset) begin
             for (i = 0; i < 32; i=i+1) begin
                 array_reg[i] <= 32'h0;  // 寄存器复位清零   
             end
@@ -116,22 +118,23 @@ module regfile(
 
 
     wire lock_en;
-    assign lock_en=(doing_op==`add 
-        ||doing_op==`addu
-        ||doing_op==`addi
-        ||doing_op==`addiu
-        ||doing_op==`sll
-        ||doing_op==`lw
-        ||doing_op==`subu
-        ||doing_op==`sltu);
+    // assign lock_en=(doing_op==`add 
+    //     ||doing_op==`addu
+    //     ||doing_op==`addi
+    //     ||doing_op==`addiu
+    //     ||doing_op==`sll
+    //     ||doing_op==`lw
+    //     ||doing_op==`subu
+    //     ||doing_op==`sltu);
     wire [4:0] rdc_to_lock;
     assign rdc_to_lock=(doing_op==`add ||
                         doing_op==`addu ||
                         doing_op==`sll ||
                         doing_op==`subu||doing_op==`sltu)? instr[15:11]:
                         (doing_op==`lw||doing_op==`addi||doing_op==`addiu)?instr[20:16]:5'b0;
+    assign lock_en= (rdc_to_lock!=5'b0);
     always @(posedge clk) begin
-        if (!reset) begin
+        if (reset) begin
             for(i=0;i<32;i=i+1)begin
                 reg_lock[i]<=4'b0;
             end
@@ -141,8 +144,8 @@ module regfile(
                     reg_lock[i]<=(doing_op==`add ||
                         doing_op==`addu ||
                         doing_op==`sll ||
-                        doing_op==`subu||doing_op==`sltu)? 4'b1110:
-                        (doing_op==`lw||doing_op==`addi||doing_op==`addiu)? 4'b1010 :4'b0;
+                        doing_op==`subu||doing_op==`sltu||doing_op==`addi||doing_op==`addiu)? 4'b1110:
+                        (doing_op==`lw)? 4'b1010 :4'b0;
                 end else begin
                     if(reg_lock[i][1:0]!=2'b0) begin
                         reg_lock[i]<=reg_lock[i]-1;

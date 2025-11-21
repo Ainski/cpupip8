@@ -7,7 +7,7 @@
 |HALT|创建了一条新的指令|
 |LOAD|lw|
 |STORE|sw|
-|CMP| sltu \$rd ,\$rs ,\$rt 或者 sub \$ 0,\$rs,\$rt|
+|CMP| sltu \$rd ,\$rs ,\$rt 或者 subu \$ 0,\$rs,\$rt|
 |BZ| beq \$0,\$r,\$label|
 |BN| bne \$0,\$r,\$label|
 
@@ -28,3 +28,8 @@
 如果冲突无法通过重定向解决，则需要等待，这个时候pc停止一个周期，向ID_EX模块传送的指令变成nop指令，冒泡一次。
 reglock低2位为计时器，前2位标志是alu型占用还是dmem型占用。
 这个冲突在ID段被检测出来，激活detact_confict信号，pc、IMEM、IF_ID保持原来持有的pc和instr一个周期。
+
+## 启动测试的指令
+``` bash
+vsim -c -do "do run_cpu_tests.do; quit" >log
+```

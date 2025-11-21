@@ -1,4 +1,6 @@
 `include "def.v"
+`timescale 1ns / 1ps
+
 module BJudge(
     input [31:0] rs,
     input [31:0] rt,
