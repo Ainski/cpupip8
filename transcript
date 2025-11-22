@@ -5,7 +5,7 @@
 # 10
 # 0
 # vsim -quiet work._246tb_ex10_tb 
-# Start time: 22:31:28 on Nov 21,2025
+# Start time: 01:46:35 on Nov 23,2025
 # //  ModelSim PE 10.4c Jul 20 2015 
 # //
 # //  Copyright 1991-2015 Mentor Graphics Corporation
@@ -28,10 +28,10 @@
 #    Time: 30005 ns  Iteration: 0  Instance: /_246tb_ex10_tb
 # Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 225
 # Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 225
-# End time: 22:31:35 on Nov 21,2025, Elapsed time: 0:00:07
+# End time: 01:46:41 on Nov 23,2025, Elapsed time: 0:00:06
 # Errors: 0, Warnings: 0
 # vsim -quiet work._246tb_ex10_tb 
-# Start time: 22:31:36 on Nov 21,2025
+# Start time: 01:46:42 on Nov 23,2025
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
@@ -40,10 +40,10 @@
 #    Time: 30005 ns  Iteration: 0  Instance: /_246tb_ex10_tb
 # Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 225
 # Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 225
-# End time: 22:31:44 on Nov 21,2025, Elapsed time: 0:00:08
+# End time: 01:46:48 on Nov 23,2025, Elapsed time: 0:00:06
 # Errors: 0, Warnings: 0
 # vsim -quiet work._246tb_ex10_tb 
-# Start time: 22:31:44 on Nov 21,2025
+# Start time: 01:46:48 on Nov 23,2025
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
@@ -52,30 +52,10 @@
 #    Time: 30005 ns  Iteration: 0  Instance: /_246tb_ex10_tb
 # Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 225
 # Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 225
-# End time: 22:31:52 on Nov 21,2025, Elapsed time: 0:00:08
+# End time: 01:46:56 on Nov 23,2025, Elapsed time: 0:00:08
 # Errors: 0, Warnings: 0
 # vsim -quiet work._246tb_ex10_tb 
-# Start time: 22:31:52 on Nov 21,2025
-# WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-# WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-# WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-# WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-# ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 15 ns.
-# 
-# End time: 22:32:02 on Nov 21,2025, Elapsed time: 0:00:10
-# Errors: 1, Warnings: 0
-# vsim -quiet work._246tb_ex10_tb 
-# Start time: 22:32:02 on Nov 21,2025
-# WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-# WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-# WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-# WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-# ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 15 ns.
-# 
-# End time: 22:32:12 on Nov 21,2025, Elapsed time: 0:00:10
-# Errors: 1, Warnings: 0
-# vsim -quiet work._246tb_ex10_tb 
-# Start time: 22:32:12 on Nov 21,2025
+# Start time: 01:46:56 on Nov 23,2025
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
@@ -84,10 +64,10 @@
 #    Time: 30005 ns  Iteration: 0  Instance: /_246tb_ex10_tb
 # Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 225
 # Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 225
-# End time: 22:32:19 on Nov 21,2025, Elapsed time: 0:00:07
+# End time: 01:47:04 on Nov 23,2025, Elapsed time: 0:00:08
 # Errors: 0, Warnings: 0
 # vsim -quiet work._246tb_ex10_tb 
-# Start time: 22:32:19 on Nov 21,2025
+# Start time: 01:47:04 on Nov 23,2025
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
@@ -96,10 +76,10 @@
 #    Time: 30005 ns  Iteration: 0  Instance: /_246tb_ex10_tb
 # Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 225
 # Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 225
-# End time: 22:32:27 on Nov 21,2025, Elapsed time: 0:00:08
+# End time: 01:47:12 on Nov 23,2025, Elapsed time: 0:00:08
 # Errors: 0, Warnings: 0
 # vsim -quiet work._246tb_ex10_tb 
-# Start time: 22:32:27 on Nov 21,2025
+# Start time: 01:47:12 on Nov 23,2025
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
@@ -108,10 +88,10 @@
 #    Time: 30005 ns  Iteration: 0  Instance: /_246tb_ex10_tb
 # Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 225
 # Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 225
-# End time: 22:32:34 on Nov 21,2025, Elapsed time: 0:00:07
+# End time: 01:47:20 on Nov 23,2025, Elapsed time: 0:00:08
 # Errors: 0, Warnings: 0
 # vsim -quiet work._246tb_ex10_tb 
-# Start time: 22:32:35 on Nov 21,2025
+# Start time: 01:47:21 on Nov 23,2025
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
@@ -120,10 +100,34 @@
 #    Time: 30005 ns  Iteration: 0  Instance: /_246tb_ex10_tb
 # Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 225
 # Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 225
-# End time: 22:32:42 on Nov 21,2025, Elapsed time: 0:00:07
+# End time: 01:47:32 on Nov 23,2025, Elapsed time: 0:00:11
 # Errors: 0, Warnings: 0
 # vsim -quiet work._246tb_ex10_tb 
-# Start time: 22:32:42 on Nov 21,2025
+# Start time: 01:47:32 on Nov 23,2025
+# WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+# WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+# WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+# WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+# ** Note: $stop    : ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v(225)
+#    Time: 30005 ns  Iteration: 0  Instance: /_246tb_ex10_tb
+# Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 225
+# Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 225
+# End time: 01:47:39 on Nov 23,2025, Elapsed time: 0:00:07
+# Errors: 0, Warnings: 0
+# vsim -quiet work._246tb_ex10_tb 
+# Start time: 01:47:39 on Nov 23,2025
+# WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+# WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+# WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+# WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+# ** Note: $stop    : ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v(225)
+#    Time: 30005 ns  Iteration: 0  Instance: /_246tb_ex10_tb
+# Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 225
+# Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 225
+# End time: 01:47:46 on Nov 23,2025, Elapsed time: 0:00:07
+# Errors: 0, Warnings: 0
+# vsim -quiet work._246tb_ex10_tb 
+# Start time: 01:47:47 on Nov 23,2025
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
@@ -139,6 +143,6 @@
 # Failed tests: 10
 # Success rate: 0.00%
 # ==================================
-# file59e5ba8
-# End time: 22:32:49 on Nov 21,2025, Elapsed time: 0:00:07
+# file558f898
+# End time: 01:47:54 on Nov 23,2025, Elapsed time: 0:00:07
 # Errors: 0, Warnings: 0

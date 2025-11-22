@@ -12,12 +12,12 @@ Compiling module xil_defaultlib.BJudge
 Compiling module xil_defaultlib.EX_MEM
 Compiling module xil_defaultlib.ID_EX
 Compiling module xil_defaultlib.IF_ID
-Compiling module xil_defaultlib.IMEM
 Compiling module xil_defaultlib.MEM_WB
 Compiling module xil_defaultlib.NPCmaker
 Compiling module xil_defaultlib.PCreg
 Compiling module xil_defaultlib.regfile
 Compiling module xil_defaultlib.cpu
+Compiling module xil_defaultlib.IMEM
 Compiling module dist_mem_gen_v8_0_10.dist_mem_gen_v8_0_10(C_FAMILY="a...
 Compiling module xil_defaultlib.dmem1
 Compiling module xil_defaultlib.DMEM

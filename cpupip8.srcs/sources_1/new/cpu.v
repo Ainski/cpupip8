@@ -113,7 +113,7 @@ module cpu (
     BJudge BJudge_inst(
         .rs(rs),
         .rt(rt),
-        .instr(instr),
+        .instr(instr_if_id),
         .NPC_if_id(NPC_if_id),
         .B_PC_en(B_PC_en),
         .B_PC(B_PC)

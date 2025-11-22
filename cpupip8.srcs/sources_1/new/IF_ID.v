@@ -75,6 +75,6 @@ module IF_ID(
             endcase
         end
     end
-    assign rsc= instr[25:21];
-    assign rtc= instr[20:16];
+    assign rsc= instr_if_id[25:21];
+    assign rtc= instr_if_id[20:16];
 endmodule

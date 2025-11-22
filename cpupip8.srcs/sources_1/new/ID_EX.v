@@ -53,7 +53,7 @@ assign b =
     (doing_op_reg==`add) ? rt_reg:
     (doing_op_reg==`addu) ? rt_reg:
     (doing_op_reg==`addi) ? {{16{instr_reg[15]}},instr_reg[15:0]}: // sign extend imdt
-    (doing_op_reg==`addiu) ? {16'b0,instr_reg[15:0]}: // sign extend imdt
+    (doing_op_reg==`addiu) ? {{16{instr_reg[15]}},instr_reg[15:0]}: // sign extend imdt
     (doing_op_reg==`subu) ? rt_reg:
     (doing_op_reg==`sltu) ? rt_reg:
     (doing_op_reg==`lw) ? {{16{instr_reg[15]}},instr_reg[15:0]}: // sign extend imdt

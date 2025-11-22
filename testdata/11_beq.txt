@@ -1,22 +1,22 @@
 sll $0,$0,0
 test:
 beq $0,$0,TAG1
-j WRONG
+beq $0,$0,WRONG
 
 TAG1:
 addi $1,$1,0x0000
 beq $1,$0,TAG2
-j WRONG
+beq $0,$0,WRONG
 
 TAG2:
 addi $2,$0,0x0001
 beq $2,$2,TAG3
-j WRONG
+beq $0,$0,WRONG
 
 TAG3:
 addi $3,$0,0xffff8000
 beq $3,$3,TAG4
-j WRONG
+beq $0,$0,WRONG
 
 TAG4:
 addi $4,$0,0xffff8000
@@ -78,7 +78,8 @@ addi $30,$0,0xffffffff
 addi $31,$0,0xffffffff
 
 RIGHT:
-addi $31,$0,0xffffffff
+addi $31,$0,0xfffffff0
+sll $0,$0,0
 
 WRONG2:
 addi $1,$0,0xffffffff
@@ -113,4 +114,4 @@ addi $29,$0,0xffffffff
 addi $30,$0,0xffffffff
 addi $31,$0,0xffffffff
 
-halt
+sll $0,$0,0
