@@ -1,0 +1,36 @@
+\contentsline {section}{\numberline {1}实验环境部署与硬件配置说明}{2}{section.1}%
+\contentsline {section}{\numberline {2}实验的总体结构}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}5级指令流水线的总体结构}{2}{subsection.2.1}%
+\contentsline {section}{\numberline {3}总体架构部件的解释说明}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}5级指令流水线总体结构部件的解释说明}{2}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}IF/ID寄存器}{2}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}ID/EX寄存器}{3}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}EX/MEM寄存器}{3}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.4}MEM/WB寄存器}{3}{subsubsection.3.1.4}%
+\contentsline {section}{\numberline {4}实验仿真过程}{3}{section.4}%
+\contentsline {subsection}{\numberline {4.1}5级指令流水线的仿真过程}{3}{subsection.4.1}%
+\contentsline {section}{\numberline {5}实验仿真的波形图及某时刻寄存器值的物理意义}{4}{section.5}%
+\contentsline {subsection}{\numberline {5.1}5级指令流水线的波形图及某时刻寄存器值的物理意义}{4}{subsection.5.1}%
+\contentsline {section}{\numberline {6}流水线CPU实验性能验证模型}{4}{section.6}%
+\contentsline {subsection}{\numberline {6.1}实验性能验证模型：比萨塔摔鸡蛋游戏}{4}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}MIPS汇编程序}{7}{subsection.6.2}%
+\contentsline {section}{\numberline {7}实验验算程序下板测试过程与实现}{11}{section.7}%
+\contentsline {section}{\numberline {8}流水线的性能指标定性分析}{12}{section.8}%
+\contentsline {subsection}{\numberline {8.1}静态流水线的性能指标定性分析}{12}{subsection.8.1}%
+\contentsline {subsubsection}{\numberline {8.1.1}吞吐率 (Throughput)}{12}{subsubsection.8.1.1}%
+\contentsline {subsubsection}{\numberline {8.1.2}加速比 (Speedup)}{12}{subsubsection.8.1.2}%
+\contentsline {subsubsection}{\numberline {8.1.3}效率 (Efficiency)}{12}{subsubsection.8.1.3}%
+\contentsline {subsubsection}{\numberline {8.1.4}相关与冲突分析}{12}{subsubsection.8.1.4}%
+\contentsline {subsubsection}{\numberline {8.1.5}CPU的运行时间及存储器空间的使用}{12}{subsubsection.8.1.5}%
+\contentsline {section}{\numberline {9}总结与体会}{12}{section.9}%
+\contentsline {section}{\numberline {10}附件（所有程序）}{13}{section.10}%
+\contentsline {subsection}{\numberline {10.1}5级指令流水线的设计程序}{13}{subsection.10.1}%
+\contentsline {subsubsection}{\numberline {10.1.1}顶层模块 (sccomp\_dataflow.v)}{13}{subsubsection.10.1.1}%
+\contentsline {subsubsection}{\numberline {10.1.2}CPU核心模块 (cpu.v)}{13}{subsubsection.10.1.2}%
+\contentsline {subsubsection}{\numberline {10.1.3}算术逻辑单元 (alu.v)}{13}{subsubsection.10.1.3}%
+\contentsline {subsubsection}{\numberline {10.1.4}流水线寄存器模块 (IF\_ID.v, ID\_EX.v, EX\_MEM.v, MEM\_WB.v)}{13}{subsubsection.10.1.4}%
+\contentsline {subsubsection}{\numberline {10.1.5}寄存器文件 (regfile.v)}{13}{subsubsection.10.1.5}%
+\contentsline {subsubsection}{\numberline {10.1.6}定义文件 (def.v)}{13}{subsubsection.10.1.6}%
+\contentsline {subsubsection}{\numberline {10.1.7}测试平台 (\_246tb\_ex10\_tb.v)}{13}{subsubsection.10.1.7}%
+\contentsline {subsubsection}{\numberline {10.1.8}自动化测试脚本 (run\_cpu\_tests.do)}{13}{subsubsection.10.1.8}%
+\contentsfinish 

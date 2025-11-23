@@ -1,0 +1,714 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{float}
+\usepackage{longtable}
+
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+
+% 配置代码块样式（适配交换机命令行）
+\lstset{
+    language=bash,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray!60},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    frame=tb,
+    tabsize=4,
+    showstringspaces=false,
+    breaklines=true,
+    escapeinside={/*@}{@*/},
+    escapechar=|  % 用 | 作为转义符包裹 #
+}
+
+% 定义MIPS汇编语言
+\lstdefinelanguage{MIPS}{
+  comment=[l]{\#},
+  keywords={add, addi, addiu, addu, and, andi, beq, bne, j, jal, jr, 
+            lui, lw, or, ori, slt, slti, sltiu, sltu, sll, srl, 
+            sub, subu, sw, xor, xori, syscall, break, li, move},
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{green!60!black},
+  stringstyle=\ttfamily,
+  basicstyle=\small\ttfamily,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  numbers=left,
+  numbersep=5pt,
+  numberstyle=\tiny,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2
+}
+
+% 定义英文校名
+\newcommand{\tongjiuniversityeng}{Tongji University}
+
+% 自定义固定宽度列类型
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+% 设置章节格式
+\titleformat{\section}{\centering\Large\heiti}{第\chinese{section}部分}{1em}{}
+\titleformat{\subsection}{\raggedright\large\heiti}{\chinese{subsection}.}{1em}{}
+
+% 设置目录格式
+\dottedcontents{section}[1.5em]{\bfseries}{1.5em}{1pc}
+\dottedcontents{subsection}[3.5em]{\normalfont}{2.5em}{1pc}
+
+% 设置封面
+\newcommand{\MakeCover}[0]{
+  \begin{titlepage}
+    \begin{center}
+      \vskip 60pt
+      {\zihao{-1}\heiti 同济大学计算机科学与技术学院}
+      \vskip 50pt
+      {\zihao{-2}\heiti 计算机系统结构课程实验总结报告}
+      \vskip 50pt
+
+      % \includegraphics[width=0.35\textwidth]{tongji_logo.png}
+      \vskip 50pt
+
+      % 信息表格 - 使用固定宽度的列，内容居中
+      \begin{tabular}{L{10em}@{\hspace{2em}}C{22em}}
+        {\zihao{-2}\heiti 实验名称} & \uline{\makebox[22em]{简单的流水线CPU设计与性能分析}} \\
+        \vspace{0.5cm} & \\
+        {\zihao{-2}\heiti 学\quad{}\quad{}号} & \uline{\makebox[22em]{2351579}} \\
+        \vspace{0.5cm} & \\
+        {\zihao{-2}\heiti 姓\quad{}\quad{}名} & \uline{\makebox[22em]{程浩然}} \\
+        \vspace{0.5cm} & \\
+        {\zihao{-2}\heiti 专\quad{}\quad{}业} & \uline{\makebox[22em]{计算机科学与技术}} \\
+        \vspace{0.5cm} & \\
+        {\zihao{-2}\heiti 授课教师} & \uline{\makebox[22em]{秦国锋}} \\
+        \vspace{0.5cm} & \\
+        {\zihao{-2}\heiti 日\quad{}\quad{}期} & \uline{\makebox[22em]{\today}} \\
+      \end{tabular}
+      \vspace*{\fill}
+    \end{center}
+  \end{titlepage}
+}
+
+\begin{document}
+
+\MakeCover
+
+% 生成目录
+\tableofcontents
+\newpage
+
+\section{实验环境部署与硬件配置说明}
+
+本实验基于MIPS架构的5级流水线CPU设计。硬件平台采用Xilinx Vivado设计套件实现，主要包括：
+
+\begin{itemize}
+\item 流水线处理器核心：包括IF、ID、EX、MEM、WB五个阶段
+\item 流水线寄存器：IF/ID、ID/EX、EX/MEM、MEM/WB寄存器
+\item 存储器：指令存储器(IMEM)和数据存储器(DMEM)
+\item 功能部件：算术逻辑单元(ALU)、寄存器文件、分支预测单元等
+\end{itemize}
+
+实验环境使用ModelSim进行仿真验证，通过run\_cpu\_tests.do脚本自动化运行测试用例。
+
+\subsection{指令集实现}
+
+指令集直接复用了计算机组成原理中的设计，采用如下的指令转义关系：
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{指令} & \textbf{MIPS实现方式} \\
+\hline
+ADD & 采用add, addi, addiu, addu \\
+\hline
+NOP & 转义为sll \$0,\$0,0 \\
+\hline
+HALT & 创建了一条新的指令 \\
+\hline
+LOAD & lw \\
+\hline
+STORE & sw \\
+\hline
+CMP & sltu \$rd,\$rs,\$rt 或者 subu \$0,\$rs,\$rt \\
+\hline
+BZ & beq \$0,\$r,\$label \\
+\hline
+BN & bne \$0,\$r,\$label \\
+\hline
+\end{tabular}
+\caption{指令转义关系表}
+\end{table}
+
+\subsection{分支指令设计}
+
+分支指令设计以分支指令读取作为第0个周期：
+\begin{itemize}
+\item 在第0个周期下，IF\_ID应当直接输出PC\_bobl信号为1
+\item 在第1个周期下，pc<=pc 同时 IMEM输出的指令应当是NOP
+\end{itemize}
+
+\section{实验的总体结构}
+
+\subsection{5级指令流水线的总体结构}
+
+本实验实现了MIPS架构的5级流水线处理器，包括以下5个阶段：
+
+\begin{enumerate}
+\item \textbf{IF (Instruction Fetch) - 指令获取阶段}：
+  从指令存储器获取指令，更新程序计数器(PC)。
+
+\item \textbf{ID (Instruction Decode) - 指令译码阶段}：
+  译码指令，从寄存器文件读取操作数，检测分支指令。
+
+\item \textbf{EX (Execute) - 执行阶段}：
+  在ALU中执行操作，计算内存访问地址。
+
+\item \textbf{MEM (Memory Access) - 内存访问阶段}：
+  访问数据存储器，执行内存读/写操作。
+
+\item \textbf{WB (Write Back) - 写回阶段}：
+  将结果写回寄存器文件。
+\end{enumerate}
+
+\section{总体架构部件的解释说明}
+
+\subsection{5级指令流水线总体结构部件的解释说明}
+
+\subsubsection{IF/ID寄存器}
+IF/ID寄存器连接指令获取阶段和指令译码阶段，保存从IF阶段传递到ID阶段的信息，包括：
+\begin{itemize}
+\item 指令本身
+\item 当前PC值
+\item 目标PC值
+\end{itemize}
+
+\subsubsection{ID/EX寄存器}
+ID/EX寄存器连接指令译码阶段和执行阶段，包含：
+\begin{itemize}
+\item 译码后的指令
+\item 操作数A和B
+\item ALU控制信号
+\end{itemize}
+
+\subsubsection{EX/MEM寄存器}
+EX/MEM寄存器连接执行阶段和内存访问阶段，包含：
+\begin{itemize}
+\item ALU计算结果
+\item 内存访问控制信号
+\item 内存写入数据
+\end{itemize}
+
+\subsubsection{MEM/WB寄存器}
+MEM/WB寄存器连接内存访问阶段和写回阶段，包含：
+\begin{itemize}
+\item 内存访问结果
+\item 写入寄存器的目标地址
+\item 写使能信号
+\end{itemize}
+
+\section{实验仿真过程}
+
+\subsection{5级指令流水线的仿真过程}
+
+仿真过程使用ModelSim工具进行，主要包括以下步骤：
+
+\begin{enumerate}
+\item 编译所有Verilog源文件
+\item 加载测试平台和待测CPU模块
+\item 为不同测试用例加载相应的指令序列
+\item 运行仿真并记录每个时钟周期的PC、指令和寄存器状态
+\item 将仿真结果与软件参考模型进行比较验证
+\end{enumerate}
+
+自动化测试脚本run\_cpu\_tests.do会依次运行多个测试用例，包括ADDI、ADDIU、LW/SW、BEQ、BNE、SLL、SUBU、SLTU等指令的测试。
+
+\subsection{启动测试与执行过程}
+
+根据readme.md文件提供的信息，启动测试的指令为：
+\begin{lstlisting}[language=bash]
+vsim -c -do "do run_cpu_tests.do; quit" >log
+\end{lstlisting}
+
+该命令会在后台执行run\_cpu\_tests.do脚本并生成日志文件。
+
+\subsection{分支预测与冲突处理机制}
+
+\subsubsection{分支指令处理}
+分支指令的处理机制如下：
+\begin{itemize}
+\item 以分支指令读取作为第0个周期
+\item 在第0个周期下，IF\_ID应当直接输出PC\_bobl信号为1
+\item 在第1个周期下，pc<=pc 同时 IMEM输出的指令应当是NOP
+\end{itemize}
+
+\subsubsection{冲突检测与处理}
+\begin{enumerate}
+\item 检测到冲突时，PC停止一个周期，向ID\_EX模块传送的指令变成NOP指令，冒泡一次
+\item 冲突在ID段被检测出来，激活detect\_confict信号
+\item PC、IMEM、IF\_ID保持原来持有的PC和instr一个周期
+\end{enumerate}
+
+\section{实验仿真的波形图及某时刻寄存器值的物理意义}
+
+\subsection{5级指令流水线的波形图及某时刻寄存器值的物理意义}
+
+在仿真过程中，每个时钟周期都会记录CPU的内部状态，包括：
+
+\begin{itemize}
+\item PC值：当前指令的程序计数器值
+\item 指令：当前执行的指令
+\item 寄存器文件：32个通用寄存器的值
+\end{itemize}
+
+寄存器值的物理意义：
+\begin{itemize}
+\item \$0：始终为0，是MIPS架构的固定约定
+\item \$1-\$31：通用寄存器，用于存储操作数、结果和地址
+\end{itemize}
+
+通过分析波形图，可以观察到流水线的并行执行特性，在稳定状态时，每个时钟周期都有一个指令在不同阶段执行。
+
+\section{流水线CPU实验性能验证模型}
+
+\subsection{实验性能验证模型：比萨塔摔鸡蛋游戏}
+
+设计C语言算法验证该模型：
+
+% 配置代码块样式（适配MIPS汇编）
+\lstset{
+    language=C,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!60!black},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    frame=tb,
+    tabsize=4,
+    showstringspaces=false,
+    breaklines=true,
+    escapeinside={/*@}{@*/},
+    escapechar=|  % 用 | 作为转义符包裹 #
+}
+
+\begin{lstlisting}
+// 比萨塔摔鸡蛋游戏验证模型的C算法
+#include <stdio.h>
+
+// 算法：使用二分搜索策略寻找鸡蛋的耐摔值
+int egg_drop_simulation(int floors, int durability) {
+    int drops = 0;         // 摔的总次数
+    int eggs_used = 0;     // 使用的总鸡蛋数
+    int broken_eggs = 0;   // 摔破的鸡蛋总数
+    int current_floor = 1;
+    int last_safe_floor = 0;
+    int egg_broken = 0;    // 最后一个鸡蛋是否摔破
+
+    // 首先使用二分搜索缩小范围
+    int low = 1;
+    int high = floors;
+    int mid;
+
+    while (low <= high) {
+        drops++;
+        eggs_used++;
+        mid = (low + high) / 2;
+
+        // 检查在mid层摔鸡蛋的情况
+        if (mid <= durability) {
+            // 鸡蛋没破，安全楼层提高
+            last_safe_floor = mid;
+            low = mid + 1;
+        } else {
+            // 鸡蛋破了，需要降低搜索范围
+            broken_eggs++;
+            high = mid - 1;
+        }
+
+        // 如果鸡蛋破了，我们需要线性搜索
+        if (broken_eggs > 0) {
+            // 从上次安全楼层+1开始逐层测试
+            int test_floor = last_safe_floor + 1;
+            while (test_floor < mid) {
+                drops++;
+                eggs_used++;
+                if (test_floor > durability) {
+                    // 鸡蛋破了
+                    broken_eggs++;
+                } else {
+                    // 鸡蛋没破
+                    last_safe_floor = test_floor;
+                }
+                test_floor++;
+            }
+            break;
+        }
+    }
+
+    // 最后一个鸡蛋的状态
+    if (broken_eggs > 0 && last_safe_floor + 1 > durability) {
+        egg_broken = 1;
+    } else {
+        egg_broken = 0;
+    }
+
+    // 输出结果
+    printf("摔的总次数: %d\n", drops);
+    printf("使用的总鸡蛋数: %d\n", eggs_used);
+    printf("摔破的鸡蛋总数: %d\n", broken_eggs);
+    printf("最后摔的鸡蛋是否摔破: %s\n", egg_broken ? "是" : "否");
+    
+    return broken_eggs;  // 返回摔破的鸡蛋数
+}
+
+// 计算总成本f = m*p1 + n*p2 + h*p3
+void calculate_cost(int floors_up, int floors_down, int broken_eggs, int p1, int p2, int p3) {
+    int total_cost = floors_up * p1 + floors_down * p2 + broken_eggs * p3;
+    printf("总成本 f = m*p1 + n*p2 + h*p3 = %d*%d + %d*%d + %d*%d = %d\n", 
+           floors_up, p1, floors_down, p2, broken_eggs, p3, total_cost);
+}
+
+int main() {
+    int durability = 25;  // 鸡蛋耐摔值（示例）
+    int floors = 100;     // 比萨塔层数（示例）
+
+    printf("比萨塔摔鸡蛋游戏验证模型\n");
+    printf("鸡蛋耐摔值: %d, 比萨塔层数: %d\n\n", durability, floors);
+
+    // 物质匮乏时期
+    printf("物质匮乏时期 (p1=2, p2=1, p3=4):\n");
+    int broken_eggs_1 = egg_drop_simulation(floors, durability);
+    calculate_cost(50, 20, broken_eggs_1, 2, 1, 4);  // 示例值
+    printf("\n");
+
+    // 人力成本增长时期
+    printf("人力成本增长时期 (p1=4, p2=1, p3=2):\n");
+    int broken_eggs_2 = egg_drop_simulation(floors, durability);
+    calculate_cost(30, 15, broken_eggs_2, 4, 1, 2);  // 示例值
+    printf("\n");
+
+    return 0;
+}
+\end{lstlisting}
+
+\subsection{MIPS汇编程序}
+
+将上述C算法转换为MIPS汇编程序：
+
+% 配置代码块样式（适配MIPS汇编）
+\lstset{
+    language=MIPS,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!60!black},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    frame=tb,
+    tabsize=4,
+    showstringspaces=false,
+    breaklines=true,
+    escapeinside={/*@}{@*/},
+    escapechar=|  % 用 | 作为转义符包裹 #
+}
+
+\begin{lstlisting}[language=MIPS]
+# 比萨塔摔鸡蛋游戏验证模型 - MIPS汇编实现
+# 
+# 使用寄存器约定:
+# $a0 - 塔的总层数 (floors)
+# $a1 - 鸡蛋耐摔值 (durability)
+#
+# $t0 - drops (摔的总次数)
+# $t1 - eggs_used (使用的总鸡蛋数)
+# $t2 - broken_eggs (摔破的鸡蛋总数)
+# $t3 - current_floor (当前测试的楼层)
+# $t4 - last_safe_floor (最后一个安全的楼层)
+# $t5 - low (二分搜索的下界)
+# $t6 - high (二分搜索的上界)
+# $t7 - mid (二分搜索的中间值)
+
+.text
+.globl main
+
+main:
+    # 初始化值（示例）
+    li $a0, 100        # 塔的总层数
+    li $a1, 25         # 鸡蛋耐摔值
+
+    # 跳转到egg_drop_simulation函数
+    jal egg_drop_simulation
+
+    # 准备计算成本
+    li $a2, 50         # 楼上楼层总数 (示例值)
+    li $a3, 20         # 楼下楼层总数 (示例值)
+    
+    # 物质匮乏时期 (p1=2, p2=1, p3=4)
+    li $t8, 2          # p1
+    li $t9, 1          # p2
+    li $t10, 4         # p3
+    jal calculate_cost
+    move $s0, $v0      # 保存成本结果
+
+    # 人力成本增长时期 (p1=4, p2=1, p3=2)
+    li $t8, 4          # p1
+    li $t9, 1          # p2
+    li $t10, 2         # p3
+    jal calculate_cost
+    move $s1, $v0      # 保存成本结果
+
+    # 程序结束
+    li $v0, 10
+    syscall
+
+# 鸡蛋摔破模拟函数
+# 输入: $a0 = 塔的总层数, $a1 = 鸡蛋耐摔值
+# 输出: $v0 = 摔破的鸡蛋数
+egg_drop_simulation:
+    addi $sp, $sp, -20     # 分配栈空间
+    sw $ra, 16($sp)        # 保存返回地址
+    sw $s0, 12($sp)        # 保存其他寄存器
+    sw $s1, 8($sp)
+    sw $s2, 4($sp)
+    sw $s3, 0($sp)
+
+    # 初始化变量
+    li $t0, 0              # drops = 0
+    li $t1, 0              # eggs_used = 0
+    li $t2, 0              # broken_eggs = 0
+    li $t3, 1              # current_floor = 1
+    li $t4, 0              # last_safe_floor = 0
+    li $t5, 1              # low = 1
+    move $t6, $a0          # high = floors
+
+binary_search_loop:
+    # 检查循环条件: low <= high
+    bgt $t5, $t6, linear_search_loop
+    
+    # 计算 mid = (low + high) / 2
+    add $t7, $t5, $t6
+    srl $t7, $t7, 1        # 右移1位等于除2
+    
+    # 增加计数器
+    addi $t0, $t0, 1       # drops++
+    addi $t1, $t1, 1       # eggs_used++
+    
+    # 检查 mid <= durability (鸡蛋是否摔破)
+    bgt $t7, $a1, egg_breaks
+    
+    # 鸡蛋没破: last_safe_floor = mid; low = mid + 1
+    move $t4, $t7
+    addi $t5, $t7, 1
+    j binary_search_loop
+
+egg_breaks:
+    # 鸡蛋破了: broken_eggs++; high = mid - 1
+    addi $t2, $t2, 1
+    addi $t6, $t7, -1
+    
+    # 检查是否已经有过鸡蛋摔破
+    bne $t2, $zero, linear_search_loop
+    j binary_search_loop
+
+linear_search_loop:
+    # 线性搜索: 从 last_safe_floor+1 到 mid-1
+    addi $t8, $t4, 1       # test_floor = last_safe_floor + 1
+    move $t9, $t7          # test_floor <= mid-1
+
+linear_search_iter:
+    bge $t8, $t9, finished_search
+    
+    # 增加计数器
+    addi $t0, $t0, 1       # drops++
+    addi $t1, $t1, 1       # eggs_used++
+    
+    # 检查 test_floor > durability
+    bgt $t8, $a1, linear_egg_breaks
+    
+    # 鸡蛋没破: last_safe_floor = test_floor
+    move $t4, $t8
+    addi $t8, $t8, 1       # test_floor++
+    j linear_search_iter
+
+linear_egg_breaks:
+    # 鸡蛋破了: broken_eggs++
+    addi $t2, $t2, 1
+    addi $t8, $t8, 1       # test_floor++
+    j linear_search_iter
+
+finished_search:
+    # 检查最后摔的鸡蛋是否摔破
+    addi $t3, $t4, 1
+    ble $t3, $a1, end_simulation
+    
+    # 最后一个鸡蛋摔破了
+    # 这里可以设置标志但当前不需要
+
+end_simulation:
+    # 将结果放入返回寄存器
+    move $v0, $t2          # 返回 broken_eggs
+    
+    # 恢复寄存器
+    lw $s3, 0($sp)
+    lw $s2, 4($sp)
+    lw $s1, 8($sp)
+    lw $s0, 12($sp)
+    lw $ra, 16($sp)
+    addi $sp, $sp, 20      # 释放栈空间
+    
+    jr $ra                 # 返回
+
+# 计算总成本函数
+# 输入: $a2 = 上楼层数 (floors_up)
+#      $a3 = 下楼层数 (floors_down)
+#      $v0 = 摔破鸡蛋数 (broken_eggs)
+#      $t8 = p1, $t9 = p2, $t10 = p3
+# 输出: $v0 = 总成本 f
+calculate_cost:
+    addi $sp, $sp, -16     # 分配栈空间
+    sw $ra, 12($sp)        # 保存返回地址
+    
+    # 计算 f = floors_up * p1 + floors_down * p2 + broken_eggs * p3
+    mult $a2, $t8          # floors_up * p1
+    mflo $t0               # $t0 = floors_up * p1
+    
+    mult $a3, $t9          # floors_down * p2
+    mflo $t1               # $t1 = floors_down * p2
+    
+    mult $v0, $t10         # broken_eggs * p3
+    mflo $t2               # $t2 = broken_eggs * p3
+    
+    add $t0, $t0, $t1      # $t0 = floors_up * p1 + floors_down * p2
+    add $v0, $t0, $t2      # $v0 = 总成本 f
+    
+    # 恢复寄存器
+    lw $ra, 12($sp)
+    addi $sp, $sp, 16      # 释放栈空间
+    
+    jr $ra                 # 返回
+\end{lstlisting}
+
+\section{实验验算程序下板测试过程与实现}
+
+下板测试主要步骤包括：
+\begin{enumerate}
+\item 将设计下载到FPGA开发板
+\item 配置测试向量和时钟源
+\item 运行测试程序并监测输出结果
+\item 验证功能正确性
+\end{enumerate}
+
+\section{流水线的性能指标定性分析}
+
+\subsection{静态流水线的性能指标定性分析}
+
+\subsubsection{吞吐率 (Throughput)}
+理想情况下，5级流水线的吞吐率为1条指令/时钟周期，即在稳定状态下每个时钟周期可以完成一条指令。
+但在实际应用中，由于数据相关、控制相关和结构冲突的存在，吞吐率会有所降低。
+
+\subsubsection{加速比 (Speedup)}
+理论上，5级流水线的理想加速比为5，但由于数据相关、控制相关和结构冲突，实际加速比会小于理论值。
+
+\subsubsection{效率 (Efficiency)}
+流水线效率 = 实际加速比 / 理论加速比，理想值为1，实际值小于1。
+流水线效率受相关冲突、分支预测准确性等因素影响。
+
+\subsubsection{相关与冲突分析}
+\begin{itemize}
+\item \textbf{数据相关}：通过数据前递技术解决，当无法前递时需要插入气泡（停顿周期）
+\item \textbf{控制相关}：通过分支预测和延迟槽技术处理
+\item \textbf{结构冲突}：通过增加硬件资源或插入停顿周期解决
+\end{itemize}
+
+\subsubsection{CPU的运行时间及存储器空间的使用}
+流水线CPU在时间上通过并行处理多条指令提高了指令执行效率，在空间上需要额外的流水线寄存器来存储中间结果，但总体资源开销是可接受的。
+
+\section{总结与体会}
+
+通过对5级流水线CPU设计的学习和实践，我深刻理解了流水线技术在提高CPU性能方面的重要作用。通过将指令执行过程分解为多个阶段，并行处理多条指令，可以显著提高处理器的吞吐率。在设计过程中，需要处理各种相关和冲突问题，如数据相关、控制相关和结构冲突，这需要采用前递、分支预测、流水线停顿等技术来解决。
+
+在本次实验中，我们实现了包括ADD、ADDU、ADDI、ADDIU、SLL、LW、SW、SUBU、BNE、BEQ、SLTU和HALT在内的12条指令的流水线处理器。通过数据前递技术解决了数据相关问题，通过分支预测机制处理控制相关问题。
+
+流水线技术虽然提高了指令执行效率，但也引入了复杂性，如数据冒险、控制冒险和结构冒险的处理。通过本次实验，我不仅掌握了流水线的基本概念和设计方法，还学会了如何分析和解决流水线中的各种冲突问题，对计算机系统结构有了更深入的理解。
+
+\section{附件（所有程序）}
+
+\subsection{5级指令流水线的设计程序}
+
+\subsubsection{顶层模块 (sccomp\_dataflow.v)}
+\lstinputlisting[language=Verilog]{../cpupip8.srcs/sources_1/new/sccomp_dataflow.v}
+
+\subsubsection{CPU核心模块 (cpu.v)}
+\lstinputlisting[language=Verilog]{../cpupip8.srcs/sources_1/new/cpu.v}
+
+\subsubsection{定义文件 (def.v)}
+\lstinputlisting[language=Verilog]{../cpupip8.srcs/sources_1/new/def.v}
+
+\subsubsection{算术逻辑单元 (alu.v)}
+\lstinputlisting[language=Verilog]{../cpupip8.srcs/sources_1/new/alu.v}
+
+\subsubsection{分支判断模块 (BJudge.v)}
+\lstinputlisting[language=Verilog]{../cpupip8.srcs/sources_1/new/BJudge.v}
+
+\subsubsection{PC寄存器模块 (PCreg.v)}
+\lstinputlisting[language=Verilog]{../cpupip8.srcs/sources_1/new/PCreg.v}
+
+\subsubsection{数据存储器 (DMEM.v)}
+\lstinputlisting[language=Verilog]{../cpupip8.srcs/sources_1/new/DMEM.v}
+
+\subsubsection{流水级间寄存器 (EX\_MEM.v)}
+\lstinputlisting[language=Verilog]{../cpupip8.srcs/sources_1/new/EX_MEM.v}
+
+\subsubsection{流水级间寄存器 (ID\_EX.v)}
+\lstinputlisting[language=Verilog]{../cpupip8.srcs/sources_1/new/ID_EX.v}
+
+\subsubsection{流水级间寄存器 (IF\_ID.v)}
+\lstinputlisting[language=Verilog]{../cpupip8.srcs/sources_1/new/IF_ID.v}
+
+\subsubsection{指令存储器 (IMEM.v)}
+\lstinputlisting[language=Verilog]{../cpupip8.srcs/sources_1/new/IMEM.v}
+
+\subsubsection{流水级间寄存器 (MEM\_WB.v)}
+\lstinputlisting[language=Verilog]{../cpupip8.srcs/sources_1/new/MEM_WB.v}
+
+\subsubsection{下一PC生成模块 (NPCmaker.v)}
+\lstinputlisting[language=Verilog]{../cpupip8.srcs/sources_1/new/NPCmaker.v}
+
+\subsubsection{寄存器文件 (regfile.v)}
+\lstinputlisting[language=Verilog]{../cpupip8.srcs/sources_1/new/regfile.v}
+
+\subsubsection{测试平台 (\_246tb\_ex10\_tb.v)}
+\lstinputlisting[language=Verilog]{../cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v}
+
+\subsubsection{自动化测试脚本 (run\_cpu\_tests.do)}
+\lstinputlisting{../run_cpu_tests.do}
+
+\subsubsection{软件仿真器 (cpu\_pipelined\_simulator.cpp)}
+\lstinputlisting[language=C++]{../cpu_pipelined_simulator.cpp}
+
+\subsection{写锁设计机制}
+
+寄存器文件的写锁设计是解决数据冲突的关键机制：
+
+\begin{enumerate}
+\item 在指令流过regfile的时候为将会写的寄存器上写锁。等到写回阶段，释放写锁。
+\item 写与写之间一定不会冲突，因为后来的写一定在先来的写之后。
+\item 读与写之间有可能会冲突，这个冲突会在ALU或者DMEM的位置重定向。
+\item 为每一个写锁设置一个定时器，定时器时长总为3，因为只有在3个周期之后才能等回这个地方的数据。定时器归0时释放写锁。
+\item 如果冲突无法通过重定向解决，则需要等待，这个时候PC停止一个周期，向ID\_EX模块传送的指令变成NOP指令，冒泡一次。
+\item reglock低2位为计时器，前2位标志是ALU型占用还是DMEM型占用。
+\item 这个冲突在ID段被检测出来，激活detact\_confict信号，PC、IMEM、IF\_ID保持原来持有的PC和instr一个周期。
+\end{enumerate}
+
+\end{document}

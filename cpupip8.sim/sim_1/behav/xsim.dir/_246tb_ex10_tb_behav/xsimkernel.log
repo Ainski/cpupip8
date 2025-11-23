@@ -1,4 +1,4 @@
-Running: xsim.dir/_246tb_ex10_tb_behav/xsimk.exe -simmode gui -wdb _246tb_ex10_tb_behav.wdb -simrunnum 0 -socket 62014
+Running: xsim.dir/_246tb_ex10_tb_behav/xsimk.exe -simmode gui -wdb _246tb_ex10_tb_behav.wdb -simrunnum 0 -socket 55780
 Design successfully loaded
-Design Loading Memory Usage: 13272 KB (Peak: 13272 KB)
-Design Loading CPU Usage: 124 ms
+Design Loading Memory Usage: 13444 KB (Peak: 13444 KB)
+Design Loading CPU Usage: 171 ms

@@ -3,7 +3,10 @@ sll $0,$0,0
 addi $0,$0,0x0000
 addi $1,$0,0x0001
 addi $2,$0,0xffffffff
-lui  $3,0x8000
+
+# 替代 lui $3,0x8000
+addi $3,$0,0xffff8000
+sll $3,$3,16
 
 addi $4,$0,0x0000
 addi $5,$0,0x0001
@@ -20,20 +23,51 @@ addi $15,$0,0x000B
 addi $16,$0,0x000C
 addi $17,$0,0x000D
 addi $18,$0,0x000E
-lui  $19,0xF000
+
+# 替代 lui $19,0xF000
+addi $19,$0,0xfffff000
+sll $19,$19,16
 
 addi $20,$0,0xffff8000
-lui  $21,0x8000
+
+# 替代 lui $21,0x8000
+addi $21,$0,0xffff8000
+sll $21,$21,16
+
 addi $22,$0,0xffffffff
 addi $23,$0,0xfffffff0
-lui  $24,0x8fff
-lui  $25,0x9fff
-lui  $26,0xefff
-lui  $27,0x8f30
-lui  $28,0x801C
-lui  $29,0x801D
-lui  $30,0x801E
-lui  $31,0x801F
+
+# 替代 lui $24,0x8fff
+addi $24,$0,0xffff8fff
+sll $24,$24,16
+
+# 替代 lui $25,0x9fff
+addi $25,$0,0xffff9fff
+sll $25,$25,16
+
+# 替代 lui $26,0xefff
+addi $26,$0,0xffffefff
+sll $26,$26,16
+
+# 替代 lui $27,0x8f30
+addi $27,$0,0xffff8f30
+sll $27,$27,16
+
+# 替代 lui $28,0x801C
+addi $28,$0,0xffff801C
+sll $28,$28,16
+
+# 替代 lui $29,0x801D
+addi $29,$0,0xffff801D
+sll $29,$29,16
+
+# 替代 lui $30,0x801E
+addi $30,$0,0xffff801E
+sll $30,$30,16
+
+# 替代 lui $31,0x801F
+addi $31,$0,0xffff801F
+sll $31,$31,16
 
 add $0,$0,$0
 add $0,$0,$1
@@ -179,6 +213,5 @@ add $31,$31,$0
 add $31,$31,$1
 add $31,$31,$2
 add $31,$31,$3
-
 
 halt

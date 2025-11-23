@@ -21,9 +21,9 @@ module IMEM(
     assign instrT=IMEMreg[address[12:2]];
 
     initial begin
-       $readmemh("E:/Homeworks/cpupip8/testdata/1_addi.hex.txt", IMEMreg);
+//       $readmemh("E:/Homeworks/cpupip8/testdata/1_addi.hex.txt", IMEMreg);
 //       $readmemh("E:/Homeworks/cpupip8/testdata/2_addiu.hex.txt", IMEMreg);
-//       $readmemh("E:/Homeworks/cpupip8/testdata/9_addu.hex.txt", IMEMreg);
+       $readmemh("E:/Homeworks/cpupip8/testdata/9_addu.hex.txt", IMEMreg);
 //      $readmemh("E:/Homeworks/cpupip8/testdata/11_beq.hex.txt", IMEMreg);
 //       $readmemh("E:/Homeworks/cpupip8/testdata/12_bne.hex.txt", IMEMreg);
 //       $readmemh("E:/Homeworks/cpupip8/testdata/16.26_lwsw.hex.txt",IMEMreg);

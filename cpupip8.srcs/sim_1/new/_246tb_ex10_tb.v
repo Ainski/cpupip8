@@ -200,6 +200,15 @@ module _246tb_ex10_tb(
         .regfile30          (regfile30          ),
         .regfile31          (regfile31          )
     );
+    wire [3:0] reg_lock[31:0];
+    genvar i;
+    generate
+        for (i = 0; i < 32; i = i + 1) begin : reg_lock_assign
+            assign reg_lock[i] = _246tb_ex10_tb.uut.sccpu.cpu_ref.reg_lock[i];
+        end
+    endgenerate
+
+
     integer file_output;
 
     initial

@@ -9,13 +9,13 @@ z2
 cModel Technology
 Z0 dE:/Homeworks/cpupip8
 v_246tb_ex10_tb
-Z1 !s110 1763833594
+Z1 !s110 1763894790
 !i10b 1
-!s100 24QJ4WUe`>z4lf6FbeZCB0
-IPh`jQF1lzc30M;jMTkDh[1
+!s100 D2N^VaBOzPM@CDemRfdM51
+IBjoXKFC_nD9hdzzaini3B0
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1763735211
+w1763883450
 8./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v
 F./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v
 L0 23
@@ -23,14 +23,14 @@ Z3 OP;L;10.4c;61
 r1
 !s85 0
 31
-Z4 !s108 1763833594.000000
+Z4 !s108 1763894790.000000
 !s107 ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v|
 !s90 -work|work|-quiet|./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v|
 !i113 1
 Z5 o-quiet -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 n@_246tb_ex10_tb
 valu
-Z6 !s110 1763833593
+Z6 !s110 1763894786
 !i10b 1
 !s100 TnElW>j52KX3F7QG7BWK92
 IMdjUi2noa>3M4Y6Sgb9MJ0
@@ -44,13 +44,13 @@ R3
 r1
 !s85 0
 31
-Z7 !s108 1763833593.000000
+Z7 !s108 1763894786.000000
 !s107 ./cpupip8.srcs/sources_1/new/alu.v|
 !s90 -work|work|-quiet|./cpupip8.srcs/sources_1/new/alu.v|
 !i113 1
 R5
 vBJudge
-R6
+Z8 !s110 1763894787
 !i10b 1
 !s100 ]@1FK=R_37elY5kjAjUjh2
 IL6F;T:LRE>0:TIDl=]?j:3
@@ -64,14 +64,14 @@ R3
 r1
 !s85 0
 31
-R7
+Z9 !s108 1763894787.000000
 !s107 .\cpupip8.srcs\sources_1\new\def.v|./cpupip8.srcs/sources_1/new/BJudge.v|
 !s90 -work|work|-quiet|./cpupip8.srcs/sources_1/new/BJudge.v|
 !i113 1
 R5
 n@b@judge
 vcpu
-R1
+Z10 !s110 1763894789
 !i10b 1
 !s100 9A9iJiAnABRQ1:PeW_B?n1
 IoU]`k5g7kLWO2TjMUiO<W1
@@ -85,19 +85,19 @@ R3
 r1
 !s85 0
 31
-R4
+Z11 !s108 1763894789.000000
 !s107 .\cpupip8.srcs\sources_1\new\def.v|./cpupip8.srcs/sources_1/new/cpu.v|
 !s90 -work|work|-quiet|./cpupip8.srcs/sources_1/new/cpu.v|
 !i113 1
 R5
 vdist_mem_gen_v8_0_10
-R6
+!s110 1763894785
 !i10b 1
 !s100 JCVFbaK<U5gBM=L[ab]bT2
 IR_OQDb8Qm1`og=b:9l=;]0
 R2
 R0
-Z8 w1763483064
+Z12 w1763483064
 8./cpupip8.srcs/sources_1/ip/dmem1/dist_mem_gen_v8_0_10/simulation/dist_mem_gen_v8_0.v
 F./cpupip8.srcs/sources_1/ip/dmem1/dist_mem_gen_v8_0_10/simulation/dist_mem_gen_v8_0.v
 L0 78
@@ -105,13 +105,13 @@ R3
 r1
 !s85 0
 31
-R7
+!s108 1763894785.000000
 !s107 ./cpupip8.srcs/sources_1/ip/dmem1/dist_mem_gen_v8_0_10/simulation/dist_mem_gen_v8_0.v|
 !s90 -work|work|-quiet|./cpupip8.srcs/sources_1/ip/dmem1/dist_mem_gen_v8_0_10/simulation/dist_mem_gen_v8_0.v|
 !i113 1
 R5
 vDMEM
-R6
+R8
 !i10b 1
 !s100 OYmV5S<m_Cze7kORjA4hX1
 IGWa]HJ_9Y<9QWY:Kn1cz80
@@ -125,7 +125,7 @@ R3
 r1
 !s85 0
 31
-R7
+R9
 !s107 .\cpupip8.srcs\sources_1\new\def.v|./cpupip8.srcs/sources_1/new/DMEM.v|
 !s90 -work|work|-quiet|./cpupip8.srcs/sources_1/new/DMEM.v|
 !i113 1
@@ -138,7 +138,7 @@ R6
 IVloLWj;2P^DZ70iQBI:KH3
 R2
 R0
-R8
+R12
 8./cpupip8.srcs/sources_1/ip/dmem1/sim/dmem1.v
 F./cpupip8.srcs/sources_1/ip/dmem1/sim/dmem1.v
 L0 56
@@ -152,7 +152,7 @@ R7
 !i113 1
 R5
 vEX_MEM
-R6
+R8
 !i10b 1
 !s100 BG?Hij^<FjYhT5QFA_h1W1
 I6jD@J[`;oB_c5]GYU@Ygf2
@@ -166,14 +166,14 @@ R3
 r1
 !s85 0
 31
-R7
+R9
 !s107 .\cpupip8.srcs\sources_1\new\def.v|./cpupip8.srcs/sources_1/new/EX_MEM.v|
 !s90 -work|work|-quiet|./cpupip8.srcs/sources_1/new/EX_MEM.v|
 !i113 1
 R5
 n@e@x_@m@e@m
 vID_EX
-R1
+Z13 !s110 1763894788
 !i10b 1
 !s100 zYYUf>>MzTUTOAT5]dCVz2
 Ii?;odiL`S>ATk:2UVIH^91
@@ -187,14 +187,14 @@ R3
 r1
 !s85 0
 31
-R7
+Z14 !s108 1763894788.000000
 !s107 .\cpupip8.srcs\sources_1\new\def.v|./cpupip8.srcs/sources_1/new/ID_EX.v|
 !s90 -work|work|-quiet|./cpupip8.srcs/sources_1/new/ID_EX.v|
 !i113 1
 R5
 n@i@d_@e@x
 vIF_ID
-R1
+R13
 !i10b 1
 !s100 8:oU6?H4eNNbUF;6^eW<J3
 ISZ>Q;HkizbjL_K;kT:8TC0
@@ -208,20 +208,20 @@ R3
 r1
 !s85 0
 31
-R4
+R14
 !s107 .\cpupip8.srcs\sources_1\new\def.v|./cpupip8.srcs/sources_1/new/IF_ID.v|
 !s90 -work|work|-quiet|./cpupip8.srcs/sources_1/new/IF_ID.v|
 !i113 1
 R5
 n@i@f_@i@d
 vIMEM
-!s110 1763833666
+!s110 1763894862
 !i10b 1
-!s100 57Kl7AU7GNiONW];L_6UC0
-I;E>ki>g59Hn=dM2be?eH<3
+!s100 >WPO@CCaOb0Kd>8Tg[N[^0
+I`7lJh@iIJ<42JN<Qoz=EG0
 R2
 R0
-w1763833666
+w1763894862
 8./cpupip8.srcs/sources_1/new/IMEM.v
 F./cpupip8.srcs/sources_1/new/IMEM.v
 L0 4
@@ -229,14 +229,14 @@ R3
 r1
 !s85 0
 31
-!s108 1763833666.000000
+!s108 1763894862.000000
 !s107 .\cpupip8.srcs\sources_1\new\def.v|./cpupip8.srcs/sources_1/new/IMEM.v|
 !s90 -work|work|-quiet|./cpupip8.srcs/sources_1/new/IMEM.v|
 !i113 1
 R5
 n@i@m@e@m
 vMEM_WB
-R1
+R10
 !i10b 1
 !s100 E:dz6c4<Pco`D_?8iDb901
 IoPnf[>c=nAkD>a[O`0Ao02
@@ -250,14 +250,14 @@ R3
 r1
 !s85 0
 31
-R4
+R14
 !s107 .\cpupip8.srcs\sources_1\new\def.v|./cpupip8.srcs/sources_1/new/MEM_WB.v|
 !s90 -work|work|-quiet|./cpupip8.srcs/sources_1/new/MEM_WB.v|
 !i113 1
 R5
 n@m@e@m_@w@b
 vNPCmaker
-R1
+R10
 !i10b 1
 !s100 XNMnV^znKkF4`XdOb46e63
 I7mCTWP=k[8UU1@1MC6JdC3
@@ -271,14 +271,14 @@ R3
 r1
 !s85 0
 31
-R4
+R11
 !s107 ./cpupip8.srcs/sources_1/new/NPCmaker.v|
 !s90 -work|work|-quiet|./cpupip8.srcs/sources_1/new/NPCmaker.v|
 !i113 1
 R5
 n@n@p@cmaker
 vPCreg
-R6
+R8
 !i10b 1
 !s100 `0ZVk;@Ij8hjX7;nD=YDT3
 Ioe8<CU9hn0;??SC_QU=8l1
@@ -292,14 +292,14 @@ R3
 r1
 !s85 0
 31
-R7
+R9
 !s107 ./cpupip8.srcs/sources_1/new/PCreg.v|
 !s90 -work|work|-quiet|./cpupip8.srcs/sources_1/new/PCreg.v|
 !i113 1
 R5
 n@p@creg
 vregfile
-R1
+R10
 !i10b 1
 !s100 ZJ:KJ<_4_X_26AE8WmeGK2
 I8DDRX6`9MfKiK=Z06gE;R1
@@ -313,7 +313,7 @@ R3
 r1
 !s85 0
 31
-R4
+R11
 !s107 .\cpupip8.srcs\sources_1\new\def.v|./cpupip8.srcs/sources_1/new/regfile.v|
 !s90 -work|work|-quiet|./cpupip8.srcs/sources_1/new/regfile.v|
 !i113 1
