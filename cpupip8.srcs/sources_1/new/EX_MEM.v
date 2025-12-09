@@ -16,6 +16,7 @@ module EX_MEM(
     // 进位标志位 
     input negative,   // 负数标志位 
     input overflow,   // 溢出标志位 
+    input [31:0] rt_id_ex,
     output [1:0]SC,
     output [2:0]LC,
     output [31:0] Data_in,
@@ -30,17 +31,21 @@ module EX_MEM(
     output [3:0] doing_op_ex_mem
 );
     reg zero_r, carry_r, negative_r, overflow_r;
+    reg [31:0] rt_r;
+    
     always @(posedge clk) begin
         if (reset) begin
             zero_r <= 0;
             carry_r <= 0;
             negative_r <= 0;
             overflow_r <= 0;
+            rt_r<=0;
         end else begin
             zero_r <= zero;
             carry_r <= carry;
             negative_r <= negative;
             overflow_r <= overflow;
+            rt_r<=rt_id_ex;
         end
     end
     reg [31:0] aluo_r , b_r , instr_r;
@@ -71,6 +76,6 @@ module EX_MEM(
     assign DM_W = (doing_op_r==`sw) ? 1'b1:1'b0;
     assign DM_R = (doing_op_r==`lw) ? 1'b1:1'b0;
     assign DMEMaddr = (doing_op_r==`sw || doing_op_r==`lw) ? aluo_r:32'b0;
-    assign Data_in = (doing_op_r==`sw) ? b_r:32'b0;
+    assign Data_in = (doing_op_r==`sw) ? rt_r:32'b0;
 
 endmodule

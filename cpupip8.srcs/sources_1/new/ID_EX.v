@@ -12,7 +12,8 @@ module ID_EX(
     output [31:0] b,
     output [3:0] aluc,
     output [31:0] instr_id_ex,
-    output [3:0] doing_op_id_ex
+    output [3:0] doing_op_id_ex,
+    output [31:0] rt_id_ex
 );
 
 
@@ -21,6 +22,7 @@ reg [3:0] doing_op_reg;
 
 assign instr_id_ex = instr_reg;
 assign doing_op_id_ex = doing_op_reg;
+assign rt_id_ex = rt_reg;
 
 always @(posedge clk) begin
     if (reset) begin

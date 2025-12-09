@@ -50,6 +50,8 @@ set test_files [list \
     "testdata/20_sll.hex.txt" \
     "testdata/22_sltu.hex.txt" \
     "testdata/25_subu.hex.txt" \
+    "testdata/101_swlwbnebeq.hex.txt" \
+    "testdata/102_regconflict.hex.txt" \
 ]
 
 # Procedure to run a single test
@@ -118,32 +120,18 @@ proc run_single_test {test_file results_dir} {
     file copy -force ./cpupip8.srcs/sources_1/new/IMEM.v.bak ./cpupip8.srcs/sources_1/new/IMEM.v
     file delete ./cpupip8.srcs/sources_1/new/IMEM.v.bak
 
-    # Generate standard result using external simulator
-    set cmd_result [catch {exec ./cpu_pipelined_simulator.exe E:/Homeworks/cpupip8/$test_file} std_output]
-    if {$cmd_result == 0} {
-        puts "Standard test result generated successfully for $test_file"
-    } else {
-        puts "Failed to generate standard test result for $test_file: $std_output"
-        return 0
-    }
+    # Use existing standard result file from testdata/
+    set original_std_result_file "E:/Homeworks/cpupip8/$test_file"
+    regsub {\.hex\.txt$} $original_std_result_file ".result.txt" std_result_file
 
-    # Generate standard result using external simulator and save it
-    set std_result_file "$results_dir/${test_name}_std_result.txt"
-    set cmd_result [catch {exec ./cpu_pipelined_simulator.exe E:/Homeworks/cpupip8/$test_file $std_result_file} std_output]
-    if {$cmd_result == 0} {
-        puts "Standard test result saved to: $std_result_file"
+    # Copy standard result file to the results directory
+    set output_std_result_file "$results_dir/${test_name}_std_result.txt"
+    if {[file exists $std_result_file]} {
+        file copy -force $std_result_file $output_std_result_file
+        puts "Standard test result copied to: $output_std_result_file"
     } else {
-        # Fallback: run without explicit output file and capture output
-        set cmd_result [catch {exec ./cpu_pipelined_simulator.exe E:/Homeworks/cpupip8/$test_file} std_output_temp]
-        if {$cmd_result == 0} {
-            set std_fid [open $std_result_file w]
-            puts $std_fid $std_output_temp
-            close $std_fid
-            puts "Standard test result saved to: $std_result_file from captured output"
-        } else {
-            puts "Failed to generate standard test result for $test_file: $std_output_temp"
-            return 0
-        }
+        puts "Standard result file not found: $std_result_file"
+        return 0
     }
 
     # Compare simulation result with standard result using external tool
@@ -156,11 +144,29 @@ proc run_single_test {test_file results_dir} {
         set comp_content [read $comp_fid]
         close $comp_fid
 
-        if {[string match "*PASS*" $comp_content] || [string match "*MATCH*" $comp_content]} {
+        # 检查是否包含成功的输出行
+        set lines [split $comp_content "\n"]
+        set success 0
+        foreach line $lines {
+            # 检查是否包含"在指定检查条件下完全一致."
+            if {[string match "*在指定检查条件下完全一致.*" $line]} {
+                set success 1
+                break
+            }
+        }
+        
+        if {$success} {
             puts "RESULT: PASS - $test_file"
             return 1
         } else {
             puts "RESULT: FAIL - $test_file"
+            
+            # 输出失败的具体信息
+            puts "Comparison output:"
+            puts "=================================================================================="
+            puts $comp_content
+            puts "=================================================================================="
+            
             return 0
         }
     } else {

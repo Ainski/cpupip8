@@ -1,0 +1,4 @@
+ERROR: Exception caught trying to open file E:\Homeworks\cpupip8\cpupip8.runs\synth_1/runme.log
+	Exception name: Error
+	Exception error code: 70
+	Exception message: 没有权限

@@ -1,7 +1,7 @@
 BATCH TEST SUMMARY
 ==================================
-Total tests: 10
+Total tests: 12
 Passed tests: 0
-Failed tests: 10
+Failed tests: 12
 Success rate: 0.00%
 ==================================

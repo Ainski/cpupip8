@@ -80,6 +80,7 @@
 `define sra_aluc      4'b1100
 `define lui_aluc      4'b1000
 `define bgez_aluc     4'b1001
+`define sla_aluc      4'b1111
 
 `define nvl_alumctr   3'b000
 `define mult_alumctr  3'b001

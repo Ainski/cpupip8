@@ -14,13 +14,13 @@ bne $3,$3,WRONG
 addi $4,$0,0xffff8000
 addi $5,$0,0x7fff
 bne $4,$5,TAG1
-j WRONG
+beq $0,$0,WRONG
 
 TAG1:
 addi $6,$0,0x0551
 addi $7,$0,0x552
 bne $7,$6,TAG2
-j WRONG
+beq $0,$0,WRONG
 
 TAG2:
 
@@ -70,9 +70,7 @@ addi $28,$0,0xffffffff
 addi $29,$0,0xffffffff
 addi $30,$0,0xffffffff
 addi $31,$0,0xffffffff
-
-RIGHT:
-addi $31,$0,0xffffffff
+sll $0,$0,0
 
 WRONG2:
 addi $1,$0,0xffffffff
@@ -106,5 +104,8 @@ addi $28,$0,0xffffffff
 addi $29,$0,0xffffffff
 addi $30,$0,0xffffffff
 addi $31,$0,0xffffffff
+sll $0,$0,0
 
-halt
+RIGHT:
+addi $31,$0,0xffffffff
+halt 

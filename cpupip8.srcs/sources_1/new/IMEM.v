@@ -17,20 +17,22 @@ module IMEM(
     //     .a(address[12:2]),
     //     .spo(instrT)
     // );
-    reg [31:0] IMEMreg [0:2047];
-    assign instrT=IMEMreg[address[12:2]];
+  reg [31:0] IMEMreg [0:2047];
+  assign instrT=IMEMreg[address[12:2]];
 
     initial begin
-//       $readmemh("E:/Homeworks/cpupip8/testdata/1_addi.hex.txt", IMEMreg);
-//       $readmemh("E:/Homeworks/cpupip8/testdata/2_addiu.hex.txt", IMEMreg);
-       $readmemh("E:/Homeworks/cpupip8/testdata/9_addu.hex.txt", IMEMreg);
-//      $readmemh("E:/Homeworks/cpupip8/testdata/11_beq.hex.txt", IMEMreg);
-//       $readmemh("E:/Homeworks/cpupip8/testdata/12_bne.hex.txt", IMEMreg);
-//       $readmemh("E:/Homeworks/cpupip8/testdata/16.26_lwsw.hex.txt",IMEMreg);
-//       $readmemh("E:/Homeworks/cpupip8/testdata/16.26_lwsw2.hex.txt",IMEMreg);
-//       $readmemh("E:/Homeworks/cpupip8/testdata/20_sll.hex.txt", IMEMreg);
-//       $readmemh("E:/Homeworks/cpupip8/testdata/22_sltu.hex.txt", IMEMreg);
-//       $readmemh("E:/Homeworks/cpupip8/testdata/25_subu.hex.txt", IMEMreg);
+    //$readmemh("E:/Homeworks/cpupip8/testdata/1_addi.hex.txt", IMEMreg);
+    //$readmemh("E:/Homeworks/cpupip8/testdata/2_addiu.hex.txt", IMEMreg);
+    //$readmemh("E:/Homeworks/cpupip8/testdata/9_addu.hex.txt", IMEMreg);
+    //$readmemh("E:/Homeworks/cpupip8/testdata/11_beq.hex.txt", IMEMreg);
+    //$readmemh("E:/Homeworks/cpupip8/testdata/12_bne.hex.txt", IMEMreg);
+    //$readmemh("E:/Homeworks/cpupip8/testdata/16.26_lwsw.hex.txt",IMEMreg);
+    //$readmemh("E:/Homeworks/cpupip8/testdata/16.26_lwsw2.hex.txt",IMEMreg);
+    //$readmemh("E:/Homeworks/cpupip8/testdata/20_sll.hex.txt", IMEMreg);
+    //$readmemh("E:/Homeworks/cpupip8/testdata/22_sltu.hex.txt", IMEMreg);
+    //$readmemh("E:/Homeworks/cpupip8/testdata/25_subu.hex.txt", IMEMreg);
+    $readmemh("E:/Homeworks/cpupip8/testdata/101_swlwbnebeq.hex.txt", IMEMreg);
+    //$readmemh("E:/Homeworks/cpupip8/testdata/102_regconflict.hex.txt", IMEMreg);
 
     end
 

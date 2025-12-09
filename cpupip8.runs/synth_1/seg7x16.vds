@@ -1,0 +1,1082 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Sun Nov 23 22:54:05 2025
+# Process ID: 84512
+# Current directory: E:/Homeworks/cpupip8/cpupip8.runs/synth_1
+# Command line: vivado.exe -log seg7x16.vds -mode batch -messageDb vivado.pb -notrace -source seg7x16.tcl
+# Log file: E:/Homeworks/cpupip8/cpupip8.runs/synth_1/seg7x16.vds
+# Journal file: E:/Homeworks/cpupip8/cpupip8.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source seg7x16.tcl -notrace
+Command: synth_design -top seg7x16 -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 59832 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 306.566 ; gain = 98.785
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'seg7x16' [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:21]
+INFO: [Synth 8-638] synthesizing module 'sccomp_dataflow' [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/sccomp_dataflow.v:4]
+INFO: [Synth 8-638] synthesizing module 'cpu' [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/cpu.v:4]
+INFO: [Synth 8-638] synthesizing module 'alu' [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/ALU.v:2]
+INFO: [Synth 8-256] done synthesizing module 'alu' (1#1) [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/ALU.v:2]
+INFO: [Synth 8-638] synthesizing module 'BJudge' [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/BJudge.v:4]
+INFO: [Synth 8-256] done synthesizing module 'BJudge' (2#1) [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/BJudge.v:4]
+INFO: [Synth 8-638] synthesizing module 'EX_MEM' [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/EX_MEM.v:4]
+INFO: [Synth 8-256] done synthesizing module 'EX_MEM' (3#1) [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/EX_MEM.v:4]
+INFO: [Synth 8-638] synthesizing module 'ID_EX' [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/ID_EX.v:4]
+INFO: [Synth 8-256] done synthesizing module 'ID_EX' (4#1) [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/ID_EX.v:4]
+INFO: [Synth 8-638] synthesizing module 'IF_ID' [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/IF_ID.v:3]
+INFO: [Synth 8-256] done synthesizing module 'IF_ID' (5#1) [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/IF_ID.v:3]
+INFO: [Synth 8-638] synthesizing module 'MEM_WB' [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/MEM_WB.v:4]
+INFO: [Synth 8-256] done synthesizing module 'MEM_WB' (6#1) [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/MEM_WB.v:4]
+INFO: [Synth 8-638] synthesizing module 'NPCmaker' [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/NPCmaker.v:3]
+INFO: [Synth 8-256] done synthesizing module 'NPCmaker' (7#1) [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/NPCmaker.v:3]
+INFO: [Synth 8-638] synthesizing module 'PCreg' [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/PCreg.v:3]
+INFO: [Synth 8-256] done synthesizing module 'PCreg' (8#1) [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/PCreg.v:3]
+INFO: [Synth 8-638] synthesizing module 'regfile' [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/regfile.v:4]
+INFO: [Synth 8-256] done synthesizing module 'regfile' (9#1) [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/regfile.v:4]
+INFO: [Synth 8-256] done synthesizing module 'cpu' (10#1) [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/cpu.v:4]
+INFO: [Synth 8-638] synthesizing module 'IMEM' [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/IMEM.v:4]
+INFO: [Synth 8-638] synthesizing module 'imem' [E:/Homeworks/cpupip8/cpupip8.runs/synth_1/.Xil/Vivado-84512-Nicolas-ainski/realtime/imem_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'imem' (11#1) [E:/Homeworks/cpupip8/cpupip8.runs/synth_1/.Xil/Vivado-84512-Nicolas-ainski/realtime/imem_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'IMEM' (12#1) [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/IMEM.v:4]
+INFO: [Synth 8-638] synthesizing module 'DMEM' [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/DMEM.v:5]
+INFO: [Synth 8-638] synthesizing module 'dmem1' [E:/Homeworks/cpupip8/cpupip8.runs/synth_1/.Xil/Vivado-84512-Nicolas-ainski/realtime/dmem1_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'dmem1' (13#1) [E:/Homeworks/cpupip8/cpupip8.runs/synth_1/.Xil/Vivado-84512-Nicolas-ainski/realtime/dmem1_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'DMEM' (14#1) [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/DMEM.v:5]
+INFO: [Synth 8-256] done synthesizing module 'sccomp_dataflow' (15#1) [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/sccomp_dataflow.v:4]
+WARNING: [Synth 8-350] instance 'cpu_inst' of module 'sccomp_dataflow' requires 79 connections, but only 3 given [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:91]
+INFO: [Synth 8-256] done synthesizing module 'seg7x16' (16#1) [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:21]
+WARNING: [Synth 8-3331] design DMEM has unconnected port DMEMaddr[31]
+WARNING: [Synth 8-3331] design DMEM has unconnected port DMEMaddr[30]
+WARNING: [Synth 8-3331] design DMEM has unconnected port DMEMaddr[29]
+WARNING: [Synth 8-3331] design DMEM has unconnected port DMEMaddr[28]
+WARNING: [Synth 8-3331] design DMEM has unconnected port DMEMaddr[27]
+WARNING: [Synth 8-3331] design DMEM has unconnected port DMEMaddr[26]
+WARNING: [Synth 8-3331] design DMEM has unconnected port DMEMaddr[25]
+WARNING: [Synth 8-3331] design DMEM has unconnected port DMEMaddr[24]
+WARNING: [Synth 8-3331] design DMEM has unconnected port DMEMaddr[23]
+WARNING: [Synth 8-3331] design DMEM has unconnected port DMEMaddr[22]
+WARNING: [Synth 8-3331] design DMEM has unconnected port DMEMaddr[21]
+WARNING: [Synth 8-3331] design DMEM has unconnected port DMEMaddr[20]
+WARNING: [Synth 8-3331] design DMEM has unconnected port DMEMaddr[19]
+WARNING: [Synth 8-3331] design DMEM has unconnected port DMEMaddr[18]
+WARNING: [Synth 8-3331] design DMEM has unconnected port DMEMaddr[17]
+WARNING: [Synth 8-3331] design DMEM has unconnected port DMEMaddr[16]
+WARNING: [Synth 8-3331] design DMEM has unconnected port DMEMaddr[15]
+WARNING: [Synth 8-3331] design DMEM has unconnected port DMEMaddr[14]
+WARNING: [Synth 8-3331] design DMEM has unconnected port DMEMaddr[13]
+WARNING: [Synth 8-3331] design DMEM has unconnected port DMEMaddr[12]
+WARNING: [Synth 8-3331] design DMEM has unconnected port DMEMaddr[11]
+WARNING: [Synth 8-3331] design IMEM has unconnected port address[31]
+WARNING: [Synth 8-3331] design IMEM has unconnected port address[30]
+WARNING: [Synth 8-3331] design IMEM has unconnected port address[29]
+WARNING: [Synth 8-3331] design IMEM has unconnected port address[28]
+WARNING: [Synth 8-3331] design IMEM has unconnected port address[27]
+WARNING: [Synth 8-3331] design IMEM has unconnected port address[26]
+WARNING: [Synth 8-3331] design IMEM has unconnected port address[25]
+WARNING: [Synth 8-3331] design IMEM has unconnected port address[24]
+WARNING: [Synth 8-3331] design IMEM has unconnected port address[23]
+WARNING: [Synth 8-3331] design IMEM has unconnected port address[22]
+WARNING: [Synth 8-3331] design IMEM has unconnected port address[21]
+WARNING: [Synth 8-3331] design IMEM has unconnected port address[20]
+WARNING: [Synth 8-3331] design IMEM has unconnected port address[19]
+WARNING: [Synth 8-3331] design IMEM has unconnected port address[18]
+WARNING: [Synth 8-3331] design IMEM has unconnected port address[17]
+WARNING: [Synth 8-3331] design IMEM has unconnected port address[16]
+WARNING: [Synth 8-3331] design IMEM has unconnected port address[15]
+WARNING: [Synth 8-3331] design IMEM has unconnected port address[14]
+WARNING: [Synth 8-3331] design IMEM has unconnected port address[13]
+WARNING: [Synth 8-3331] design IMEM has unconnected port address[1]
+WARNING: [Synth 8-3331] design IMEM has unconnected port address[0]
+WARNING: [Synth 8-3331] design IMEM has unconnected port instr_if_id[25]
+WARNING: [Synth 8-3331] design IMEM has unconnected port instr_if_id[24]
+WARNING: [Synth 8-3331] design IMEM has unconnected port instr_if_id[23]
+WARNING: [Synth 8-3331] design IMEM has unconnected port instr_if_id[22]
+WARNING: [Synth 8-3331] design IMEM has unconnected port instr_if_id[21]
+WARNING: [Synth 8-3331] design IMEM has unconnected port instr_if_id[20]
+WARNING: [Synth 8-3331] design IMEM has unconnected port instr_if_id[19]
+WARNING: [Synth 8-3331] design IMEM has unconnected port instr_if_id[18]
+WARNING: [Synth 8-3331] design IMEM has unconnected port instr_if_id[17]
+WARNING: [Synth 8-3331] design IMEM has unconnected port instr_if_id[16]
+WARNING: [Synth 8-3331] design IMEM has unconnected port instr_if_id[15]
+WARNING: [Synth 8-3331] design IMEM has unconnected port instr_if_id[14]
+WARNING: [Synth 8-3331] design IMEM has unconnected port instr_if_id[13]
+WARNING: [Synth 8-3331] design IMEM has unconnected port instr_if_id[12]
+WARNING: [Synth 8-3331] design IMEM has unconnected port instr_if_id[11]
+WARNING: [Synth 8-3331] design IMEM has unconnected port instr_if_id[10]
+WARNING: [Synth 8-3331] design IMEM has unconnected port instr_if_id[9]
+WARNING: [Synth 8-3331] design IMEM has unconnected port instr_if_id[8]
+WARNING: [Synth 8-3331] design IMEM has unconnected port instr_if_id[7]
+WARNING: [Synth 8-3331] design IMEM has unconnected port instr_if_id[6]
+WARNING: [Synth 8-3331] design IMEM has unconnected port instr_if_id[5]
+WARNING: [Synth 8-3331] design IMEM has unconnected port instr_if_id[4]
+WARNING: [Synth 8-3331] design IMEM has unconnected port instr_if_id[3]
+WARNING: [Synth 8-3331] design IMEM has unconnected port instr_if_id[2]
+WARNING: [Synth 8-3331] design IMEM has unconnected port instr_if_id[1]
+WARNING: [Synth 8-3331] design IMEM has unconnected port instr_if_id[0]
+WARNING: [Synth 8-3331] design regfile has unconnected port instr[31]
+WARNING: [Synth 8-3331] design regfile has unconnected port instr[30]
+WARNING: [Synth 8-3331] design regfile has unconnected port instr[29]
+WARNING: [Synth 8-3331] design regfile has unconnected port instr[28]
+WARNING: [Synth 8-3331] design regfile has unconnected port instr[27]
+WARNING: [Synth 8-3331] design regfile has unconnected port instr[26]
+WARNING: [Synth 8-3331] design regfile has unconnected port instr[25]
+WARNING: [Synth 8-3331] design regfile has unconnected port instr[24]
+WARNING: [Synth 8-3331] design regfile has unconnected port instr[23]
+WARNING: [Synth 8-3331] design regfile has unconnected port instr[22]
+WARNING: [Synth 8-3331] design regfile has unconnected port instr[21]
+WARNING: [Synth 8-3331] design regfile has unconnected port instr[10]
+WARNING: [Synth 8-3331] design regfile has unconnected port instr[9]
+WARNING: [Synth 8-3331] design regfile has unconnected port instr[8]
+WARNING: [Synth 8-3331] design regfile has unconnected port instr[7]
+WARNING: [Synth 8-3331] design regfile has unconnected port instr[6]
+WARNING: [Synth 8-3331] design regfile has unconnected port instr[5]
+WARNING: [Synth 8-3331] design regfile has unconnected port instr[4]
+WARNING: [Synth 8-3331] design regfile has unconnected port instr[3]
+WARNING: [Synth 8-3331] design regfile has unconnected port instr[2]
+WARNING: [Synth 8-3331] design regfile has unconnected port instr[1]
+WARNING: [Synth 8-3331] design regfile has unconnected port instr[0]
+WARNING: [Synth 8-3331] design regfile has unconnected port ALUo_WB[31]
+WARNING: [Synth 8-3331] design regfile has unconnected port ALUo_WB[30]
+WARNING: [Synth 8-3331] design regfile has unconnected port ALUo_WB[29]
+WARNING: [Synth 8-3331] design regfile has unconnected port ALUo_WB[28]
+WARNING: [Synth 8-3331] design regfile has unconnected port ALUo_WB[27]
+WARNING: [Synth 8-3331] design regfile has unconnected port ALUo_WB[26]
+WARNING: [Synth 8-3331] design regfile has unconnected port ALUo_WB[25]
+WARNING: [Synth 8-3331] design regfile has unconnected port ALUo_WB[24]
+WARNING: [Synth 8-3331] design regfile has unconnected port ALUo_WB[23]
+WARNING: [Synth 8-3331] design regfile has unconnected port ALUo_WB[22]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 345.539 ; gain = 137.758
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[31] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[30] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[29] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[28] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[27] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[26] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[25] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[24] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[23] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[22] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[21] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[20] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[19] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[18] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[17] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[16] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[15] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[14] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[13] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[12] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[11] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[10] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[9] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[8] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[7] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[6] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[5] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[4] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[3] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[2] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[1] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:instr[0] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[31] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[30] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[29] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[28] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[27] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[26] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[25] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[24] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[23] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[22] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[21] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[20] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[19] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[18] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[17] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[16] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[15] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[14] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[13] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[12] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[11] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[10] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[9] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[8] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[7] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[6] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[5] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[4] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[3] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[2] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[1] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+WARNING: [Synth 8-3295] tying undriven pin cpu_inst:Dataout[0] to constant 0 [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:30]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 345.539 ; gain = 137.758
+---------------------------------------------------------------------------------
+WARNING: [Project 1-560] Could not resolve non-primitive black box cell 'dmem1' instantiated as 'cpu_inst/dmem_inst/dmem1_uut'. 4 instances of this cell are unresolved black boxes. [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/DMEM.v:49]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'imem' instantiated as 'cpu_inst/imem_inst/imem_ip' [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/IMEM.v:16]
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [E:/Homeworks/cpupip8/cpupip8.runs/synth_1/.Xil/Vivado-84512-Nicolas-ainski/dcp/imem_in_context.xdc] for cell 'cpu_inst/imem_inst/imem_ip'
+Finished Parsing XDC File [E:/Homeworks/cpupip8/cpupip8.runs/synth_1/.Xil/Vivado-84512-Nicolas-ainski/dcp/imem_in_context.xdc] for cell 'cpu_inst/imem_inst/imem_ip'
+Parsing XDC File [E:/Homeworks/cpupip8/cpupip8.runs/synth_1/.Xil/Vivado-84512-Nicolas-ainski/dcp_2/dmem1_in_context.xdc] for cell 'cpu_inst/dmem_inst/dmem1_uut'
+Finished Parsing XDC File [E:/Homeworks/cpupip8/cpupip8.runs/synth_1/.Xil/Vivado-84512-Nicolas-ainski/dcp_2/dmem1_in_context.xdc] for cell 'cpu_inst/dmem_inst/dmem1_uut'
+Parsing XDC File [E:/Homeworks/cpupip8/cpupip8.runs/synth_1/.Xil/Vivado-84512-Nicolas-ainski/dcp_2/dmem1_in_context.xdc] for cell 'cpu_inst/dmem_inst/dmem2_uut'
+Finished Parsing XDC File [E:/Homeworks/cpupip8/cpupip8.runs/synth_1/.Xil/Vivado-84512-Nicolas-ainski/dcp_2/dmem1_in_context.xdc] for cell 'cpu_inst/dmem_inst/dmem2_uut'
+Parsing XDC File [E:/Homeworks/cpupip8/cpupip8.runs/synth_1/.Xil/Vivado-84512-Nicolas-ainski/dcp_2/dmem1_in_context.xdc] for cell 'cpu_inst/dmem_inst/dmem3_uut'
+Finished Parsing XDC File [E:/Homeworks/cpupip8/cpupip8.runs/synth_1/.Xil/Vivado-84512-Nicolas-ainski/dcp_2/dmem1_in_context.xdc] for cell 'cpu_inst/dmem_inst/dmem3_uut'
+Parsing XDC File [E:/Homeworks/cpupip8/cpupip8.runs/synth_1/.Xil/Vivado-84512-Nicolas-ainski/dcp_2/dmem1_in_context.xdc] for cell 'cpu_inst/dmem_inst/dmem4_uut'
+Finished Parsing XDC File [E:/Homeworks/cpupip8/cpupip8.runs/synth_1/.Xil/Vivado-84512-Nicolas-ainski/dcp_2/dmem1_in_context.xdc] for cell 'cpu_inst/dmem_inst/dmem4_uut'
+Parsing XDC File [E:/Homeworks/cpupip8/cpupip8.srcs/constrs_1/new/cpupip8.xdc]
+WARNING: [Vivado 12-584] No ports matched 'clk_in'. [E:/Homeworks/cpupip8/cpupip8.srcs/constrs_1/new/cpupip8.xdc:10]
+WARNING: [Vivado 12-584] No ports matched 'clk_in'. [E:/Homeworks/cpupip8/cpupip8.srcs/constrs_1/new/cpupip8.xdc:51]
+Finished Parsing XDC File [E:/Homeworks/cpupip8/cpupip8.srcs/constrs_1/new/cpupip8.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [E:/Homeworks/cpupip8/cpupip8.srcs/constrs_1/new/cpupip8.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/seg7x16_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/Homeworks/cpupip8/cpupip8.srcs/constrs_1/new/cpupip8.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/seg7x16_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/seg7x16_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 665.559 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 665.559 ; gain = 457.777
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 665.559 ; gain = 457.777
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 665.559 ; gain = 457.777
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "carry" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "DM_W" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "DM_R" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "aluc9" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "doing_op0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "doing_op0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "array_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "o_seg_r" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-327] inferring latch for variable 'r_reg' [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/ALU.v:18]
+WARNING: [Synth 8-327] inferring latch for variable 'carry_reg' [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/ALU.v:20]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 665.559 ; gain = 457.777
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 4     
+	   3 Input     32 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 32    
+	   2 Input      3 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 46    
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 35    
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 8     
+	  12 Input     32 Bit        Muxes := 2     
+	   7 Input     32 Bit        Muxes := 4     
+	   2 Input      8 Bit        Muxes := 1     
+	  16 Input      8 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 4     
+	  11 Input      4 Bit        Muxes := 1     
+	   6 Input      4 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 99    
+	   3 Input      4 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	  16 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 38    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module seg7x16 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	  16 Input      8 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
+Module alu 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   3 Input     32 Bit       Adders := 2     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Muxes : 
+	  16 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module BJudge 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module EX_MEM 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
+Module ID_EX 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
++---Muxes : 
+	  12 Input     32 Bit        Muxes := 2     
+	  11 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+Module IF_ID 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
++---Muxes : 
+	   6 Input      4 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   8 Input      3 Bit        Muxes := 1     
+Module MEM_WB 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+Module NPCmaker 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+Module PCreg 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module regfile 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 32    
++---Registers : 
+	               32 Bit    Registers := 32    
+	                4 Bit    Registers := 32    
++---Muxes : 
+	   7 Input     32 Bit        Muxes := 3     
+	   2 Input      5 Bit        Muxes := 2     
+	   3 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 96    
+	   2 Input      1 Bit        Muxes := 32    
+Module IMEM 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module DMEM 
+Detailed RTL Component Info : 
++---Muxes : 
+	   7 Input     32 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 665.559 ; gain = 457.777
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "carry" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "IF_ID_inst/doing_op0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 665.559 ; gain = 457.777
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 665.559 ; gain = 457.777
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\o_seg_r_reg[7] )
+WARNING: [Synth 8-3332] Sequential element (r_reg[31]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[30]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[29]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[28]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[27]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[26]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[25]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[24]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[23]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[22]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[21]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[20]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[19]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[18]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[17]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[16]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[15]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[14]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[13]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[12]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[11]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[10]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[9]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[8]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[7]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[6]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[5]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[4]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[3]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[2]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[1]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (r_reg[0]) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (carry_reg) is unused and will be removed from module alu.
+WARNING: [Synth 8-3332] Sequential element (PCreg_inst/pc_reg[31]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PCreg_inst/pc_reg[30]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PCreg_inst/pc_reg[29]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PCreg_inst/pc_reg[28]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PCreg_inst/pc_reg[27]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PCreg_inst/pc_reg[26]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PCreg_inst/pc_reg[25]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PCreg_inst/pc_reg[24]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PCreg_inst/pc_reg[23]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PCreg_inst/pc_reg[22]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PCreg_inst/pc_reg[21]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PCreg_inst/pc_reg[20]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PCreg_inst/pc_reg[19]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PCreg_inst/pc_reg[18]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PCreg_inst/pc_reg[17]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PCreg_inst/pc_reg[16]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PCreg_inst/pc_reg[15]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PCreg_inst/pc_reg[14]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PCreg_inst/pc_reg[13]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PCreg_inst/pc_reg[0]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (IF_ID_inst/NPC_reg_reg[31]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (IF_ID_inst/NPC_reg_reg[30]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (IF_ID_inst/NPC_reg_reg[29]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (IF_ID_inst/NPC_reg_reg[28]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (IF_ID_inst/NPC_reg_reg[27]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (IF_ID_inst/NPC_reg_reg[26]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (IF_ID_inst/NPC_reg_reg[25]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (IF_ID_inst/NPC_reg_reg[24]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (IF_ID_inst/NPC_reg_reg[23]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (IF_ID_inst/NPC_reg_reg[22]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (IF_ID_inst/NPC_reg_reg[21]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (IF_ID_inst/NPC_reg_reg[20]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (IF_ID_inst/NPC_reg_reg[19]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (IF_ID_inst/NPC_reg_reg[18]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (IF_ID_inst/NPC_reg_reg[17]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (IF_ID_inst/NPC_reg_reg[16]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (IF_ID_inst/NPC_reg_reg[15]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (IF_ID_inst/NPC_reg_reg[14]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (IF_ID_inst/NPC_reg_reg[13]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (IF_ID_inst/NPC_reg_reg[0]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (ID_EX_inst/instr_reg_reg[31]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (ID_EX_inst/instr_reg_reg[30]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (ID_EX_inst/instr_reg_reg[29]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (ID_EX_inst/instr_reg_reg[28]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (ID_EX_inst/instr_reg_reg[27]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (ID_EX_inst/instr_reg_reg[26]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (ID_EX_inst/instr_reg_reg[25]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (ID_EX_inst/instr_reg_reg[24]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (ID_EX_inst/instr_reg_reg[23]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (ID_EX_inst/instr_reg_reg[22]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (ID_EX_inst/instr_reg_reg[21]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (EX_MEM_inst/instr_r_reg[31]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (EX_MEM_inst/instr_r_reg[30]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (EX_MEM_inst/instr_r_reg[29]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (EX_MEM_inst/instr_r_reg[28]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (EX_MEM_inst/instr_r_reg[27]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (EX_MEM_inst/instr_r_reg[26]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (EX_MEM_inst/instr_r_reg[25]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (EX_MEM_inst/instr_r_reg[24]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (EX_MEM_inst/instr_r_reg[23]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (EX_MEM_inst/instr_r_reg[22]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (EX_MEM_inst/instr_r_reg[21]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (EX_MEM_inst/instr_r_reg[10]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (EX_MEM_inst/instr_r_reg[9]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (EX_MEM_inst/instr_r_reg[8]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (EX_MEM_inst/instr_r_reg[7]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (EX_MEM_inst/instr_r_reg[6]) is unused and will be removed from module cpu.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'cpu_inst/sccpu/IF_ID_inst/doing_op_last_reg[2]' (FDR) to 'cpu_inst/sccpu/ID_EX_inst/doing_op_reg_reg[2]'
+INFO: [Synth 8-3886] merging instance 'cpu_inst/sccpu/IF_ID_inst/doing_op_last_reg[3]' (FDR) to 'cpu_inst/sccpu/ID_EX_inst/doing_op_reg_reg[3]'
+INFO: [Synth 8-3886] merging instance 'cpu_inst/sccpu/IF_ID_inst/doing_op_last_reg[1]' (FDR) to 'cpu_inst/sccpu/ID_EX_inst/doing_op_reg_reg[1]'
+INFO: [Synth 8-3886] merging instance 'cpu_inst/sccpu/IF_ID_inst/doing_op_last_reg[0]' (FDR) to 'cpu_inst/sccpu/ID_EX_inst/doing_op_reg_reg[0]'
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 665.559 ; gain = 457.777
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 665.559 ; gain = 457.777
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:30 . Memory (MB): peak = 665.559 ; gain = 457.777
+---------------------------------------------------------------------------------
+Found timing loop:
+     0: \cpu_inst/sccpu /cpu_ref/i_1/i_495/O (GATE_2_8_AND)
+     1: \cpu_inst/sccpu /cpu_ref/i_1/i_495/I1 (GATE_2_8_AND)
+     2: \cpu_inst/sccpu /cpu_ref/i_1/i_494/O (GATE_2_8_AND)
+     3: \cpu_inst/sccpu /cpu_ref/i_1/i_494/I0 (GATE_2_8_AND)
+     4: \cpu_inst/sccpu /cpu_ref/i_1/i_489/O (GATE_2_14_OR)
+     5: \cpu_inst/sccpu /cpu_ref/i_1/i_489/I0 (GATE_2_14_OR)
+     6: \cpu_inst/sccpu /cpu_ref/i_1/i_484/O (GATE_2_8_AND)
+     7: \cpu_inst/sccpu /cpu_ref/i_1/i_484/I0 (GATE_2_8_AND)
+     8: \cpu_inst/sccpu /cpu_ref/i_1/i_511/O (GATE_2_2)
+     9: \cpu_inst/sccpu /cpu_ref/i_1/i_511/I0 (GATE_2_2)
+      : \cpu_inst/sccpu /cpu_ref/i_1/doing_op[2]
+      : \cpu_inst/sccpu /cpu_ref/doing_op[2]
+      : \cpu_inst/sccpu /i_1/O75[2]
+    10: \cpu_inst/sccpu /i_1/i_115/O (GATE_2_2)
+    11: \cpu_inst/sccpu /i_1/i_115/I0 (GATE_2_2)
+    12: \cpu_inst/sccpu /i_1/i_114/O (GATE_2_11)
+    13: \cpu_inst/sccpu /i_1/i_114/I1 (GATE_2_11)
+      : \cpu_inst/sccpu /i_1/I73
+      : \cpu_inst/sccpu /cpu_ref/detect_conflict
+      : \cpu_inst/sccpu /cpu_ref/i_1/detect_conflict
+    14: \cpu_inst/sccpu /cpu_ref/i_1/i_495/O (GATE_2_8_AND)
+WARNING: [Synth 8-295] found timing loop. [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/regfile.v:130]
+Found timing loop:
+     0: \cpu_inst/sccpu /cpu_ref/i_1/i_495/O (GATE_2_8_AND)
+     1: \cpu_inst/sccpu /cpu_ref/i_1/i_495/I1 (GATE_2_8_AND)
+     2: \cpu_inst/sccpu /cpu_ref/i_1/i_494/O (GATE_2_8_AND)
+     3: \cpu_inst/sccpu /cpu_ref/i_1/i_494/I0 (GATE_2_8_AND)
+     4: \cpu_inst/sccpu /cpu_ref/i_1/i_489/O (GATE_2_14_OR)
+     5: \cpu_inst/sccpu /cpu_ref/i_1/i_489/I0 (GATE_2_14_OR)
+     6: \cpu_inst/sccpu /cpu_ref/i_1/i_484/O (GATE_2_8_AND)
+     7: \cpu_inst/sccpu /cpu_ref/i_1/i_484/I0 (GATE_2_8_AND)
+     8: \cpu_inst/sccpu /cpu_ref/i_1/i_511/O (GATE_2_2)
+     9: \cpu_inst/sccpu /cpu_ref/i_1/i_511/I0 (GATE_2_2)
+      : \cpu_inst/sccpu /cpu_ref/i_1/doing_op[2]
+      : \cpu_inst/sccpu /cpu_ref/doing_op[2]
+      : \cpu_inst/sccpu /i_1/O75[2]
+    10: \cpu_inst/sccpu /i_1/i_115/O (GATE_2_2)
+    11: \cpu_inst/sccpu /i_1/i_115/I1 (GATE_2_2)
+    12: \cpu_inst/sccpu /i_1/i_113/O (GATE_2_2)
+    13: \cpu_inst/sccpu /i_1/i_113/I0 (GATE_2_2)
+    14: \cpu_inst/sccpu /i_1/i_112/O (GATE_2_2)
+    15: \cpu_inst/sccpu /i_1/i_112/I0 (GATE_2_2)
+    16: \cpu_inst/sccpu /i_1/i_111/O (GATE_2_2)
+    17: \cpu_inst/sccpu /i_1/i_111/I0 (GATE_2_2)
+    18: \cpu_inst/sccpu /i_1/i_33/O (INV)
+    19: \cpu_inst/sccpu /i_1/i_33/I (INV)
+      : \cpu_inst/sccpu /i_1/I73
+      : \cpu_inst/sccpu /cpu_ref/detect_conflict
+      : \cpu_inst/sccpu /cpu_ref/i_1/detect_conflict
+    20: \cpu_inst/sccpu /cpu_ref/i_1/i_495/O (GATE_2_8_AND)
+WARNING: [Synth 8-295] found timing loop. [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/regfile.v:130]
+Found timing loop:
+     0: \cpu_inst/sccpu /i_1/i_134/Z (MUX1)
+     1: \cpu_inst/sccpu /i_1/i_134/S (MUX1)
+      : \cpu_inst/sccpu /i_1/I73
+      : \cpu_inst/sccpu /cpu_ref/detect_conflict
+      : \cpu_inst/sccpu /cpu_ref/i_1/detect_conflict
+     2: \cpu_inst/sccpu /cpu_ref/i_1/i_495/O (GATE_2_8_AND)
+     3: \cpu_inst/sccpu /cpu_ref/i_1/i_495/I1 (GATE_2_8_AND)
+     4: \cpu_inst/sccpu /cpu_ref/i_1/i_494/O (GATE_2_8_AND)
+     5: \cpu_inst/sccpu /cpu_ref/i_1/i_494/I0 (GATE_2_8_AND)
+     6: \cpu_inst/sccpu /cpu_ref/i_1/i_489/O (GATE_2_14_OR)
+     7: \cpu_inst/sccpu /cpu_ref/i_1/i_489/I0 (GATE_2_14_OR)
+     8: \cpu_inst/sccpu /cpu_ref/i_1/i_484/O (GATE_2_8_AND)
+     9: \cpu_inst/sccpu /cpu_ref/i_1/i_484/I0 (GATE_2_8_AND)
+    10: \cpu_inst/sccpu /cpu_ref/i_1/i_511/O (GATE_2_2)
+    11: \cpu_inst/sccpu /cpu_ref/i_1/i_511/I1 (GATE_2_2)
+    12: \cpu_inst/sccpu /cpu_ref/i_1/i_527/O (INV)
+    13: \cpu_inst/sccpu /cpu_ref/i_1/i_527/I (INV)
+    14: \cpu_inst/sccpu /cpu_ref/i_1/i_506/O (GATE_2_2)
+    15: \cpu_inst/sccpu /cpu_ref/i_1/i_506/I0 (GATE_2_2)
+    16: \cpu_inst/sccpu /cpu_ref/i_1/i_505/O (GATE_2_2)
+    17: \cpu_inst/sccpu /cpu_ref/i_1/i_505/I0 (GATE_2_2)
+      : \cpu_inst/sccpu /cpu_ref/i_1/doing_op[0]
+      : \cpu_inst/sccpu /cpu_ref/doing_op[0]
+      : \cpu_inst/sccpu /i_1/O75[0]
+    18: \cpu_inst/sccpu /i_1/i_134/Z (MUX1)
+WARNING: [Synth 8-295] found timing loop. [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/PCreg.v:29]
+Found timing loop:
+     0: \cpu_inst/sccpu /cpu_ref/i_1/i_495/O (GATE_2_8_AND)
+     1: \cpu_inst/sccpu /cpu_ref/i_1/i_495/I1 (GATE_2_8_AND)
+     2: \cpu_inst/sccpu /cpu_ref/i_1/i_494/O (GATE_2_8_AND)
+     3: \cpu_inst/sccpu /cpu_ref/i_1/i_494/I0 (GATE_2_8_AND)
+     4: \cpu_inst/sccpu /cpu_ref/i_1/i_489/O (GATE_2_14_OR)
+     5: \cpu_inst/sccpu /cpu_ref/i_1/i_489/I0 (GATE_2_14_OR)
+     6: \cpu_inst/sccpu /cpu_ref/i_1/i_484/O (GATE_2_8_AND)
+     7: \cpu_inst/sccpu /cpu_ref/i_1/i_484/I0 (GATE_2_8_AND)
+     8: \cpu_inst/sccpu /cpu_ref/i_1/i_511/O (GATE_2_2)
+     9: \cpu_inst/sccpu /cpu_ref/i_1/i_511/I1 (GATE_2_2)
+    10: \cpu_inst/sccpu /cpu_ref/i_1/i_527/O (INV)
+    11: \cpu_inst/sccpu /cpu_ref/i_1/i_527/I (INV)
+    12: \cpu_inst/sccpu /cpu_ref/i_1/i_506/O (GATE_2_2)
+    13: \cpu_inst/sccpu /cpu_ref/i_1/i_506/I0 (GATE_2_2)
+    14: \cpu_inst/sccpu /cpu_ref/i_1/i_505/O (GATE_2_2)
+    15: \cpu_inst/sccpu /cpu_ref/i_1/i_505/I0 (GATE_2_2)
+      : \cpu_inst/sccpu /cpu_ref/i_1/doing_op[0]
+      : \cpu_inst/sccpu /cpu_ref/doing_op[0]
+      : \cpu_inst/sccpu /i_1/O75[0]
+    16: \cpu_inst/sccpu /i_1/i_134/Z (MUX1)
+    17: \cpu_inst/sccpu /i_1/i_134/S (MUX1)
+      : \cpu_inst/sccpu /i_1/I73
+      : \cpu_inst/sccpu /cpu_ref/detect_conflict
+      : \cpu_inst/sccpu /cpu_ref/i_1/detect_conflict
+    18: \cpu_inst/sccpu /cpu_ref/i_1/i_495/O (GATE_2_8_AND)
+WARNING: [Synth 8-295] found timing loop. [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/regfile.v:130]
+Found timing loop:
+     0: \cpu_inst/sccpu /cpu_ref/i_1/i_495/O (GATE_2_8_AND)
+     1: \cpu_inst/sccpu /cpu_ref/i_1/i_495/I1 (GATE_2_8_AND)
+     2: \cpu_inst/sccpu /cpu_ref/i_1/i_494/O (GATE_2_8_AND)
+     3: \cpu_inst/sccpu /cpu_ref/i_1/i_494/I0 (GATE_2_8_AND)
+     4: \cpu_inst/sccpu /cpu_ref/i_1/i_489/O (GATE_2_14_OR)
+     5: \cpu_inst/sccpu /cpu_ref/i_1/i_489/I0 (GATE_2_14_OR)
+     6: \cpu_inst/sccpu /cpu_ref/i_1/i_484/O (GATE_2_8_AND)
+     7: \cpu_inst/sccpu /cpu_ref/i_1/i_484/I0 (GATE_2_8_AND)
+     8: \cpu_inst/sccpu /cpu_ref/i_1/i_511/O (GATE_2_2)
+     9: \cpu_inst/sccpu /cpu_ref/i_1/i_511/I1 (GATE_2_2)
+    10: \cpu_inst/sccpu /cpu_ref/i_1/i_527/O (INV)
+    11: \cpu_inst/sccpu /cpu_ref/i_1/i_527/I (INV)
+    12: \cpu_inst/sccpu /cpu_ref/i_1/i_506/O (GATE_2_2)
+    13: \cpu_inst/sccpu /cpu_ref/i_1/i_506/I1 (GATE_2_2)
+      : \cpu_inst/sccpu /cpu_ref/i_1/doing_op[3]
+      : \cpu_inst/sccpu /cpu_ref/doing_op[3]
+      : \cpu_inst/sccpu /i_1/O75[3]
+    14: \cpu_inst/sccpu /i_1/i_60/Z (MUX1)
+    15: \cpu_inst/sccpu /i_1/i_60/S (MUX1)
+      : \cpu_inst/sccpu /i_1/I73
+      : \cpu_inst/sccpu /cpu_ref/detect_conflict
+      : \cpu_inst/sccpu /cpu_ref/i_1/detect_conflict
+    16: \cpu_inst/sccpu /cpu_ref/i_1/i_495/O (GATE_2_8_AND)
+WARNING: [Synth 8-295] found timing loop. [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/regfile.v:130]
+Found timing loop:
+     0: \cpu_inst/sccpu /i_1/i_134/Z (MUX1)
+     1: \cpu_inst/sccpu /i_1/i_134/S (MUX1)
+      : \cpu_inst/sccpu /i_1/I73
+      : \cpu_inst/sccpu /cpu_ref/detect_conflict
+      : \cpu_inst/sccpu /cpu_ref/i_1/detect_conflict
+     2: \cpu_inst/sccpu /cpu_ref/i_1/i_495/O (GATE_2_8_AND)
+     3: \cpu_inst/sccpu /cpu_ref/i_1/i_495/I1 (GATE_2_8_AND)
+     4: \cpu_inst/sccpu /cpu_ref/i_1/i_494/O (GATE_2_8_AND)
+     5: \cpu_inst/sccpu /cpu_ref/i_1/i_494/I0 (GATE_2_8_AND)
+     6: \cpu_inst/sccpu /cpu_ref/i_1/i_489/O (GATE_2_14_OR)
+     7: \cpu_inst/sccpu /cpu_ref/i_1/i_489/I1 (GATE_2_14_OR)
+     8: \cpu_inst/sccpu /cpu_ref/i_1/i_488/O (GATE_2_14_OR)
+     9: \cpu_inst/sccpu /cpu_ref/i_1/i_488/I0 (GATE_2_14_OR)
+    10: \cpu_inst/sccpu /cpu_ref/i_1/i_4/O (GATE_2_14_OR)
+    11: \cpu_inst/sccpu /cpu_ref/i_1/i_4/I0 (GATE_2_14_OR)
+    12: \cpu_inst/sccpu /cpu_ref/i_1/i_2/O (GATE_2_14_OR)
+    13: \cpu_inst/sccpu /cpu_ref/i_1/i_2/I0 (GATE_2_14_OR)
+    14: \cpu_inst/sccpu /cpu_ref/i_1/i_515/O (GATE_2_2)
+    15: \cpu_inst/sccpu /cpu_ref/i_1/i_515/I1 (GATE_2_2)
+    16: \cpu_inst/sccpu /cpu_ref/i_1/i_514/O (GATE_2_7_NAND)
+    17: \cpu_inst/sccpu /cpu_ref/i_1/i_514/I1 (GATE_2_7_NAND)
+    18: \cpu_inst/sccpu /cpu_ref/i_1/i_513/O (GATE_2_1_NOR)
+    19: \cpu_inst/sccpu /cpu_ref/i_1/i_513/I1 (GATE_2_1_NOR)
+      : \cpu_inst/sccpu /cpu_ref/i_1/doing_op[0]
+      : \cpu_inst/sccpu /cpu_ref/doing_op[0]
+      : \cpu_inst/sccpu /i_1/O75[0]
+    20: \cpu_inst/sccpu /i_1/i_134/Z (MUX1)
+WARNING: [Synth 8-295] found timing loop. [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/PCreg.v:29]
+Found timing loop:
+     0: \cpu_inst/sccpu /i_1/i_134/Z (MUX1)
+     1: \cpu_inst/sccpu /i_1/i_134/S (MUX1)
+      : \cpu_inst/sccpu /i_1/I73
+      : \cpu_inst/sccpu /cpu_ref/detect_conflict
+      : \cpu_inst/sccpu /cpu_ref/i_1/detect_conflict
+     2: \cpu_inst/sccpu /cpu_ref/i_1/i_495/O (GATE_2_8_AND)
+     3: \cpu_inst/sccpu /cpu_ref/i_1/i_495/I1 (GATE_2_8_AND)
+     4: \cpu_inst/sccpu /cpu_ref/i_1/i_494/O (GATE_2_8_AND)
+     5: \cpu_inst/sccpu /cpu_ref/i_1/i_494/I0 (GATE_2_8_AND)
+     6: \cpu_inst/sccpu /cpu_ref/i_1/i_489/O (GATE_2_14_OR)
+     7: \cpu_inst/sccpu /cpu_ref/i_1/i_489/I1 (GATE_2_14_OR)
+     8: \cpu_inst/sccpu /cpu_ref/i_1/i_488/O (GATE_2_14_OR)
+     9: \cpu_inst/sccpu /cpu_ref/i_1/i_488/I0 (GATE_2_14_OR)
+    10: \cpu_inst/sccpu /cpu_ref/i_1/i_4/O (GATE_2_14_OR)
+    11: \cpu_inst/sccpu /cpu_ref/i_1/i_4/I1 (GATE_2_14_OR)
+    12: \cpu_inst/sccpu /cpu_ref/i_1/i_7/O (GATE_2_14_OR)
+    13: \cpu_inst/sccpu /cpu_ref/i_1/i_7/I0 (GATE_2_14_OR)
+    14: \cpu_inst/sccpu /cpu_ref/i_1/i_510/O (GATE_2_2)
+    15: \cpu_inst/sccpu /cpu_ref/i_1/i_510/I0 (GATE_2_2)
+    16: \cpu_inst/sccpu /cpu_ref/i_1/i_509/O (GATE_2_2)
+    17: \cpu_inst/sccpu /cpu_ref/i_1/i_509/I0 (GATE_2_2)
+    18: \cpu_inst/sccpu /cpu_ref/i_1/i_508/O (GATE_2_2)
+    19: \cpu_inst/sccpu /cpu_ref/i_1/i_508/I1 (GATE_2_2)
+      : \cpu_inst/sccpu /cpu_ref/i_1/doing_op[0]
+      : \cpu_inst/sccpu /cpu_ref/doing_op[0]
+      : \cpu_inst/sccpu /i_1/O75[0]
+    20: \cpu_inst/sccpu /i_1/i_134/Z (MUX1)
+WARNING: [Synth 8-295] found timing loop. [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/PCreg.v:29]
+Found timing loop:
+     0: \cpu_inst/sccpu /i_1/i_134/Z (MUX1)
+     1: \cpu_inst/sccpu /i_1/i_134/S (MUX1)
+      : \cpu_inst/sccpu /i_1/I73
+      : \cpu_inst/sccpu /cpu_ref/detect_conflict
+      : \cpu_inst/sccpu /cpu_ref/i_1/detect_conflict
+     2: \cpu_inst/sccpu /cpu_ref/i_1/i_495/O (GATE_2_8_AND)
+     3: \cpu_inst/sccpu /cpu_ref/i_1/i_495/I1 (GATE_2_8_AND)
+     4: \cpu_inst/sccpu /cpu_ref/i_1/i_494/O (GATE_2_8_AND)
+     5: \cpu_inst/sccpu /cpu_ref/i_1/i_494/I0 (GATE_2_8_AND)
+     6: \cpu_inst/sccpu /cpu_ref/i_1/i_489/O (GATE_2_14_OR)
+     7: \cpu_inst/sccpu /cpu_ref/i_1/i_489/I1 (GATE_2_14_OR)
+     8: \cpu_inst/sccpu /cpu_ref/i_1/i_488/O (GATE_2_14_OR)
+     9: \cpu_inst/sccpu /cpu_ref/i_1/i_488/I1 (GATE_2_14_OR)
+    10: \cpu_inst/sccpu /cpu_ref/i_1/i_487/O (GATE_2_14_OR)
+    11: \cpu_inst/sccpu /cpu_ref/i_1/i_487/I0 (GATE_2_14_OR)
+    12: \cpu_inst/sccpu /cpu_ref/i_1/i_486/O (GATE_2_14_OR)
+    13: \cpu_inst/sccpu /cpu_ref/i_1/i_486/I0 (GATE_2_14_OR)
+    14: \cpu_inst/sccpu /cpu_ref/i_1/i_525/O (GATE_2_2)
+    15: \cpu_inst/sccpu /cpu_ref/i_1/i_525/I1 (GATE_2_2)
+    16: \cpu_inst/sccpu /cpu_ref/i_1/i_40/O (GATE_2_7_NAND)
+    17: \cpu_inst/sccpu /cpu_ref/i_1/i_40/I1 (GATE_2_7_NAND)
+      : \cpu_inst/sccpu /cpu_ref/i_1/doing_op[0]
+      : \cpu_inst/sccpu /cpu_ref/doing_op[0]
+      : \cpu_inst/sccpu /i_1/O75[0]
+    18: \cpu_inst/sccpu /i_1/i_134/Z (MUX1)
+WARNING: [Synth 8-295] found timing loop. [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/PCreg.v:29]
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \cpu_inst/sccpu /cpu_ref/i_1/i_494/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \cpu_inst/sccpu /cpu_ref/i_1/i_494/O'
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:38 . Memory (MB): peak = 765.844 ; gain = 558.063
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+Found timing loop:
+     0: i_826/O (LUT3)
+     1: i_826/I2 (LUT3)
+     2: i_1866/O (LUT2)
+     3: i_1866/I1 (LUT2)
+     4: i_821/O (LUT5)
+     5: i_821/I3 (LUT5)
+     6: i_1881/O (LUT5)
+     7: i_1881/I4 (LUT5)
+     8: i_1882/O (LUT3)
+     9: i_1882/I1 (LUT3)
+    10: i_826/O (LUT3)
+WARNING: [Synth 8-295] found timing loop. [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:21]
+Found timing loop:
+     0: i_826/O (LUT3)
+     1: i_826/I2 (LUT3)
+     2: i_1866/O (LUT2)
+     3: i_1866/I1 (LUT2)
+     4: i_821/O (LUT5)
+     5: i_821/I3 (LUT5)
+     6: i_1881/O (LUT5)
+     7: i_1881/I0 (LUT5)
+     8: i_826/O (LUT3)
+WARNING: [Synth 8-295] found timing loop. [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:21]
+Found timing loop:
+     0: i_826/O (LUT3)
+     1: i_826/I2 (LUT3)
+     2: i_1866/O (LUT2)
+     3: i_1866/I1 (LUT2)
+     4: i_821/O (LUT5)
+     5: i_821/I2 (LUT5)
+     6: i_1878/O (LUT6)
+     7: i_1878/I1 (LUT6)
+     8: i_826/O (LUT3)
+WARNING: [Synth 8-295] found timing loop. [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:21]
+Found timing loop:
+     0: i_1880/O (LUT6)
+     1: i_1880/I1 (LUT6)
+     2: i_826/O (LUT3)
+     3: i_826/I2 (LUT3)
+     4: i_1866/O (LUT2)
+     5: i_1866/I1 (LUT2)
+     6: i_821/O (LUT5)
+     7: i_821/I1 (LUT5)
+     8: i_1880/O (LUT6)
+WARNING: [Synth 8-295] found timing loop. [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:21]
+Found timing loop:
+     0: i_826/O (LUT3)
+     1: i_826/I2 (LUT3)
+     2: i_1866/O (LUT2)
+     3: i_1866/I1 (LUT2)
+     4: i_821/O (LUT5)
+     5: i_821/I1 (LUT5)
+     6: i_1880/O (LUT6)
+     7: i_1880/I1 (LUT6)
+     8: i_826/O (LUT3)
+WARNING: [Synth 8-295] found timing loop. [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:21]
+Found timing loop:
+     0: i_1880/O (LUT6)
+     1: i_1880/I1 (LUT6)
+     2: i_826/O (LUT3)
+     3: i_826/I2 (LUT3)
+     4: i_1866/O (LUT2)
+     5: i_1866/I0 (LUT2)
+     6: i_819/O (LUT5)
+     7: i_819/I3 (LUT5)
+     8: i_1880/O (LUT6)
+WARNING: [Synth 8-295] found timing loop. [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:21]
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1866/O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through i_1866/O'
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:39 . Memory (MB): peak = 765.844 ; gain = 558.063
+---------------------------------------------------------------------------------
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:31 ; elapsed = 00:00:39 . Memory (MB): peak = 765.844 ; gain = 558.063
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:31 ; elapsed = 00:00:39 . Memory (MB): peak = 765.844 ; gain = 558.063
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:40 . Memory (MB): peak = 765.844 ; gain = 558.063
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:40 . Memory (MB): peak = 765.844 ; gain = 558.063
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Found timing loop:
+     0: \instr_reg[31]_i_3 /O (LUT6)
+     1: \instr_reg[31]_i_3 /I3 (LUT6)
+     2: \doing_op_reg[2]_i_1 /O (LUT6)
+     3: \doing_op_reg[2]_i_1 /I1 (LUT6)
+     4: \instr_reg[31]_i_3 /O (LUT6)
+WARNING: [Synth 8-295] found timing loop. [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:21]
+Found timing loop:
+     0: \doing_op_reg[1]_i_1 /O (LUT5)
+     1: \doing_op_reg[1]_i_1 /I1 (LUT5)
+     2: \instr_reg[31]_i_3 /O (LUT6)
+     3: \instr_reg[31]_i_3 /I0 (LUT6)
+     4: \doing_op_reg[1]_i_1 /O (LUT5)
+WARNING: [Synth 8-295] found timing loop. [E:/Homeworks/cpupip8/cpupip8.srcs/sources_1/new/seg7x16.v:21]
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:40 . Memory (MB): peak = 765.844 ; gain = 558.063
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:40 . Memory (MB): peak = 765.844 ; gain = 558.063
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:40 . Memory (MB): peak = 765.844 ; gain = 558.063
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:40 . Memory (MB): peak = 765.844 ; gain = 558.063
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |dmem1         |         4|
+|2     |imem          |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |dmem1    |     1|
+|2     |dmem1__1 |     1|
+|3     |dmem1__2 |     1|
+|4     |dmem1__3 |     1|
+|5     |imem     |     1|
+|6     |BUFG     |     1|
+|7     |CARRY4   |    56|
+|8     |LUT1     |    31|
+|9     |LUT2     |    61|
+|10    |LUT3     |    44|
+|11    |LUT4     |   146|
+|12    |LUT5     |   381|
+|13    |LUT6     |  1369|
+|14    |MUXF7    |   288|
+|15    |FDCE     |    50|
+|16    |FDPE     |     7|
+|17    |FDRE     |  1461|
+|18    |IBUF     |     3|
+|19    |OBUF     |    16|
++------+---------+------+
+
+Report Instance Areas: 
++------+------------------+----------------+------+
+|      |Instance          |Module          |Cells |
++------+------------------+----------------+------+
+|1     |top               |                |  3978|
+|2     |  cpu_inst        |sccomp_dataflow |  3807|
+|3     |    dmem_inst     |DMEM            |    64|
+|4     |    imem_inst     |IMEM            |    83|
+|5     |    sccpu         |cpu             |  3660|
+|6     |      BJudge_inst |BJudge          |     3|
+|7     |      EX_MEM_inst |EX_MEM          |   123|
+|8     |      ID_EX_inst  |ID_EX           |   840|
+|9     |      IF_ID_inst  |IF_ID           |   189|
+|10    |      MEM_WB_inst |MEM_WB          |   149|
+|11    |      PCreg_inst  |PCreg           |    40|
+|12    |      cpu_ref     |regfile         |  2316|
++------+------------------+----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:40 . Memory (MB): peak = 765.844 ; gain = 558.063
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 298 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:31 . Memory (MB): peak = 765.844 ; gain = 209.891
+INFO: Vivado Synthesis caught shared memory exception '系统找不到指定的文件。'. Continuing without using shared memory (or continuing without parallel flow)
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:40 . Memory (MB): peak = 765.844 ; gain = 558.063
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 59 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+93 Infos, 292 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:37 . Memory (MB): peak = 765.844 ; gain = 534.172
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 765.844 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sun Nov 23 22:54:48 2025...

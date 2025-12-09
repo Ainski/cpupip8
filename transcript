@@ -1,11 +1,11 @@
 # do run_cpu_tests.do
 # 0
 # ./test_scripts/results
-# testdata/1_addi.hex.txt testdata/2_addiu.hex.txt testdata/9_addu.hex.txt testdata/11_beq.hex.txt testdata/12_bne.hex.txt testdata/16.26_lwsw.hex.txt testdata/16.26_lwsw2.hex.txt testdata/20_sll.hex.txt testdata/22_sltu.hex.txt testdata/25_subu.hex.txt
-# 10
+# testdata/1_addi.hex.txt testdata/2_addiu.hex.txt testdata/9_addu.hex.txt testdata/11_beq.hex.txt testdata/12_bne.hex.txt testdata/16.26_lwsw.hex.txt testdata/16.26_lwsw2.hex.txt testdata/20_sll.hex.txt testdata/22_sltu.hex.txt testdata/25_subu.hex.txt testdata/101_swlwbnebeq.hex.txt testdata/102_regconflict.hex.txt
+# 12
 # 0
 # vsim -quiet work._246tb_ex10_tb 
-# Start time: 18:46:31 on Nov 23,2025
+# Start time: 09:19:05 on Dec 09,2025
 # //  ModelSim PE 10.4c Jul 20 2015 
 # //
 # //  Copyright 1991-2015 Mentor Graphics Corporation
@@ -20,129 +20,195 @@
 # //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
 # //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
 # //
+# ** Warning: (vsim-3017) ./cpupip8.srcs/sources_1/new/sccomp_dataflow.v(103): [TFMPC] - Too few port connections. Expected 80, found 79.
+#    Time: 0 ps  Iteration: 0  Instance: /_246tb_ex10_tb/uut/sccpu File: ./cpupip8.srcs/sources_1/new/cpu.v
+# ** Warning: (vsim-3722) ./cpupip8.srcs/sources_1/new/sccomp_dataflow.v(103): [TFMPC] - Missing connection for port 'rt_id_ex'.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-# ** Note: $stop    : ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v(234)
+# ** Note: $stop    : ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v(266)
 #    Time: 30005 ns  Iteration: 0  Instance: /_246tb_ex10_tb
-# Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 234
-# Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 234
-# End time: 18:46:39 on Nov 23,2025, Elapsed time: 0:00:08
-# Errors: 0, Warnings: 0
+# Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 266
+# Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 266
+# End time: 09:19:11 on Dec 09,2025, Elapsed time: 0:00:06
+# Errors: 0, Warnings: 2
 # vsim -quiet work._246tb_ex10_tb 
-# Start time: 18:46:39 on Nov 23,2025
+# Start time: 09:19:11 on Dec 09,2025
+# ** Warning: (vsim-3017) ./cpupip8.srcs/sources_1/new/sccomp_dataflow.v(103): [TFMPC] - Too few port connections. Expected 80, found 79.
+#    Time: 0 ps  Iteration: 0  Instance: /_246tb_ex10_tb/uut/sccpu File: ./cpupip8.srcs/sources_1/new/cpu.v
+# ** Warning: (vsim-3722) ./cpupip8.srcs/sources_1/new/sccomp_dataflow.v(103): [TFMPC] - Missing connection for port 'rt_id_ex'.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-# ** Note: $stop    : ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v(234)
+# ** Note: $stop    : ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v(266)
 #    Time: 30005 ns  Iteration: 0  Instance: /_246tb_ex10_tb
-# Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 234
-# Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 234
-# End time: 18:46:46 on Nov 23,2025, Elapsed time: 0:00:07
-# Errors: 0, Warnings: 0
+# Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 266
+# Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 266
+# End time: 09:19:18 on Dec 09,2025, Elapsed time: 0:00:07
+# Errors: 0, Warnings: 2
 # vsim -quiet work._246tb_ex10_tb 
-# Start time: 18:46:47 on Nov 23,2025
+# Start time: 09:19:18 on Dec 09,2025
+# ** Warning: (vsim-3017) ./cpupip8.srcs/sources_1/new/sccomp_dataflow.v(103): [TFMPC] - Too few port connections. Expected 80, found 79.
+#    Time: 0 ps  Iteration: 0  Instance: /_246tb_ex10_tb/uut/sccpu File: ./cpupip8.srcs/sources_1/new/cpu.v
+# ** Warning: (vsim-3722) ./cpupip8.srcs/sources_1/new/sccomp_dataflow.v(103): [TFMPC] - Missing connection for port 'rt_id_ex'.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-# ** Note: $stop    : ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v(234)
+# ** Note: $stop    : ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v(266)
 #    Time: 30005 ns  Iteration: 0  Instance: /_246tb_ex10_tb
-# Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 234
-# Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 234
-# End time: 18:46:55 on Nov 23,2025, Elapsed time: 0:00:08
-# Errors: 0, Warnings: 0
+# Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 266
+# Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 266
+# End time: 09:19:25 on Dec 09,2025, Elapsed time: 0:00:07
+# Errors: 0, Warnings: 2
 # vsim -quiet work._246tb_ex10_tb 
-# Start time: 18:46:55 on Nov 23,2025
+# Start time: 09:19:25 on Dec 09,2025
+# ** Warning: (vsim-3017) ./cpupip8.srcs/sources_1/new/sccomp_dataflow.v(103): [TFMPC] - Too few port connections. Expected 80, found 79.
+#    Time: 0 ps  Iteration: 0  Instance: /_246tb_ex10_tb/uut/sccpu File: ./cpupip8.srcs/sources_1/new/cpu.v
+# ** Warning: (vsim-3722) ./cpupip8.srcs/sources_1/new/sccomp_dataflow.v(103): [TFMPC] - Missing connection for port 'rt_id_ex'.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-# ** Note: $stop    : ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v(234)
+# ** Note: $stop    : ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v(266)
 #    Time: 30005 ns  Iteration: 0  Instance: /_246tb_ex10_tb
-# Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 234
-# Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 234
-# End time: 18:47:02 on Nov 23,2025, Elapsed time: 0:00:07
-# Errors: 0, Warnings: 0
+# Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 266
+# Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 266
+# End time: 09:19:31 on Dec 09,2025, Elapsed time: 0:00:06
+# Errors: 0, Warnings: 2
 # vsim -quiet work._246tb_ex10_tb 
-# Start time: 18:47:03 on Nov 23,2025
+# Start time: 09:19:31 on Dec 09,2025
+# ** Warning: (vsim-3017) ./cpupip8.srcs/sources_1/new/sccomp_dataflow.v(103): [TFMPC] - Too few port connections. Expected 80, found 79.
+#    Time: 0 ps  Iteration: 0  Instance: /_246tb_ex10_tb/uut/sccpu File: ./cpupip8.srcs/sources_1/new/cpu.v
+# ** Warning: (vsim-3722) ./cpupip8.srcs/sources_1/new/sccomp_dataflow.v(103): [TFMPC] - Missing connection for port 'rt_id_ex'.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-# ** Note: $stop    : ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v(234)
+# ** Note: $stop    : ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v(266)
 #    Time: 30005 ns  Iteration: 0  Instance: /_246tb_ex10_tb
-# Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 234
-# Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 234
-# End time: 18:47:11 on Nov 23,2025, Elapsed time: 0:00:08
-# Errors: 0, Warnings: 0
+# Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 266
+# Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 266
+# End time: 09:19:38 on Dec 09,2025, Elapsed time: 0:00:07
+# Errors: 0, Warnings: 2
 # vsim -quiet work._246tb_ex10_tb 
-# Start time: 18:47:11 on Nov 23,2025
+# Start time: 09:19:38 on Dec 09,2025
+# ** Warning: (vsim-3017) ./cpupip8.srcs/sources_1/new/sccomp_dataflow.v(103): [TFMPC] - Too few port connections. Expected 80, found 79.
+#    Time: 0 ps  Iteration: 0  Instance: /_246tb_ex10_tb/uut/sccpu File: ./cpupip8.srcs/sources_1/new/cpu.v
+# ** Warning: (vsim-3722) ./cpupip8.srcs/sources_1/new/sccomp_dataflow.v(103): [TFMPC] - Missing connection for port 'rt_id_ex'.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-# ** Note: $stop    : ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v(234)
+# WARNING in _246tb_ex10_tb.uut.dmem_inst.dmem4_uut.inst at time              1025000 ns: 
+# Reading from out-of-range address. Max address in _246tb_ex10_tb.uut.dmem_inst.dmem4_uut.inst is        2047
+# WARNING in _246tb_ex10_tb.uut.dmem_inst.dmem3_uut.inst at time              1025000 ns: 
+# Reading from out-of-range address. Max address in _246tb_ex10_tb.uut.dmem_inst.dmem3_uut.inst is        2047
+# WARNING in _246tb_ex10_tb.uut.dmem_inst.dmem2_uut.inst at time              1025000 ns: 
+# Reading from out-of-range address. Max address in _246tb_ex10_tb.uut.dmem_inst.dmem2_uut.inst is        2047
+# WARNING in _246tb_ex10_tb.uut.dmem_inst.dmem1_uut.inst at time              1025000 ns: 
+# Reading from out-of-range address. Max address in _246tb_ex10_tb.uut.dmem_inst.dmem1_uut.inst is        2047
+# ** Note: $stop    : ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v(266)
 #    Time: 30005 ns  Iteration: 0  Instance: /_246tb_ex10_tb
-# Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 234
-# Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 234
-# End time: 18:47:18 on Nov 23,2025, Elapsed time: 0:00:07
-# Errors: 0, Warnings: 0
+# Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 266
+# Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 266
+# End time: 09:19:44 on Dec 09,2025, Elapsed time: 0:00:06
+# Errors: 0, Warnings: 2
 # vsim -quiet work._246tb_ex10_tb 
-# Start time: 18:47:19 on Nov 23,2025
+# Start time: 09:19:44 on Dec 09,2025
+# ** Warning: (vsim-3017) ./cpupip8.srcs/sources_1/new/sccomp_dataflow.v(103): [TFMPC] - Too few port connections. Expected 80, found 79.
+#    Time: 0 ps  Iteration: 0  Instance: /_246tb_ex10_tb/uut/sccpu File: ./cpupip8.srcs/sources_1/new/cpu.v
+# ** Warning: (vsim-3722) ./cpupip8.srcs/sources_1/new/sccomp_dataflow.v(103): [TFMPC] - Missing connection for port 'rt_id_ex'.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-# ** Note: $stop    : ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v(234)
+# ** Note: $stop    : ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v(266)
 #    Time: 30005 ns  Iteration: 0  Instance: /_246tb_ex10_tb
-# Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 234
-# Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 234
-# End time: 18:47:27 on Nov 23,2025, Elapsed time: 0:00:08
-# Errors: 0, Warnings: 0
+# Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 266
+# Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 266
+# End time: 09:19:50 on Dec 09,2025, Elapsed time: 0:00:06
+# Errors: 0, Warnings: 2
 # vsim -quiet work._246tb_ex10_tb 
-# Start time: 18:47:27 on Nov 23,2025
+# Start time: 09:19:51 on Dec 09,2025
+# ** Warning: (vsim-3017) ./cpupip8.srcs/sources_1/new/sccomp_dataflow.v(103): [TFMPC] - Too few port connections. Expected 80, found 79.
+#    Time: 0 ps  Iteration: 0  Instance: /_246tb_ex10_tb/uut/sccpu File: ./cpupip8.srcs/sources_1/new/cpu.v
+# ** Warning: (vsim-3722) ./cpupip8.srcs/sources_1/new/sccomp_dataflow.v(103): [TFMPC] - Missing connection for port 'rt_id_ex'.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-# ** Note: $stop    : ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v(234)
+# ** Note: $stop    : ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v(266)
 #    Time: 30005 ns  Iteration: 0  Instance: /_246tb_ex10_tb
-# Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 234
-# Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 234
-# End time: 18:47:35 on Nov 23,2025, Elapsed time: 0:00:08
-# Errors: 0, Warnings: 0
+# Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 266
+# Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 266
+# End time: 09:19:57 on Dec 09,2025, Elapsed time: 0:00:06
+# Errors: 0, Warnings: 2
 # vsim -quiet work._246tb_ex10_tb 
-# Start time: 18:47:35 on Nov 23,2025
+# Start time: 09:19:57 on Dec 09,2025
+# ** Warning: (vsim-3017) ./cpupip8.srcs/sources_1/new/sccomp_dataflow.v(103): [TFMPC] - Too few port connections. Expected 80, found 79.
+#    Time: 0 ps  Iteration: 0  Instance: /_246tb_ex10_tb/uut/sccpu File: ./cpupip8.srcs/sources_1/new/cpu.v
+# ** Warning: (vsim-3722) ./cpupip8.srcs/sources_1/new/sccomp_dataflow.v(103): [TFMPC] - Missing connection for port 'rt_id_ex'.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-# ** Note: $stop    : ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v(234)
+# ** Note: $stop    : ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v(266)
 #    Time: 30005 ns  Iteration: 0  Instance: /_246tb_ex10_tb
-# Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 234
-# Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 234
-# End time: 18:47:43 on Nov 23,2025, Elapsed time: 0:00:08
-# Errors: 0, Warnings: 0
+# Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 266
+# Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 266
+# End time: 09:20:04 on Dec 09,2025, Elapsed time: 0:00:07
+# Errors: 0, Warnings: 2
 # vsim -quiet work._246tb_ex10_tb 
-# Start time: 18:47:43 on Nov 23,2025
+# Start time: 09:20:04 on Dec 09,2025
+# ** Warning: (vsim-3017) ./cpupip8.srcs/sources_1/new/sccomp_dataflow.v(103): [TFMPC] - Too few port connections. Expected 80, found 79.
+#    Time: 0 ps  Iteration: 0  Instance: /_246tb_ex10_tb/uut/sccpu File: ./cpupip8.srcs/sources_1/new/cpu.v
+# ** Warning: (vsim-3722) ./cpupip8.srcs/sources_1/new/sccomp_dataflow.v(103): [TFMPC] - Missing connection for port 'rt_id_ex'.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 # WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-# ** Note: $stop    : ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v(234)
+# ** Note: $stop    : ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v(266)
 #    Time: 30005 ns  Iteration: 0  Instance: /_246tb_ex10_tb
-# Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 234
-# Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 234
+# Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 266
+# Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 266
+# End time: 09:20:10 on Dec 09,2025, Elapsed time: 0:00:06
+# Errors: 0, Warnings: 2
+# vsim -quiet work._246tb_ex10_tb 
+# Start time: 09:20:10 on Dec 09,2025
+# ** Warning: (vsim-3017) ./cpupip8.srcs/sources_1/new/sccomp_dataflow.v(103): [TFMPC] - Too few port connections. Expected 80, found 79.
+#    Time: 0 ps  Iteration: 0  Instance: /_246tb_ex10_tb/uut/sccpu File: ./cpupip8.srcs/sources_1/new/cpu.v
+# ** Warning: (vsim-3722) ./cpupip8.srcs/sources_1/new/sccomp_dataflow.v(103): [TFMPC] - Missing connection for port 'rt_id_ex'.
+# WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+# WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+# WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+# WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+# ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 145 ns.
+# 
+# End time: 09:20:18 on Dec 09,2025, Elapsed time: 0:00:08
+# Errors: 1, Warnings: 2
+# vsim -quiet work._246tb_ex10_tb 
+# Start time: 09:20:18 on Dec 09,2025
+# ** Warning: (vsim-3017) ./cpupip8.srcs/sources_1/new/sccomp_dataflow.v(103): [TFMPC] - Too few port connections. Expected 80, found 79.
+#    Time: 0 ps  Iteration: 0  Instance: /_246tb_ex10_tb/uut/sccpu File: ./cpupip8.srcs/sources_1/new/cpu.v
+# ** Warning: (vsim-3722) ./cpupip8.srcs/sources_1/new/sccomp_dataflow.v(103): [TFMPC] - Missing connection for port 'rt_id_ex'.
+# WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+# WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+# WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+# WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+# ** Note: $stop    : ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v(266)
+#    Time: 30005 ns  Iteration: 0  Instance: /_246tb_ex10_tb
+# Break in Module _246tb_ex10_tb at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 266
+# Stopped at ./cpupip8.srcs/sim_1/new/_246tb_ex10_tb.v line 266
 # BATCH TEST SUMMARY
 # ==================================
-# Total tests: 10
+# Total tests: 12
 # Passed tests: 0
-# Failed tests: 10
+# Failed tests: 12
 # Success rate: 0.00%
 # ==================================
-# file5a44800
-# End time: 18:47:51 on Nov 23,2025, Elapsed time: 0:00:08
-# Errors: 0, Warnings: 0
+# file5704da0
+# End time: 09:20:24 on Dec 09,2025, Elapsed time: 0:00:06
+# Errors: 0, Warnings: 2

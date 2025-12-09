@@ -41,6 +41,7 @@ module cpu (
     //ID_EX
     output [31:0] instr_if_id,
     output [3:0] doing_op ,
+    output [31:0] rt_id_ex,
 
     // IF_ID
     output [3:0] jpc_head,
@@ -137,7 +138,7 @@ module cpu (
         .CS(CS),
         .DM_W(DM_W),
         .DM_R(DM_R),
-
+        .rt_id_ex(rt_id_ex),
         .aluo_ex_mem(aluo_ex_mem),
         .b_ex_mem(b_ex_mem),
         .instr_ex_mem(instr_ex_mem),
@@ -155,7 +156,8 @@ module cpu (
         .b(b),
         .aluc(aluc),
         .instr_id_ex(instr_id_ex),
-        .doing_op_id_ex(doing_op_id_ex)
+        .doing_op_id_ex(doing_op_id_ex),
+        .rt_id_ex(rt_id_ex)
     );
 
     IF_ID IF_ID_inst(

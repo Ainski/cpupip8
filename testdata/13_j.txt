@@ -67,12 +67,9 @@ addi $28,$0,0x0001
 addi $29,$0,0x0001
 addi $30,$0,0x0001
 addi $31,$0,0x0001
-beq $1,$2,END
+beq $0, $0 ,END
 j RIGHT
 
-
-END:
-addi $31,$0,0xffffffff
 
 WRONG2:
 addi $1,$0,0xffffffff
@@ -105,6 +102,10 @@ addi $27,$0,0xffffffff
 addi $28,$0,0xffffffff
 addi $29,$0,0xffffffff
 addi $30,$0,0xffffffff
+addi $31,$0,0xffffffff
+
+
+END:
 addi $31,$0,0xffffffff
 
 halt
