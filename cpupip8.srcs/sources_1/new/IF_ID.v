@@ -78,12 +78,13 @@ module IF_ID(
     always @(posedge clk) begin
         if (reset) begin
             doing_op_last <= 0;
+        end else if(reg_detect_confict) begin
+            doing_op_last<=doing_op_last;
         end else begin 
             doing_op_last <= doing_op;
         end 
     end
-    assign doing_op= (reg_detect_confict ) ? doing_op_last : 
-                    (instr_reg== `halt_instr) ? `halt : 
+    assign doing_op=(instr_reg== `halt_instr) ? `halt : 
                     (instr_reg[31:26]==`lw_op) ? `lw : 
                     (instr_reg[31:26]==`sw_op) ? `sw : 
                     (instr_reg[31:26]==`beq_op) ? `beq : 

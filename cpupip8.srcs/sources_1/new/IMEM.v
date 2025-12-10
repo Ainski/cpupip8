@@ -31,8 +31,9 @@ module IMEM(
     //$readmemh("E:/Homeworks/cpupip8/testdata/20_sll.hex.txt", IMEMreg);
     //$readmemh("E:/Homeworks/cpupip8/testdata/22_sltu.hex.txt", IMEMreg);
     //$readmemh("E:/Homeworks/cpupip8/testdata/25_subu.hex.txt", IMEMreg);
-    $readmemh("E:/Homeworks/cpupip8/testdata/101_swlwbnebeq.hex.txt", IMEMreg);
+    //$readmemh("E:/Homeworks/cpupip8/testdata/101_swlwbnebeq.hex.txt", IMEMreg);
     //$readmemh("E:/Homeworks/cpupip8/testdata/102_regconflict.hex.txt", IMEMreg);
+    $readmemh("E:/Homeworks/cpupip8/testdata/103_regconflict_detected_2.hex.txt", IMEMreg);
 
     end
 

@@ -157,7 +157,8 @@ module cpu (
         .aluc(aluc),
         .instr_id_ex(instr_id_ex),
         .doing_op_id_ex(doing_op_id_ex),
-        .rt_id_ex(rt_id_ex)
+        .rt_id_ex(rt_id_ex),
+        .reg_conflict_detected(reg_detect_confict)
     );
 
     IF_ID IF_ID_inst(
