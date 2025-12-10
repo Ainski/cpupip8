@@ -1,96 +1,75 @@
-# CPU流水线仿真器项目
+# Pipelined CPU Design Project
 
-## 项目概述
+## Project Overview
 
-这是一个实现5级流水线处理器的MIPS CPU仿真器项目。项目包含硬件设计文件（Verilog语言）和一个用于比较的软件仿真器。
+This is a pipelined MIPS-like CPU implementation written in Verilog. The design follows a classic 5-stage pipeline architecture (IF: Instruction Fetch, ID: Instruction Decode, EX: Execute, MEM: Memory Access, WB: Write Back) with various pipeline registers between stages to store intermediate results.
 
-### 主要组件
+### Key Components
 
-- **硬件设计**: 用Verilog实现，文件位于 `cpupip8.srcs/sources_1/new/`
-- **测试平台**: 位于 `cpupip8.srcs/sim_1/new/`
-- **仿真控制**: ModelSim批处理脚本 `run_cpu_tests.do` 用于自动化测试
-- **软件仿真器**: `cpu_pipelined_simulator.cpp` - 一个C++参考实现
+- **ALU.v**: Arithmetic Logic Unit that performs various arithmetic and logical operations
+- **regfile.v**: 32-register register file with forwarding and hazard detection capabilities
+- **PC.v**: Program Counter module to manage instruction address sequencing
+- **Pipeline Registers**: 
+  - IF_ID.v: Instruction Fetch to Instruction Decode register
+  - ID_EX.v: Instruction Decode to Execute register  
+  - EX_MEM.v: Execute to Memory register
+  - MEM_WB.v: Memory to Write Back register
+- **Memory Modules**:
+  - IMEM.v: Instruction Memory
+  - DMEM.v: Data Memory
+- **def.v**: Definition file containing operation codes, ALU control signals, and other constants
+- **top.v**: Top-level module that integrates all components
+- **NPCmaker.v**: Next Program Counter maker for handling jumps and branches
+- **BJudge.v**: Branch judgment module for conditional branches
 
-### CPU架构
+### Architecture Features
 
-CPU实现5级流水线：
-1. IF (指令获取)
-2. ID (指令译码)
-3. EX (执行)
-4. MEM (内存访问)
-5. WB (写回)
+The CPU supports various MIPS-like instructions including:
+- Arithmetic operations: ADD, ADDU, SUBU
+- Logical operations: AND, OR, XOR, NOR
+- Shift operations: SLL, SRL, SRA
+- Load/Store operations: LW, SW
+- Branch operations: BEQ, BNE
+- Immediate operations: ADDI, ADDIU
+- Comparison operations: SLT, SLTU
 
-支持的指令类型包括：
-- R型: ADD, ADDU, SUBU, SLL, SLTU等
-- I型: ADDI, ADDIU, LW, SW, BEQ, BNE等
-- J型: J, JAL
+The design includes:
+- Data forwarding to handle data hazards
+- Hazard detection and stalling mechanisms
+- Forwarding logic to reduce pipeline stalls
+- Support for load-use hazards with proper stalling
 
-## 构建和运行
+### Simulation and Testing
 
-### 硬件仿真
-1. 在Vivado中打开项目
-2. 或使用ModelSim运行自动化测试:
-   ```bash
-   vsim -c -do "do run_cpu_tests.do; quit" > log
-   ```
+The project includes simulation result files that demonstrate the CPU executing test programs:
+- 1_addi_simulated.result.txt
+- 1_addi.hex.txt  
+- 1_addi.result.txt
 
-### 软件仿真器
-1. 编译C++仿真器:
-   ```bash
-   g++ -o cpu_pipelined_simulator.exe cpu_pipelined_simulator.cpp
-   ```
-2. 使用测试hex文件运行:
-   ```bash
-   ./cpu_pipelined_simulator.exe testdata/1_addi.hex.txt
-   ```
+These result files show the CPU executing various instructions and tracking register values, program counter changes, and instruction execution over time.
 
-### 自动化测试
-- 使用 `run_cpu_tests.do` 脚本运行所有测试用例
-- 结果保存在 `test_scripts/results/` 目录
-- 每个测试将仿真结果与标准模型进行比较
+### Building and Running
 
-## 关键文件
+This project appears to be designed for synthesis and simulation using a tool like Xilinx Vivado (based on the file path structure). To build and simulate:
 
-### 硬件文件 (Verilog)
-- `sccomp_dataflow.v`: 顶层CPU模块
-- `cpu.v`: 主CPU实现
-- `ALU.v`: 算术逻辑单元
-- `regfile.v`: 带转发功能的寄存器文件
-- `IF_ID.v`, `ID_EX.v`, `EX_MEM.v`, `MEM_WB.v`: 流水线级间寄存器
-- `def.v`: 定义和操作码
+1. Open the project in a Verilog simulator or synthesis tool
+2. Compile all Verilog files in the project
+3. Load test programs into the instruction memory
+4. Run the simulation to observe CPU behavior
+5. Analyze the results to verify correct operation of the pipeline
 
-### 测试文件
-- `_246tb_ex10_tb.v`: 测试平台
-- `run_cpu_tests.do`: ModelSim自动化脚本
-- `test_scripts/results/`: 测试结果输出目录
+### Development Conventions
 
-### 测试数据
-- `testdata/*.hex.txt`: 以hex格式表示的输入测试程序
-- `testdata/*.result.txt`: 期望结果
+- Verilog modules follow standard naming conventions with descriptive names
+- Use of `def.v` for all constants to maintain consistency
+- Pipeline registers use appropriate control signals to manage data flow
+- The design handles hazards through stalling and forwarding mechanisms
+- Clock and reset signals are properly used for synchronous operation
 
-### 其他重要文件
-- `cpu_pipelined_simulator.cpp`: C++参考模型实现
-- `log`: 仿真日志文件
+### Key Design Concepts
 
-## 开发规范
-
-- 使用5级MIPS流水线架构
-- 实现冒险检测和数据转发
-- 包括全面的测试套件
-- 使用模块化设计，每个组件使用单独文件
-
-## 项目状态
-
-当前实现显示硬件仿真与参考模型在ADDI指令上存在差异，如比较日志所证明。这表明可能存在以下问题：
-- ADDI指令的数据转发
-- 寄存器写回时序
-- 立即数的符号扩展逻辑
-- 流水线冒险检测
-
-## 测试结果位置
-
-- 日志文件: `log`
-- 测试结果: `test_scripts/results/`
-- 比较结果: `test_scripts/results/*_comparison_result.txt`
-- 标准模型结果: `test_scripts/results/*_std_result.txt`
-- 仿真结果: `test_scripts/results/*_sim_result.txt`
+- **Pipelining**: The 5-stage pipeline enables instruction-level parallelism
+- **Hazard Handling**: Data and control hazards are handled through forwarding and stalling
+- **Forwarding**: Results are forwarded between pipeline stages to reduce stalls
+- **Stalling**: Pipeline bubbles are inserted when forwarding cannot resolve hazards
+- **Control Logic**: Complex control logic manages pipeline operation and hazard detection

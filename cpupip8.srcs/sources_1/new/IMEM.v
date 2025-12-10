@@ -34,6 +34,7 @@ module IMEM(
     //$readmemh("E:/Homeworks/cpupip8/testdata/101_swlwbnebeq.hex.txt", IMEMreg);
     //$readmemh("E:/Homeworks/cpupip8/testdata/102_regconflict.hex.txt", IMEMreg);
     $readmemh("E:/Homeworks/cpupip8/testdata/103_regconflict_detected_2.hex.txt", IMEMreg);
+    //$readmemh("E:/Homeworks/cpupip8/testdata/104_pizza_tower_test.hex.txt", IMEMreg);
 
     end
 

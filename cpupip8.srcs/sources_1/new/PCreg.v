@@ -25,7 +25,7 @@ end
 
 always @(posedge pc_clk) begin
     if (reset) begin       // 复位时PC清零
-        pc <= 32'b0;
+        pc <= 32'h00400000;
     end else if (Halting||halt) begin
         pc <= pc;
     end else begin

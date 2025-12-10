@@ -53,6 +53,7 @@ set test_files [list \
     "testdata/101_swlwbnebeq.hex.txt" \
     "testdata/102_regconflict.hex.txt" \
     "testdata/103_regconflict_detected_2.hex.txt" \
+    "testdata/104_pizza_tower_test.hex.txt" \
 ]
 
 # Procedure to run a single test
