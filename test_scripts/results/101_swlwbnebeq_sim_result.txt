@@ -4,9 +4,9 @@ regfile2: 00000002
 regfile3: 00000004
 regfile4: 00000004
 regfile5: 00000001
-regfile6: 00000001
-regfile7: 00000000
-regfile8: 00000000
+regfile6: 00000002
+regfile7: 00000004
+regfile8: 00000004
 regfile9: 00000000
 regfile10: 00000000
 regfile11: 00000000
@@ -29,4 +29,4 @@ regfile27: 00000000
 regfile28: 00000000
 regfile29: 00000000
 regfile30: 10010000
-regfile31: 00000001
+regfile31: 00000002

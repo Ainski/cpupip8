@@ -40,7 +40,6 @@ always @(posedge clk) begin
 end
 
 assign a = 
-    (reg_conflict_detected)? 32'b0:
     (doing_op_reg==`add) ? rs_reg:
     (doing_op_reg==`addu) ? rs_reg:
     (doing_op_reg==`addi) ? rs_reg:
@@ -54,7 +53,6 @@ assign a =
     (doing_op_reg==`bne) ? rs_reg:
     32'b0;
 assign b = 
-    (reg_conflict_detected)? 32'b0:
     (doing_op_reg==`add) ? rt_reg:
     (doing_op_reg==`addu) ? rt_reg:
     (doing_op_reg==`addi) ? {{16{instr_reg[15]}},instr_reg[15:0]}: // sign extend imdt
@@ -68,7 +66,6 @@ assign b =
     (doing_op_reg==`bne) ? rt_reg:
     32'b0;
 assign aluc =
-    (reg_conflict_detected)? `sll_aluc:
     (doing_op_reg==`add) ? `add_aluc:
     (doing_op_reg==`addu) ? `addu_aluc:
     (doing_op_reg==`addi) ? `add_aluc:
