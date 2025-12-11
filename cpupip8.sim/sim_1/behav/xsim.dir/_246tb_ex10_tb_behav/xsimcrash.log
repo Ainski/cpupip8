@@ -1,41 +1,44 @@
-Unable to capture context for thread 32692 in process 45392, can not generate back trace
-Unable to capture context for thread 11696 in process 45392, can not generate back trace
-Unable to capture context for thread 36680 in process 45392, can not generate back trace
-Exception at PC 0x00007FFDD39A80DA
-Unable to capture context for thread 32692 in process 45392, can not generate back trace
-Unable to capture context for thread 11696 in process 45392, can not generate back trace
-Unable to capture context for thread 36680 in process 45392, can not generate back trace
-Exception at PC 0x00007FFC95D8BB93
+Unable to capture context for thread 20572 in process 44956, can not generate back trace
+Unable to capture context for thread 46248 in process 44956, can not generate back trace
+Unable to capture context for thread 16768 in process 44956, can not generate back trace
+Unable to capture context for thread 39048 in process 44956, can not generate back trace
+Unable to capture context for thread 46588 in process 44956, can not generate back trace
+Exception at PC 0x00007FFB755FBB93
 Printing stacktrace...
 
-Exception at PC 0x00007FFDD39A80DA
-Exception at PC 0x00007FFDD39A80DA
-Exception at PC 0x00007FFDD39A80DA
-[0]  [0x00007FFC95D8BB93]
-[1]  [0x00007FFC95D8BB93]
-[2]  [0x00007FFC95D8B4A1]
-[3]  [0x00007FFC95D8B459]
-[4]  [0x00007FFC95D719FE]
-[5]  [0x00007FFC95D70ED1]
-[6]  [0x00007FFC95D70D76]
-[7]  [0x00007FFC95D179F6]
-[8]  [0x00007FFC95D07AFB]
-[9]  [0x00007FFC95E2E90A]
-[10]  [0x00007FFC95E49F87]
-[11]  [0x00007FFC95E4A05F]
-[12] (BaseThreadInitThunk+0x17) [0x00007FFDD619E8D7]
-[13] (RtlUserThreadStart+0x2c) [0x00007FFDD652C53C]
+Unable to capture context for thread 20572 in process 44956, can not generate back trace
+Unable to capture context for thread 46248 in process 44956, can not generate back trace
+Unable to capture context for thread 16768 in process 44956, can not generate back trace
+Unable to capture context for thread 46588 in process 44956, can not generate back trace
+Exception at PC 0x00007FFCF3DB782A
+Exception at PC 0x00007FFCF3DB782A
+Exception at PC 0x00007FFCF3DB782A
+Exception at PC 0x00007FFCF3DB782A
+[0]  [0x00007FFB755FBB93]
+[1]  [0x00007FFB755FBB93]
+[2]  [0x00007FFB755FB4A1]
+[3]  [0x00007FFB755FB459]
+[4]  [0x00007FFB755E19FE]
+[5]  [0x00007FFB755E0ED1]
+[6]  [0x00007FFB755E0D76]
+[7]  [0x00007FFB755879F6]
+[8]  [0x00007FFB75577AFB]
+[9]  [0x00007FFB7569E90A]
+[10]  [0x00007FFB756B9F87]
+[11]  [0x00007FFB756BA05F]
+[12] (BaseThreadInitThunk+0x17) [0x00007FFCF503E8D7]
+[13] (RtlUserThreadStart+0x2c) [0x00007FFCF648C53C]
 Done
-Exception at PC 0x00007FFDD39A80DA
-Exception at PC 0x00007FFDD39A80DA
-Exception at PC 0x00007FFDD39A80DA
-Exception at PC 0x00007FFDD39A80DA
-Exception at PC 0x00007FFDD39A80DA
-Exception at PC 0x00007FFDD39A80DA
-Exception at PC 0x00007FFDD39A80DA
-Exception at PC 0x00007FFDD39A80DA
-Exception at PC 0x00007FFDD39A80DA
-Exception at PC 0x00007FFDD39A80DA
-Exception at PC 0x00007FFDD39A80DA
-Exception at PC 0x00007FFDD39A80DA
-Exception at PC 0x00007FFDD39A80DA
+Exception at PC 0x00007FFCF3DB782A
+Exception at PC 0x00007FFCF3DB782A
+Exception at PC 0x00007FFCF3DB782A
+Exception at PC 0x00007FFCF3DB782A
+Exception at PC 0x00007FFCF3DB782A
+Exception at PC 0x00007FFCF3DB782A
+Exception at PC 0x00007FFCF3DB782A
+Exception at PC 0x00007FFCF3DB782A
+Exception at PC 0x00007FFCF3DB782A
+Exception at PC 0x00007FFCF3DB782A
+Exception at PC 0x00007FFCF3DB782A
+Exception at PC 0x00007FFCF3DB782A
+Exception at PC 0x00007FFCF3DB782A
