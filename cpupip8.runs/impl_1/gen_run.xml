@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1766341526">
+  <File Type="OPT-DCP" Name="board_top_opt.dcp"/>
+  <File Type="ROUTE-STATUS-PB" Name="board_top_route_status.pb"/>
+  <File Type="PA-TCL" Name="board_top.tcl"/>
+  <File Type="RDI-RDI" Name="board_top.vdi"/>
+  <File Type="PWROPT-DRC" Name="board_top_drc_pwropted.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="board_top_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="board_top_timing_summary_init.rpt"/>
+  <File Type="OPT-DRC" Name="board_top_drc_opted.rpt"/>
+  <File Type="PWROPT-DCP" Name="board_top_pwropt.dcp"/>
+  <File Type="OPT-HWDEF" Name="board_top.hwdef"/>
+  <File Type="OPT-TIMING" Name="board_top_timing_summary_opted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="board_top_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="board_top_placed.dcp"/>
+  <File Type="PLACE-IO" Name="board_top_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="board_top_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="board_top_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="board_top_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="board_top_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="board_top_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="board_top_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="board_top_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="board_top_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="board_top_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="board_top_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="board_top_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="board_top_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-DCP" Name="board_top_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="board_top_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="board_top_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="board_top_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="board_top_methodology_drc_routed.rpt"/>
+  <File Type="BG-BIT" Name="board_top.bit"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="board_top_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="board_top_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="board_top_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="board_top_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="board_top_route_status.rpt"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="board_top_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="board_top_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="board_top_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="board_top_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="board_top_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="board_top_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="board_top_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="board_top_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="board_top_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="board_top_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BG-BIN" Name="board_top.bin"/>
+  <File Type="BITSTR-MSK" Name="board_top.msk"/>
+  <File Type="BITSTR-RBT" Name="board_top.rbt"/>
+  <File Type="BITSTR-NKY" Name="board_top.nky"/>
+  <File Type="BITSTR-BMM" Name="board_top_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="board_top.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="board_top.sysdef"/>
+  <File Type="BG-BGN" Name="board_top.bgn"/>
+  <File Type="BG-DRC" Name="board_top.drc"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/def.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/regfile.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/PCreg.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/NPCmaker.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/MEM_WB.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/IF_ID.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ID_EX.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/EX_MEM.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/BJudge.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ALU.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/IMEM.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/DMEM.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/cpu.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/sccomp_dataflow.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/mux8_32.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/seg7x16.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/board_top.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/coe/test.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/Tcoe/output.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="board_top"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/cpupip8.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="imem"/>
+  <BlockFileSet Type="BlockSrcs" Name="dmem1"/>
+</GenRun>

@@ -4,11 +4,4 @@ WARNING: This core is supplied with a behavioral model. To model cycle-accurate 
 WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-WARNING in _246tb_ex10_tb.uut.dmem_inst.dmem1_uut.inst at time              1025000 ns: 
-Reading from out-of-range address. Max address in _246tb_ex10_tb.uut.dmem_inst.dmem1_uut.inst is        2047
-WARNING in _246tb_ex10_tb.uut.dmem_inst.dmem2_uut.inst at time              1025000 ns: 
-Reading from out-of-range address. Max address in _246tb_ex10_tb.uut.dmem_inst.dmem2_uut.inst is        2047
-WARNING in _246tb_ex10_tb.uut.dmem_inst.dmem3_uut.inst at time              1025000 ns: 
-Reading from out-of-range address. Max address in _246tb_ex10_tb.uut.dmem_inst.dmem3_uut.inst is        2047
-WARNING in _246tb_ex10_tb.uut.dmem_inst.dmem4_uut.inst at time              1025000 ns: 
-Reading from out-of-range address. Max address in _246tb_ex10_tb.uut.dmem_inst.dmem4_uut.inst is        2047
+WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.

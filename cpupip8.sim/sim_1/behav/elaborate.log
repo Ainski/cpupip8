@@ -17,6 +17,8 @@ Compiling module xil_defaultlib.NPCmaker
 Compiling module xil_defaultlib.PCreg
 Compiling module xil_defaultlib.regfile
 Compiling module xil_defaultlib.cpu
+Compiling module dist_mem_gen_v8_0_10.dist_mem_gen_v8_0_10(C_FAMILY="a...
+Compiling module xil_defaultlib.imem
 Compiling module xil_defaultlib.IMEM
 Compiling module dist_mem_gen_v8_0_10.dist_mem_gen_v8_0_10(C_FAMILY="a...
 Compiling module xil_defaultlib.dmem1

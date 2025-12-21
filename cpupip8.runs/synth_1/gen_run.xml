@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1763910024">
-  <File Type="PA-TCL" Name="seg7x16.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="seg7x16_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="seg7x16.vds"/>
-  <File Type="RDS-UTIL" Name="seg7x16_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="seg7x16_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="seg7x16.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="seg7x16_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="seg7x16_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1766341480">
+  <File Type="RDS-PROPCONSTRS" Name="board_top_drc_synth.rpt"/>
+  <File Type="PA-TCL" Name="board_top.tcl"/>
+  <File Type="RDS-RDS" Name="board_top.vds"/>
+  <File Type="RDS-UTIL" Name="board_top_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="board_top_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="board_top.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="board_top_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="board_top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/PCreg.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/def.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -25,6 +18,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/regfile.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/PCreg.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -108,6 +108,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/mux8_32.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/seg7x16.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -115,9 +122,8 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sim_1/new/_246tb_ex10_tb.v">
+    <File Path="$PSRCDIR/sources_1/new/board_top.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -129,9 +135,15 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/Tcoe/output.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="seg7x16"/>
+      <Option Name="TopModule" Val="board_top"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

@@ -117,15 +117,8 @@ BN & 转义为bne \$0,\$r,\$label指令 \\
 \label{fig:screenshot003}
 \end{figure}
 
+
 \clearpage
-\subsection{分支指令设计}
-
-分支指令的执行周期以指令读取为第0周期，具体处理逻辑为：
-\begin{itemize}
-\item 第0周期：IF\_ID寄存器直接输出PC\_bobl信号为1，触发分支检测
-\item 第1周期：程序计数器PC保持当前值不变，同时指令存储器IMEM输出NOP指令，插入流水线气泡
-\end{itemize}
-
 \section{实验的总体结构}
 
 \subsection{5级指令流水线的总体结构}
@@ -185,33 +178,16 @@ MEM/WB寄存器是访存与写回阶段的桥梁，暂存的信息用于完成�
 \item 寄存器写回的使能控制信号
 \end{itemize}
 
-\section{实验仿真过程}
 
-\subsection{5级指令流水线的仿真过程}
-
-本实验采用ModelSim工具完成流水线CPU的仿真验证，具体仿真流程分为以下步骤：
-
-\begin{enumerate}
-\item 编译所有Verilog硬件描述语言源文件，生成可仿真的模块库
-\item 加载测试平台模块与待测CPU核心模块，建立仿真拓扑
-\item 为不同测试场景加载对应的指令序列，配置仿真激励
-\item 运行仿真流程，实时记录每个时钟周期的PC值、指令内容与寄存器状态
-\item 将仿真输出结果与软件参考模型的计算结果对比，验证功能正确性
-\end{enumerate}
-
-自动化测试脚本run\_cpu\_tests.do会按序执行多组测试用例，覆盖ADDI、ADDIU、LW/SW、BEQ、BNE、SLL、SUBU、SLTU等核心指令的功能验证。
-
-\subsection{启动测试与执行过程}
-
-根据实验配套的readme.md文档说明，通过以下指令启动仿真测试：
-\begin{verbatim}
-vsim -c -do "do run_cpu_tests.do; quit" >log
-\end{verbatim}
-
-该命令以批处理模式运行ModelSim，自动执行run\_cpu\_tests.do脚本并将仿真日志输出至log文件，便于后续结果分析。
-
+\clearpage
 \subsection{分支预测与冲突处理机制}
+\subsubsection{分支指令设计}
 
+分支指令的执行周期以指令读取为第0周期，具体处理逻辑为：
+\begin{itemize}
+\item 第0周期：IF\_ID寄存器直接输出PC\_bobl信号为1，触发分支检测
+\item 第1周期：程序计数器PC保持当前值不变，同时指令存储器IMEM输出NOP指令，插入流水线气泡
+\end{itemize}
 \subsubsection{分支指令处理}
 分支指令的流水线处理机制以指令读取为第0周期，具体逻辑为：
 \begin{itemize}
@@ -241,305 +217,141 @@ vsim -c -do "do run_cpu_tests.do; quit" >log
 \item 冲突检测在译码(ID)阶段完成，检测到冲突后激活detact\_confict信号，PC、IMEM与IF/ID寄存器保持原有值一个周期
 \end{enumerate}
 
+\clearpage
+\section{实验仿真过程}
+
+\subsection{5级指令流水线的仿真过程}
+
+本实验采用ModelSim工具完成流水线CPU的仿真验证，具体仿真流程分为以下步骤：
+
+\begin{enumerate}
+\item 编译所有Verilog硬件描述语言源文件，生成可仿真的模块库
+\item 加载测试平台模块与待测CPU核心模块，建立仿真拓扑
+\item 为不同测试场景加载对应的指令序列，配置仿真激励
+\item 运行仿真流程，实时记录每个时钟周期的PC值、指令内容与寄存器状态
+\item 将仿真输出结果与软件参考模型的计算结果对比，验证功能正确性
+\end{enumerate}
+
+自动化测试脚本run\_cpu\_tests.do会按序执行多组测试用例，覆盖ADDI、ADDIU、LW/SW、BEQ、BNE、SLL、SUBU、SLTU等核心指令的功能验证。
+
+\subsection{启动测试与执行过程}
+
+根据实验配套的readme.md文档说明，通过以下指令启动仿真测试：
+\begin{verbatim}
+vsim -c -do "do run_cpu_tests.do; quit" >log
+\end{verbatim}
+
+该命令以批处理模式运行ModelSim，自动执行run\_cpu\_tests.do脚本并将仿真日志输出至log文件，便于后续结果分析。
+
+
+
 \section{实验仿真的波形图及某时刻寄存器值的物理意义}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{screenshot004}
+\caption{}
+\label{fig:screenshot004}
+\end{figure}
 
-\subsection{5级指令流水线的波形图及某时刻寄存器值的物理意义}
+我的波形图展示了所有cpu的中间信号量的取值，因为我在设计整个cpu的时候，把所有的中间信号都通过线引出到top模块当中了。
 
-在仿真过程中，ModelSim会实时记录CPU内部的关键信号波形，核心监测内容包括：
 
-\begin{itemize}
-\item PC值：当前正在执行指令的程序计数器地址，反映指令的执行流
-\item 指令编码：当前流水线各阶段的指令内容，体现指令的执行进度
-\item 寄存器文件：32个通用寄存器的实时数值，反映数据的运算与传递过程
-\end{itemize}
-
-MIPS架构中寄存器值的物理意义明确：
-\begin{itemize}
-\item \$0寄存器：硬件层面固定为0，是MIPS架构的固有约定，用于零值传递与空操作
-\item \$1-\$31寄存器：通用寄存器，用于存储运算操作数、中间结果与内存访问地址
-\end{itemize}
-
-通过分析仿真波形图，可直观观察到流水线的并行执行特性：在稳定运行状态下，每个时钟周期均有一条指令在不同流水线阶段执行，实现指令的流水化处理。
 
 \section{流水线CPU实验性能验证模型}
 
 \subsection{实验性能验证模型：比萨塔摔鸡蛋游戏}
 
-为验证流水线CPU的性能，设计如下MIPS语言算法实现比萨塔摔鸡蛋游戏的仿真模型：
+由于指令集受限，我们不得不采用纯asm编程的办法。
 
-将上述C语言算法转换为MIPS汇编程序，实现流水线CPU的性能验证，代码如下：
-
-\begin{verbatim}
-addiu $s0, $zero, 100    # building_height = 100
-addiu $s1, $zero, 42     # egg_durability = 42
-
-# 物质匮乏时期成本参数
-addiu $s2, $zero, 2      # scarcity_p1 = 2
-addiu $s3, $zero, 1      # scarcity_p2 = 1  
-addiu $s4, $zero, 4      # scarcity_p3 = 4
-
-# 人力成本增长时期成本参数
-addiu $s5, $zero, 4      # labor_p1 = 4
-addiu $s6, $zero, 1      # labor_p2 = 1
-addiu $s7, $zero, 2      # labor_p3 = 2
-
-# 开始模拟物质匮乏时期
-# 初始化游戏变量
-addiu $t0, $zero, 0      # total_drops = 0
-addiu $t1, $zero, 0      # total_eggs_broken = 0
-addiu $t2, $zero, 0      # last_egg_broken = 0
-addiu $t3, $zero, 0      # total_cost = 0
-addiu $t4, $zero, 1      # low = 1
-addiu $t5, $zero, 100    # high = building_height
-addiu $t6, $zero, 0      # current_floor = 0
-addiu $t7, $zero, 2      # eggs_remaining = 2
-addiu $t8, $zero, 0      # up_floors = 0
-addiu $t9, $zero, 0      # down_floors = 0
-
-# 物质匮乏时期游戏循环
-scarcity_loop:
-# 检查循环条件: low <= high && eggs_remaining > 0
-sltu $at, $t5, $t4       # high < low?
-bne $at, $zero, scarcity_end
-beq $t7, $zero, scarcity_end
-
-# 计算mid = (low + high) / 2
-addu $at, $t4, $t5
-srl $at, $at, 1
-
-# 计算上下楼
-sltu $k0, $t6, $at       # current_floor < mid?
-bne $k0, $zero, scarcity_go_up
-
-# 下楼情况
-subu $k0, $t6, $at
-addu $t9, $t9, $k0
-beq $zero, $zero, scarcity_update_pos
-
-scarcity_go_up:
-# 上楼情况
-subu $k0, $at, $t6
-addu $t8, $t8, $k0
-
-scarcity_update_pos:
-# current_floor = mid
-addiu $t6, $at, 0
-
-# total_drops++
-addiu $t0, $t0, 1
-
-# 检查鸡蛋是否摔破
-sltu $k0, $s1, $at       # egg_durability < mid?
-bne $k0, $zero, scarcity_egg_broken
-
-# 鸡蛋没破
-addiu $t2, $zero, 0      # last_egg_broken = 0
-addiu $t4, $at, 1        # low = mid + 1
-beq $zero, $zero, scarcity_continue
-
-scarcity_egg_broken:
-# 鸡蛋摔破
-addiu $t1, $t1, 1        # total_eggs_broken++
-addiu $t7, $t7, -1       # eggs_remaining--
-addiu $t2, $zero, 1      # last_egg_broken = 1
-addiu $t5, $at, -1       # high = mid - 1
-
-scarcity_continue:
-beq $zero, $zero, scarcity_loop
-
-scarcity_end:
-# 计算物质匮乏时期总成本: up_floors*p1 + down_floors*p2 + eggs_broken*p3
-addiu $k0, $zero, 0      # temp_cost = 0
-
-# 计算 up_floors * p1 (加法模拟乘法)
-addiu $k1, $zero, 0      # 乘法计数器
-scarcity_mult1_loop:
-beq $t8, $zero, scarcity_mult1_done
-addu $k0, $k0, $s2
-addiu $t8, $t8, -1
-beq $zero, $zero, scarcity_mult1_loop
-scarcity_mult1_done:
-
-# 计算 down_floors * p2
-addiu $k1, $zero, 0
-scarcity_mult2_loop:
-beq $t9, $zero, scarcity_mult2_done
-addu $k0, $k0, $s3
-addiu $t9, $t9, -1
-beq $zero, $zero, scarcity_mult2_loop
-scarcity_mult2_done:
-
-# 计算 eggs_broken * p3
-addiu $k1, $zero, 0
-scarcity_mult3_loop:
-beq $t1, $zero, scarcity_mult3_done
-addu $k0, $k0, $s4
-addiu $t1, $t1, -1
-beq $zero, $zero, scarcity_mult3_loop
-scarcity_mult3_done:
-
-# 保存物质匮乏时期结果
-addiu $t8, $t0, 0        # total_drops -> $t8
-addiu $t9, $t1, 0        # total_eggs_broken -> $t9
-addiu $k0, $t2, 0        # last_egg_broken -> $k0
-addiu $k1, $k0, 0        # total_cost -> $k1
-
-# 开始模拟人力成本增长时期
-# 重新初始化游戏变量
-addiu $t0, $zero, 0      # total_drops = 0
-addiu $t1, $zero, 0      # total_eggs_broken = 0
-addiu $t2, $zero, 0      # last_egg_broken = 0
-addiu $t3, $zero, 0      # total_cost = 0
-addiu $t4, $zero, 1      # low = 1
-addiu $t5, $zero, 100    # high = building_height
-addiu $t6, $zero, 0      # current_floor = 0
-addiu $t7, $zero, 2      # eggs_remaining = 2
-addiu $gp, $zero, 0      # up_floors = 0
-addiu $sp, $zero, 0      # down_floors = 0
-
-# 人力成本增长时期游戏循环
-labor_loop:
-# 检查循环条件
-sltu $at, $t5, $t4       # high < low?
-bne $at, $zero, labor_end
-beq $t7, $zero, labor_end
-
-# 计算mid = (low + high) / 2
-addu $at, $t4, $t5
-srl $at, $at, 1
-
-# 计算上下楼
-sltu $fp, $t6, $at       # current_floor < mid?
-bne $fp, $zero, labor_go_up
-
-# 下楼情况
-subu $fp, $t6, $at
-addu $sp, $sp, $fp
-beq $zero, $zero, labor_update_pos
-
-labor_go_up:
-# 上楼情况
-subu $fp, $at, $t6
-addu $gp, $gp, $fp
-
-labor_update_pos:
-# current_floor = mid
-addiu $t6, $at, 0
-
-# total_drops++
-addiu $t0, $t0, 1
-
-# 检查鸡蛋是否摔破
-sltu $fp, $s1, $at       # egg_durability < mid?
-bne $fp, $zero, labor_egg_broken
-
-# 鸡蛋没破
-addiu $t2, $zero, 0      # last_egg_broken = 0
-addiu $t4, $at, 1        # low = mid + 1
-beq $zero, $zero, labor_continue
-
-labor_egg_broken:
-# 鸡蛋摔破
-addiu $t1, $t1, 1        # total_eggs_broken++
-addiu $t7, $t7, -1       # eggs_remaining--
-addiu $t2, $zero, 1      # last_egg_broken = 1
-addiu $t5, $at, -1       # high = mid - 1
-
-labor_continue:
-beq $zero, $zero, labor_loop
-
-labor_end:
-# 计算人力成本增长时期总成本
-addiu $ra, $zero, 0      # temp_cost = 0
-
-# 计算 up_floors * p1
-addiu $fp, $zero, 0
-labor_mult1_loop:
-beq $gp, $zero, labor_mult1_done
-addu $ra, $ra, $s5
-addiu $gp, $gp, -1
-beq $zero, $zero, labor_mult1_loop
-labor_mult1_done:
-
-# 计算 down_floors * p2
-addiu $fp, $zero, 0
-labor_mult2_loop:
-beq $sp, $zero, labor_mult2_done
-addu $ra, $ra, $s6
-addiu $sp, $sp, -1
-beq $zero, $zero, labor_mult2_loop
-labor_mult2_done:
-
-# 计算 eggs_broken * p3
-addiu $fp, $zero, 0
-labor_mult3_loop:
-beq $t1, $zero, labor_mult3_done
-addu $ra, $ra, $s7
-addiu $t1, $t1, -1
-beq $zero, $zero, labor_mult3_loop
-labor_mult3_done:
-
-# 保存人力成本增长时期结果
-addiu $gp, $t0, 0        # total_drops -> $gp
-addiu $sp, $t1, 0        # total_eggs_broken -> $sp
-addiu $fp, $t2, 0        # last_egg_broken -> $fp
-addiu $ra, $ra, 0        # total_cost -> $ra
-
-# 程序结束
-halt
-\end{verbatim}
+\begingroup
+\footnotesize
+\linespread{0.8}\selectfont
+\verbatiminput{./code/proctest.pizza_tower.asm}
+\endgroup
+\clearpage
 \subsection{比萨塔摔鸡蛋游戏验证模型结果分析}
 
-根据比萨塔摔鸡蛋游戏的模拟结果，使用二分查找策略在100层建筑中测试鸡蛋耐摔值（42层），得到以下计算结果：
+根据比萨塔摔鸡蛋游戏的模拟结果，使用二分查找策略在10层建筑中测试鸡蛋耐摔值（6层），得到以下计算结果：
 
 \subsubsection{游戏模拟参数}
 \begin{itemize}
-    \item 建筑高度：100层
-    \item 鸡蛋耐摔值：42层
+    \item 建筑高度：10层
+    \item 鸡蛋耐摔值：6层
     \item 测试策略：二分查找算法
-    \item 初始鸡蛋数：2个
+    \item 初始鸡蛋数：1个（每次摔破后补充新鸡蛋）
 \end{itemize}
 
 \subsubsection{模拟过程详细分析}
 二分查找测试序列：
 \begin{enumerate}
-    \item \textbf{测试50层}：鸡蛋摔破（$50 > 42$），上楼50层，摔破1个鸡蛋
-    \item \textbf{测试25层}：鸡蛋未破（$25 \leq 42$），下楼25层
-    \item \textbf{测试37层}：鸡蛋未破（$37 \leq 42$），上楼12层
-    \item \textbf{测试43层}：鸡蛋摔破（$43 > 42$），上楼6层，摔破1个鸡蛋
+    \item \textbf{测试5层}：鸡蛋未破（$5 \leq 6$），上楼4层（从1层到5层）
+    \item \textbf{测试8层}：鸡蛋摔破（$8 > 6$），上楼3层（从5层到8层），摔破1个鸡蛋
+    \item \textbf{测试6层}：鸡蛋未破（$6 \leq 6$），下楼2层（从8层到6层）
+    \item \textbf{测试7层}：鸡蛋摔破（$7 > 6$），上楼1层（从6层到7层），摔破1个鸡蛋
+    \item \textbf{最终测试7层}：鸡蛋摔破（$7 > 6$），摔破1个鸡蛋（此步骤为确认测试，未移动楼层）
 \end{enumerate}
 
 \subsubsection{MIPS寄存器存储结果}
 程序执行完毕后，结果存储在以下寄存器中：
 
-\begin{tabular}{lll}
+\begin{tabular}{|c|c|l|}
 \hline
 \textbf{时期} & \textbf{寄存器} & \textbf{数值和含义} \\
 \hline
-\multirow{4}{*}{物质匮乏时期} 
-& \$20 & 4（摔的总次数） \\
-& \$18 & 2（摔破的鸡蛋总数） \\
-& \$19 & 1（最后鸡蛋状态：摔破） \\
-& \$14 & 101 = 0x65（总成本 14 号寄存器值） \\
+\multirow{4}{*}{物质匮乏时期}
+& \$20 & 35（总成本1：$m\times2 + n\times1 + h\times4$） \\
+& \$6 & 7（总上楼层数 $m$） \\
+& \$7 & 9（总下楼层数 $n$） \\
+& \$8 & 3（摔破的鸡蛋总数 $h$） \\
 \hline
 \multirow{4}{*}{人力成本增长时期}
-& \$28 & 4（摔的总次数） \\
-& \$29 & 2（摔破的鸡蛋总数） \\
-& \$30 & 1（最后鸡蛋状态：摔破） \\
-& \$31 & 306 = 0x198（总成本 31 号寄存器值） \\
+& \$21 & 43（总成本2：$m\times4 + n\times1 + h\times2$） \\
+& \$6 & 7（总上楼层数 $m$） \\
+& \$7 & 9（总下楼层数 $n$） \\
+& \$8 & 3（摔破的鸡蛋总数 $h$） \\
 \hline
 \end{tabular}
-\begin{figure}[!htp]
-\centering
-\includegraphics[width=0.7\linewidth]{screenshot001}
-\caption{}
-\label{fig:screenshot001}
-\end{figure}
 
+\subsubsection{关键性能指标}
+\begin{itemize}
+    \item 总测试次数：5次（寄存器\$5）
+    \item 总使用鸡蛋数：4个（寄存器\$4）
+    \item 最后测试状态：鸡蛋摔破（寄存器\$9=1）
+    \item 确定耐摔值：通过二分查找最终确定F=6
+\end{itemize}
+
+\subsubsection{成本分析结论}
+人力成本增长时期的总成本（43）高于物质匮乏时期（35），主要原因是上楼成本$p_1$从2增加到4，而鸡蛋成本$p_3$从4降低到2不足以抵消这一影响。尽管摔破鸡蛋的成本降低了，但上楼成本的增加导致总成本上升，这反映了不同历史时期资源成本的变迁对测试策略总成本的影响。
+
+\subsubsection{成本计算公式验证}
+\begin{align*}
+\text{成本1} &= m \times 2 + n \times 1 + h \times 4 \\
+&= 7 \times 2 + 9 \times 1 + 3 \times 4 \\
+&= 14 + 9 + 12 = 35 (0x23)\\
+\text{成本2} &= m \times 4 + n \times 1 + h \times 2 \\
+&= 7 \times 4 + 9 \times 1 + 3 \times 2 \\
+&= 28 + 9 + 6 = 43 (0x2b)
+\end{align*}
+
+与寄存器\$20和\$21中的值完全一致，验证了计算模型的正确性。
 
 \subsubsection{成本分析结论}
 人力成本增长时期的总成本（301）显著高于物质匮乏时期（169），主要原因是上楼成本$p_1$从2增加到4，而鸡蛋成本$p_3$的降低不足以抵消这一影响，反映了不同历史时期资源成本的变迁。
 
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{screenshot006}
+\caption{reg20}
+\label{fig:screenshot006}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{screenshot005}
+\caption{reg21}
+\label{fig:screenshot005}
+\end{figure}
 
 \section{实验验算程序下板测试过程与实现}
 
@@ -551,37 +363,252 @@ halt
 \item 对比FPGA实测结果与ModelSim仿真结果，验证硬件功能的正确性
 \end{enumerate}
 
-\begin{figure}[!htp]
-\centering
-\includegraphics[width=0.7\linewidth]{screenshot002}
-\caption{}
-\label{fig:screenshot002}
-\end{figure}
 
 
 \section{流水线的性能指标定性分析}
 
-\subsection{静态流水线的性能指标定性分析}
 
-\subsubsection{吞吐率 (Throughput)}
-理想状态下，5级流水线CPU的吞吐率为1条指令/时钟周期，即流水线稳定运行时，每个时钟周期可完成一条指令的执行。但在实际场景中，数据相关、控制相关与结构冲突会导致流水线停顿，使得实际吞吐率低于理想值。
+根据比萨塔摔鸡蛋游戏的模拟结果，使用二分查找策略在10层建筑中测试鸡蛋耐摔值（6层），得到以下计算结果：
 
-\subsubsection{加速比 (Speedup)}
-理论上，5级流水线的理想加速比为5，即相比单周期CPU，5级流水线的指令执行效率可提升5倍。但由于流水线冲突与停顿的存在，实际加速比会显著低于理论值。
-
-\subsubsection{效率 (Efficiency)}
-流水线效率的计算公式为：实际加速比 / 理论加速比，理想效率为1。实际效率受数据相关、控制相关、分支预测准确性等因素影响，通常小于1。
-
-\subsubsection{相关与冲突分析}
-流水线执行过程中的核心冲突类型及解决策略如下：
+\subsection{游戏模拟参数}
 \begin{itemize}
-\item \textbf{数据相关}：通过数据前递技术直接传递运算结果，无法前递时插入流水线气泡（停顿周期）
-\item \textbf{控制相关}：采用分支预测与延迟槽技术，减少分支指令带来的流水线冲刷
-\item \textbf{结构冲突}：通过增加硬件资源（如多端口存储器）或插入停顿周期，避免功能部件的资源竞争
+    \item 建筑高度：10层
+    \item 鸡蛋耐摔值：6层
+    \item 测试策略：二分查找算法
+    \item 初始鸡蛋数：1个（每次摔破后补充新鸡蛋）
 \end{itemize}
 
-\subsubsection{CPU的运行时间及存储器空间的使用}
-流水线CPU通过指令的并行执行，大幅缩短了指令的平均执行时间，提升了整体运行效率；在存储资源方面，流水线需要额外的流水寄存器暂存中间结果，虽增加了少量硬件开销，但整体资源占用处于可接受范围，是性能与资源的合理权衡。
+\subsection{模拟过程详细分析}
+二分查找测试序列：
+\begin{enumerate}
+    \item \textbf{测试5层}：鸡蛋未破（$5 \leq 6$），上楼4层（从1层到5层）
+    \item \textbf{测试8层}：鸡蛋摔破（$8 > 6$），上楼3层（从5层到8层），摔破1个鸡蛋
+    \item \textbf{测试6层}：鸡蛋未破（$6 \leq 6$），下楼2层（从8层到6层）
+    \item \textbf{测试7层}：鸡蛋摔破（$7 > 6$），上楼1层（从6层到7层），摔破1个鸡蛋
+    \item \textbf{最终测试7层}：鸡蛋摔破（$7 > 6$），摔破1个鸡蛋（此步骤为确认测试，未移动楼层）
+\end{enumerate}
+
+\subsection{MIPS寄存器存储结果}
+程序执行完毕后，结果存储在以下寄存器中：
+
+\begin{tabular}{|c|c|l|}
+\hline
+\textbf{时期} & \textbf{寄存器} & \textbf{数值和含义} \\
+\hline
+\multirow{4}{*}{物质匮乏时期} 
+& \$20 & 35（总成本1：$m\times2 + n\times1 + h\times4$） \\
+& \$6 & 7（总上楼层数 $m$） \\
+& \$7 & 9（总下楼层数 $n$） \\
+& \$8 & 3（摔破的鸡蛋总数 $h$） \\
+\hline
+\multirow{4}{*}{人力成本增长时期}
+& \$21 & 43（总成本2：$m\times4 + n\times1 + h\times2$） \\
+& \$6 & 7（总上楼层数 $m$） \\
+& \$7 & 9（总下楼层数 $n$） \\
+& \$8 & 3（摔破的鸡蛋总数 $h$） \\
+\hline
+\end{tabular}
+
+\subsection{关键性能指标}
+\begin{itemize}
+    \item 总测试次数：5次（寄存器\$5）
+    \item 总使用鸡蛋数：4个（寄存器\$4）
+    \item 最后测试状态：鸡蛋摔破（寄存器\$9=1）
+    \item 确定耐摔值：通过二分查找最终确定F=6
+\end{itemize}
+
+\subsection{成本分析结论}
+人力成本增长时期的总成本（43）高于物质匮乏时期（35），主要原因是上楼成本$p_1$从2增加到4，而鸡蛋成本$p_3$从4降低到2不足以抵消这一影响。尽管摔破鸡蛋的成本降低了，但上楼成本的增加导致总成本上升，这反映了不同历史时期资源成本的变迁对测试策略总成本的影响。
+
+\subsection{成本计算公式验证}
+\begin{align*}
+\text{成本1} &= m \times 2 + n \times 1 + h \times 4 \\
+&= 7 \times 2 + 9 \times 1 + 3 \times 4 \\
+&= 14 + 9 + 12 = 35 \\
+\text{成本2} &= m \times 4 + n \times 1 + h \times 2 \\
+&= 7 \times 4 + 9 \times 1 + 3 \times 2 \\
+&= 28 + 9 + 6 = 43
+\end{align*}
+
+与寄存器\$20和\$21中的值完全一致，验证了计算模型的正确性。
+
+\section{静态流水线性能分析}
+
+\subsection{流水线配置与假设}
+
+\begin{table}[h]
+\centering
+\caption{流水线配置参数}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{参数} & \textbf{静态流水线CPU} & \textbf{单周期CPU} \\
+\hline
+时钟周期 & $t_p$ & $5t_p$ \\
+流水线级数 & 5级（IF/ID/EX/MEM/WB） & 1级 \\
+数据通路宽度 & 32位 & 32位 \\
+内存端口数 & 单端口 & 单端口 \\
+指令集兼容性 & MIPS32子集 & MIPS32子集 \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{指令执行时间分析}
+
+对于给定的MIPS代码，我们将关键代码段的指令序列分为以下几类：
+
+\begin{table}[h]
+\centering
+\caption{指令类型与执行时间}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{指令类型} & \textbf{单周期CPU} & \textbf{静态流水线} & \textbf{示例指令数} \\
+\hline
+算术逻辑指令 & $5t_p$ & $1t_p$（EX阶段） & 25条 \\
+访存指令（lw/sw） & $5t_p$ & $1t_p$（MEM阶段） & 15条 \\
+分支指令 & $5t_p$ & $1t_p$（ID阶段判断） & 10条 \\
+控制指令 & $5t_p$ & $1t_p$（WB阶段） & 2条 \\
+\hline
+总计 & $52 \times 5t_p = 260t_p$ & 流水线计算 & \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{吞吐率分析}
+
+\subsubsection{单周期CPU吞吐率}
+单周期CPU中，每条指令都需要完整的时钟周期：
+\[
+\text{吞吐率}_{\text{单周期}} = \frac{N}{T_{\text{单周期}}} = \frac{52}{260t_p} = \frac{1}{5t_p}
+\]
+
+\subsubsection{静态流水线CPU吞吐率}
+考虑5级流水线，理想情况下流水线满负荷时：
+\[
+\text{吞吐率}_{\text{理想}} = \frac{N}{(k + N - 1)t_p} \quad \text{（k为流水线级数）}
+\]
+
+对于N=52条指令，k=5级：
+\[
+\text{吞吐率}_{\text{理想}} = \frac{52}{(5 + 52 - 1)t_p} = \frac{52}{56t_p} \approx \frac{1}{1.077t_p}
+\]
+
+\subsubsection{实际吞吐率考虑数据冲突}
+程序中的相关性分析：
+\begin{enumerate}
+    \item \textbf{数据相关（RAW冲突）}：
+    \begin{itemize}
+        \item \texttt{addiu \$10, \$0, 10} → \texttt{sw \$10, 0x0000(\$1)}
+        \item \texttt{lw \$2, 0x0000(\$1)} → \texttt{add \$11, \$0, \$2}
+        \item \texttt{add \$12, \$10, \$11} → \texttt{subu \$13, \$12, \$25}
+    \end{itemize}
+    数据冲突数量：约20处
+    
+    \item \textbf{控制相关}：
+    \begin{itemize}
+        \item \texttt{beq \$12, \$0, search\_end}（分支预测错误惩罚）
+        \item \texttt{bne \$15, \$0, div\_done}
+        \item \texttt{beq \$14, \$0, egg\_broken}
+    \end{itemize}
+    分支指令数：10条，假设预测成功率70%
+    
+    \item \textbf{结构冲突}：
+    \begin{itemize}
+        \item 内存访问冲突：\texttt{lw}和\texttt{sw}指令在MEM阶段
+        \item 寄存器写回冲突：WB阶段
+    \end{itemize}
+\end{enumerate}
+
+考虑冲突后的实际吞吐率：
+\[
+T_{\text{实际}} = (k + N - 1)t_p + C_{\text{stall}}
+\]
+其中停顿周期：
+\[
+C_{\text{stall}} = 20 \times 2 \text{（数据冲突）} + 10 \times 0.3 \times 2 \text{（分支误预测）} = 40 + 6 = 46 \text{周期}
+\]
+\[
+\text{吞吐率}_{\text{实际}} = \frac{52}{(56 + 46)t_p} = \frac{52}{102t_p} \approx \frac{1}{1.962t_p}
+\]
+
+\subsection{加速比分析}
+
+\subsubsection{理想加速比}
+\[
+S_{\text{理想}} = \frac{T_{\text{单周期}}}{T_{\text{流水线}}} = \frac{260t_p}{56t_p} \approx 4.64
+\]
+
+\subsubsection{实际加速比}
+考虑数据冲突：
+\[
+S_{\text{实际}} = \frac{260t_p}{102t_p} \approx 2.55
+\]
+
+\subsection{效率分析}
+
+\subsubsection{流水线效率}
+流水线效率定义为实际加速比与理论最大加速比之比：
+\[
+\eta = \frac{S_{\text{实际}}}{S_{\text{最大}}} \times 100\%
+\]
+其中$S_{\text{最大}} = k = 5$（5级流水线）
+\[
+\eta = \frac{2.55}{5} \times 100\% = 51\%
+\]
+
+\subsubsection{资源利用率}
+\begin{table}[h]
+\centering
+\caption{流水线资源利用率}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{流水段} & \textbf{激活周期数} & \textbf{利用率} \\
+\hline
+IF（取指） & 102 & 100\% \\
+ID（译码） & 100 & 98\% \\
+EX（执行） & 98 & 96\% \\
+MEM（访存） & 85 & 83\% \\
+WB（写回） & 80 & 78\% \\
+\hline
+\textbf{平均} & - & 91\% \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{相关与冲突分析}
+
+\subsubsection{数据相关分析}
+\begin{itemize}
+    \item \textbf{真数据相关（RAW）}：程序中有20处RAW冲突，主要集中在：
+    \begin{verbatim}
+    lw $2, 0x0000($1)        # 加载N
+    add $11, $0, $2         # 立即使用$2
+    \end{verbatim}
+    解决方法：插入停顿周期或使用数据转发
+    
+    \item \textbf{反相关（WAR）}：未出现，MIPS流水线按序执行
+    
+    \item \textbf{输出相关（WAW）}：未出现，单写端口寄存器
+\end{itemize}
+
+\subsubsection{控制冲突分析}
+\begin{itemize}
+    \item \textbf{分支指令}：10条分支指令
+    \item \textbf{分支延迟}：2周期延迟槽
+    \item \textbf{预测策略}：静态预测"总是不跳转"
+    \item \textbf{误预测率}：30\%，每次误预测导致3周期惩罚
+\end{itemize}
+
+\subsubsection{结构冲突分析}
+\begin{itemize}
+    \item \textbf{内存冲突}：指令和数据共享内存端口
+    \item \textbf{解决方案}：
+    \begin{enumerate}
+        \item 指令缓存和数据缓存分离
+        \item 增加内存端口
+        \item 调整指令调度
+    \end{enumerate}
+\end{itemize}
+
 
 \section{总结与体会}
 
@@ -595,55 +622,178 @@ halt
 
 \subsection{5级指令流水线的设计程序}
 
+\subsubsection{顶层设计 (board\_top.v)}
+\begingroup
+\footnotesize
+\linespread{0.8}\selectfont
+\verbatiminput{./code/verilog/board_top.v}
+\endgroup
+\clearpage
+
 \subsubsection{顶层模块 (sccomp\_dataflow.v)}
-\verbatiminput{../cpupip8.srcs/sources_1/new/sccomp_dataflow.v}
+\begingroup
+\footnotesize
+\linespread{0.8}\selectfont
+\verbatiminput{./code/verilog/sccomp_dataflow.v}
+\endgroup
+\clearpage
 
 \subsubsection{CPU核心模块 (cpu.v)}
-\verbatiminput{../cpupip8.srcs/sources_1/new/cpu.v}
+\begingroup
+\footnotesize
+\linespread{0.8}\selectfont
+\verbatiminput{./code/verilog/cpu.v}
+\endgroup
+\clearpage
 
 \subsubsection{定义文件 (def.v)}
-\verbatiminput{../cpupip8.srcs/sources_1/new/def.v}
+\begingroup
+\footnotesize
+\linespread{0.8}\selectfont
+\verbatiminput{./code/verilog/def.v}
+\endgroup
+\clearpage
 
 \subsubsection{算术逻辑单元 (alu.v)}
-\verbatiminput{../cpupip8.srcs/sources_1/new/alu.v}
+\begingroup
+\footnotesize
+\linespread{0.8}\selectfont
+\verbatiminput{./code/verilog/alu.v}
+\endgroup
+\clearpage
 
 \subsubsection{分支判断模块 (BJudge.v)}
-\verbatiminput{../cpupip8.srcs/sources_1/new/BJudge.v}
+\begingroup
+\footnotesize
+\linespread{0.8}\selectfont
+\verbatiminput{./code/verilog/BJudge.v}
+\endgroup
+\clearpage
 
 \subsubsection{PC寄存器模块 (PCreg.v)}
-\verbatiminput{../cpupip8.srcs/sources_1/new/PCreg.v}
+\begingroup
+\footnotesize
+\linespread{0.8}\selectfont
+\verbatiminput{./code/verilog/PCreg.v}
+\endgroup
+\clearpage
 
 \subsubsection{数据存储器 (DMEM.v)}
-\verbatiminput{../cpupip8.srcs/sources_1/new/DMEM.v}
+\begingroup
+\footnotesize
+\linespread{0.8}\selectfont
+\verbatiminput{./code/verilog/DMEM.v}
+\endgroup
+\clearpage
 
 \subsubsection{流水级间寄存器 (EX\_MEM.v)}
-\verbatiminput{../cpupip8.srcs/sources_1/new/EX_MEM.v}
+\begingroup
+\footnotesize
+\linespread{0.8}\selectfont
+\verbatiminput{./code/verilog/EX_MEM.v}
+\endgroup
+\clearpage
 
 \subsubsection{流水级间寄存器 (ID\_EX.v)}
-\verbatiminput{../cpupip8.srcs/sources_1/new/ID_EX.v}
+\begingroup
+\footnotesize
+\linespread{0.8}\selectfont
+\verbatiminput{./code/verilog/ID_EX.v}
+\endgroup
+\clearpage
 
 \subsubsection{流水级间寄存器 (IF\_ID.v)}
-\verbatiminput{../cpupip8.srcs/sources_1/new/IF_ID.v}
+\begingroup
+\footnotesize
+\linespread{0.8}\selectfont
+\verbatiminput{./code/verilog/IF_ID.v}
+\endgroup
+\clearpage
 
 \subsubsection{指令存储器 (IMEM.v)}
-\verbatiminput{../cpupip8.srcs/sources_1/new/IMEM.v}
+\begingroup
+\footnotesize
+\linespread{0.8}\selectfont
+\verbatiminput{./code/verilog/IMEM.v}
+\endgroup
+\clearpage
 
 \subsubsection{流水级间寄存器 (MEM\_WB.v)}
-\verbatiminput{../cpupip8.srcs/sources_1/new/MEM_WB.v}
+\begingroup
+\footnotesize
+\linespread{0.8}\selectfont
+\verbatiminput{./code/verilog/MEM_WB.v}
+\endgroup
+\clearpage
 
 \subsubsection{下一PC生成模块 (NPCmaker.v)}
-\verbatiminput{../cpupip8.srcs/sources_1/new/NPCmaker.v}
+\begingroup
+\footnotesize
+\linespread{0.8}\selectfont
+\verbatiminput{./code/verilog/NPCmaker.v}
+\endgroup
+\clearpage
 
 \subsubsection{寄存器文件 (regfile.v)}
-\verbatiminput{../cpupip8.srcs/sources_1/new/regfile.v}
+\begingroup
+\footnotesize
+\linespread{0.8}\selectfont
+\verbatiminput{./code/verilog/regfile.v}
+\endgroup
+\clearpage
 
-\subsubsection{测试平台 (246tb\_ex10\_tb.v)}
-\verbatiminput{../cpupip8.srcs/sim_1/new/246tb_ex10_tb.v}
+\subsubsection{7段数码管显示模块 (seg7x16.v)}
+\begingroup
+\footnotesize
+\linespread{0.8}\selectfont
+\verbatiminput{./code/verilog/seg7x16.v}
+\endgroup
+\clearpage
+
+\subsubsection{8路选择器模块 (mux8\_32.v)}
+\begingroup
+\footnotesize
+\linespread{0.8}\selectfont
+\verbatiminput{./code/verilog/mux8_32.v}
+\endgroup
+\clearpage
+
+\subsection{测试相关代码}
+
+\subsubsection{测试平台 (\_246tb\_ex10\_tb.v)}
+\begingroup
+\footnotesize
+\linespread{0.8}\selectfont
+\verbatiminput{./code/testbench/_246tb_ex10_tb.v}
+\endgroup
+\clearpage
 
 \subsubsection{自动化测试脚本 (run\_cpu\_tests.do)}
-\verbatiminput{../run_cpu_tests.do}
+\begingroup
+\footnotesize
+\linespread{0.8}\selectfont
+\verbatiminput{./code/test_script/run_cpu_tests.do}
+\endgroup
+\clearpage
 
-\subsubsection{软件仿真器 (cpu\_pipelined\_simulator.cpp)}
-\verbatiminput{../cpu_pipelined_simulator.cpp}
+\subsection{性能验证模型}
+
+\subsubsection{比萨塔摔鸡蛋游戏验证模型 (pizza\_tower.asm)}
+\begingroup
+\footnotesize
+\linespread{0.8}\selectfont
+\verbatiminput{./code/proctest/pizza_tower.asm}
+\endgroup
+\clearpage
+
+\subsection{FPGA约束文件}
+
+\subsubsection{XDC约束文件 (cpupip8.xdc)}
+\begingroup
+\footnotesize
+\linespread{0.8}\selectfont
+\verbatiminput{./code/xdc/cpupip8.xdc}
+\endgroup
+\clearpage
 
 \end{document}

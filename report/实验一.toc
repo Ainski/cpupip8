@@ -1,55 +1,81 @@
-\contentsline {section}{\numberline {1}实验环境部署与硬件配置说明}{3}{}%
-\contentsline {subsection}{\numberline {1.1}指令集实现}{3}{}%
-\contentsline {subsection}{\numberline {1.2}分支指令设计}{5}{}%
-\contentsline {section}{\numberline {2}实验的总体结构}{5}{}%
-\contentsline {subsection}{\numberline {2.1}5级指令流水线的总体结构}{5}{}%
-\contentsline {section}{\numberline {3}总体架构部件的解释说明}{5}{}%
-\contentsline {subsection}{\numberline {3.1}5级指令流水线总体结构部件的解释说明}{5}{}%
-\contentsline {subsubsection}{\numberline {3.1.1}IF/ID寄存器}{5}{}%
+\contentsline {section}{\numberline {1}实验环境部署与硬件配置说明}{4}{}%
+\contentsline {subsection}{\numberline {1.1}指令集实现}{4}{}%
+\contentsline {section}{\numberline {2}实验的总体结构}{6}{}%
+\contentsline {subsection}{\numberline {2.1}5级指令流水线的总体结构}{6}{}%
+\contentsline {section}{\numberline {3}总体架构部件的解释说明}{6}{}%
+\contentsline {subsection}{\numberline {3.1}5级指令流水线总体结构部件的解释说明}{6}{}%
+\contentsline {subsubsection}{\numberline {3.1.1}IF/ID寄存器}{6}{}%
 \contentsline {subsubsection}{\numberline {3.1.2}ID/EX寄存器}{6}{}%
-\contentsline {subsubsection}{\numberline {3.1.3}EX/MEM寄存器}{6}{}%
-\contentsline {subsubsection}{\numberline {3.1.4}MEM/WB寄存器}{6}{}%
-\contentsline {section}{\numberline {4}实验仿真过程}{6}{}%
-\contentsline {subsection}{\numberline {4.1}5级指令流水线的仿真过程}{6}{}%
-\contentsline {subsection}{\numberline {4.2}启动测试与执行过程}{7}{}%
-\contentsline {subsection}{\numberline {4.3}分支预测与冲突处理机制}{7}{}%
-\contentsline {subsubsection}{\numberline {4.3.1}分支指令处理}{7}{}%
-\contentsline {subsubsection}{\numberline {4.3.2}冲突检测与处理}{7}{}%
-\contentsline {subsection}{\numberline {4.4}写锁设计机制}{7}{}%
-\contentsline {section}{\numberline {5}实验仿真的波形图及某时刻寄存器值的物理意义}{8}{}%
-\contentsline {subsection}{\numberline {5.1}5级指令流水线的波形图及某时刻寄存器值的物理意义}{8}{}%
-\contentsline {section}{\numberline {6}流水线CPU实验性能验证模型}{8}{}%
-\contentsline {subsection}{\numberline {6.1}实验性能验证模型：比萨塔摔鸡蛋游戏}{8}{}%
-\contentsline {subsection}{\numberline {6.2}比萨塔摔鸡蛋游戏验证模型结果分析}{15}{}%
-\contentsline {subsubsection}{\numberline {6.2.1}游戏模拟参数}{15}{}%
-\contentsline {subsubsection}{\numberline {6.2.2}模拟过程详细分析}{15}{}%
-\contentsline {subsubsection}{\numberline {6.2.3}MIPS寄存器存储结果}{15}{}%
-\contentsline {subsubsection}{\numberline {6.2.4}成本分析结论}{15}{}%
-\contentsline {section}{\numberline {7}实验验算程序下板测试过程与实现}{16}{}%
-\contentsline {section}{\numberline {8}流水线的性能指标定性分析}{17}{}%
-\contentsline {subsection}{\numberline {8.1}静态流水线的性能指标定性分析}{17}{}%
-\contentsline {subsubsection}{\numberline {8.1.1}吞吐率 (Throughput)}{17}{}%
-\contentsline {subsubsection}{\numberline {8.1.2}加速比 (Speedup)}{17}{}%
-\contentsline {subsubsection}{\numberline {8.1.3}效率 (Efficiency)}{17}{}%
-\contentsline {subsubsection}{\numberline {8.1.4}相关与冲突分析}{17}{}%
-\contentsline {subsubsection}{\numberline {8.1.5}CPU的运行时间及存储器空间的使用}{17}{}%
-\contentsline {section}{\numberline {9}总结与体会}{17}{}%
-\contentsline {section}{\numberline {10}附件（所有程序）}{18}{}%
-\contentsline {subsection}{\numberline {10.1}5级指令流水线的设计程序}{18}{}%
-\contentsline {subsubsection}{\numberline {10.1.1}顶层模块 (sccomp\_dataflow.v)}{18}{}%
-\contentsline {subsubsection}{\numberline {10.1.2}CPU核心模块 (cpu.v)}{24}{}%
-\contentsline {subsubsection}{\numberline {10.1.3}定义文件 (def.v)}{31}{}%
-\contentsline {subsubsection}{\numberline {10.1.4}算术逻辑单元 (alu.v)}{34}{}%
-\contentsline {subsubsection}{\numberline {10.1.5}分支判断模块 (BJudge.v)}{39}{}%
-\contentsline {subsubsection}{\numberline {10.1.6}PC寄存器模块 (PCreg.v)}{39}{}%
-\contentsline {subsubsection}{\numberline {10.1.7}数据存储器 (DMEM.v)}{40}{}%
-\contentsline {subsubsection}{\numberline {10.1.8}流水级间寄存器 (EX\_MEM.v)}{43}{}%
-\contentsline {subsubsection}{\numberline {10.1.9}流水级间寄存器 (ID\_EX.v)}{45}{}%
-\contentsline {subsubsection}{\numberline {10.1.10}流水级间寄存器 (IF\_ID.v)}{47}{}%
-\contentsline {subsubsection}{\numberline {10.1.11}指令存储器 (IMEM.v)}{50}{}%
-\contentsline {subsubsection}{\numberline {10.1.12}流水级间寄存器 (MEM\_WB.v)}{51}{}%
-\contentsline {subsubsection}{\numberline {10.1.13}下一PC生成模块 (NPCmaker.v)}{53}{}%
-\contentsline {subsubsection}{\numberline {10.1.14}寄存器文件 (regfile.v)}{53}{}%
-\contentsline {subsubsection}{\numberline {10.1.15}测试平台 (246tb\_ex10\_tb.v)}{59}{}%
-\contentsline {subsubsection}{\numberline {10.1.16}自动化测试脚本 (run\_cpu\_tests.do)}{59}{}%
-\contentsline {subsubsection}{\numberline {10.1.17}软件仿真器 (cpu\_pipelined\_simulator.cpp)}{64}{}%
+\contentsline {subsubsection}{\numberline {3.1.3}EX/MEM寄存器}{7}{}%
+\contentsline {subsubsection}{\numberline {3.1.4}MEM/WB寄存器}{7}{}%
+\contentsline {subsection}{\numberline {3.2}分支预测与冲突处理机制}{8}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}分支指令设计}{8}{}%
+\contentsline {subsubsection}{\numberline {3.2.2}分支指令处理}{8}{}%
+\contentsline {subsubsection}{\numberline {3.2.3}冲突检测与处理}{8}{}%
+\contentsline {subsection}{\numberline {3.3}写锁设计机制}{8}{}%
+\contentsline {section}{\numberline {4}实验仿真过程}{10}{}%
+\contentsline {subsection}{\numberline {4.1}5级指令流水线的仿真过程}{10}{}%
+\contentsline {subsection}{\numberline {4.2}启动测试与执行过程}{10}{}%
+\contentsline {section}{\numberline {5}实验仿真的波形图及某时刻寄存器值的物理意义}{10}{}%
+\contentsline {section}{\numberline {6}流水线CPU实验性能验证模型}{10}{}%
+\contentsline {subsection}{\numberline {6.1}实验性能验证模型：比萨塔摔鸡蛋游戏}{10}{}%
+\contentsline {subsection}{\numberline {6.2}比萨塔摔鸡蛋游戏验证模型结果分析}{12}{}%
+\contentsline {subsubsection}{\numberline {6.2.1}游戏模拟参数}{12}{}%
+\contentsline {subsubsection}{\numberline {6.2.2}模拟过程详细分析}{12}{}%
+\contentsline {subsubsection}{\numberline {6.2.3}MIPS寄存器存储结果}{12}{}%
+\contentsline {subsubsection}{\numberline {6.2.4}关键性能指标}{13}{}%
+\contentsline {subsubsection}{\numberline {6.2.5}成本分析结论}{13}{}%
+\contentsline {subsubsection}{\numberline {6.2.6}成本计算公式验证}{13}{}%
+\contentsline {subsubsection}{\numberline {6.2.7}成本分析结论}{13}{}%
+\contentsline {section}{\numberline {7}实验验算程序下板测试过程与实现}{13}{}%
+\contentsline {section}{\numberline {8}流水线的性能指标定性分析}{15}{}%
+\contentsline {subsection}{\numberline {8.1}游戏模拟参数}{15}{}%
+\contentsline {subsection}{\numberline {8.2}模拟过程详细分析}{15}{}%
+\contentsline {subsection}{\numberline {8.3}MIPS寄存器存储结果}{15}{}%
+\contentsline {subsection}{\numberline {8.4}关键性能指标}{16}{}%
+\contentsline {subsection}{\numberline {8.5}成本分析结论}{16}{}%
+\contentsline {subsection}{\numberline {8.6}成本计算公式验证}{16}{}%
+\contentsline {section}{\numberline {9}静态流水线性能分析}{17}{}%
+\contentsline {subsection}{\numberline {9.1}流水线配置与假设}{17}{}%
+\contentsline {subsection}{\numberline {9.2}指令执行时间分析}{17}{}%
+\contentsline {subsection}{\numberline {9.3}吞吐率分析}{17}{}%
+\contentsline {subsubsection}{\numberline {9.3.1}单周期CPU吞吐率}{17}{}%
+\contentsline {subsubsection}{\numberline {9.3.2}静态流水线CPU吞吐率}{17}{}%
+\contentsline {subsubsection}{\numberline {9.3.3}实际吞吐率考虑数据冲突}{18}{}%
+\contentsline {subsection}{\numberline {9.4}加速比分析}{18}{}%
+\contentsline {subsubsection}{\numberline {9.4.1}理想加速比}{18}{}%
+\contentsline {subsubsection}{\numberline {9.4.2}实际加速比}{19}{}%
+\contentsline {subsection}{\numberline {9.5}效率分析}{19}{}%
+\contentsline {subsubsection}{\numberline {9.5.1}流水线效率}{19}{}%
+\contentsline {subsubsection}{\numberline {9.5.2}资源利用率}{19}{}%
+\contentsline {subsection}{\numberline {9.6}相关与冲突分析}{19}{}%
+\contentsline {subsubsection}{\numberline {9.6.1}数据相关分析}{19}{}%
+\contentsline {subsubsection}{\numberline {9.6.2}控制冲突分析}{20}{}%
+\contentsline {subsubsection}{\numberline {9.6.3}结构冲突分析}{20}{}%
+\contentsline {section}{\numberline {10}总结与体会}{20}{}%
+\contentsline {section}{\numberline {11}附件（所有程序）}{21}{}%
+\contentsline {subsection}{\numberline {11.1}5级指令流水线的设计程序}{21}{}%
+\contentsline {subsubsection}{\numberline {11.1.1}顶层设计 (board\_top.v)}{21}{}%
+\contentsline {subsubsection}{\numberline {11.1.2}顶层模块 (sccomp\_dataflow.v)}{22}{}%
+\contentsline {subsubsection}{\numberline {11.1.3}CPU核心模块 (cpu.v)}{25}{}%
+\contentsline {subsubsection}{\numberline {11.1.4}定义文件 (def.v)}{29}{}%
+\contentsline {subsubsection}{\numberline {11.1.5}算术逻辑单元 (alu.v)}{31}{}%
+\contentsline {subsubsection}{\numberline {11.1.6}分支判断模块 (BJudge.v)}{34}{}%
+\contentsline {subsubsection}{\numberline {11.1.7}PC寄存器模块 (PCreg.v)}{35}{}%
+\contentsline {subsubsection}{\numberline {11.1.8}数据存储器 (DMEM.v)}{36}{}%
+\contentsline {subsubsection}{\numberline {11.1.9}流水级间寄存器 (EX\_MEM.v)}{38}{}%
+\contentsline {subsubsection}{\numberline {11.1.10}流水级间寄存器 (ID\_EX.v)}{40}{}%
+\contentsline {subsubsection}{\numberline {11.1.11}流水级间寄存器 (IF\_ID.v)}{42}{}%
+\contentsline {subsubsection}{\numberline {11.1.12}指令存储器 (IMEM.v)}{44}{}%
+\contentsline {subsubsection}{\numberline {11.1.13}流水级间寄存器 (MEM\_WB.v)}{45}{}%
+\contentsline {subsubsection}{\numberline {11.1.14}下一PC生成模块 (NPCmaker.v)}{47}{}%
+\contentsline {subsubsection}{\numberline {11.1.15}寄存器文件 (regfile.v)}{48}{}%
+\contentsline {subsubsection}{\numberline {11.1.16}7段数码管显示模块 (seg7x16.v)}{51}{}%
+\contentsline {subsubsection}{\numberline {11.1.17}8路选择器模块 (mux8\_32.v)}{53}{}%
+\contentsline {subsection}{\numberline {11.2}测试相关代码}{54}{}%
+\contentsline {subsubsection}{\numberline {11.2.1}测试平台 (\_246tb\_ex10\_tb.v)}{54}{}%
+\contentsline {subsubsection}{\numberline {11.2.2}自动化测试脚本 (run\_cpu\_tests.do)}{59}{}%
+\contentsline {subsection}{\numberline {11.3}性能验证模型}{62}{}%
+\contentsline {subsubsection}{\numberline {11.3.1}比萨塔摔鸡蛋游戏验证模型 (pizza\_tower.asm)}{62}{}%
+\contentsline {subsection}{\numberline {11.4}FPGA约束文件}{65}{}%
+\contentsline {subsubsection}{\numberline {11.4.1}XDC约束文件 (cpupip8.xdc)}{65}{}%
